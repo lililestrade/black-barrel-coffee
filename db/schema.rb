@@ -10,25 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_175500) do
+ActiveRecord::Schema.define(version: 2020_03_18_212839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "mutations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.bigint "adult_1_id", null: false
-    t.bigint "adult_2_id", default: ""
-    t.bigint "adult_3_id", default: ""
-    t.bigint "kid_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -44,19 +29,4 @@ ActiveRecord::Schema.define(version: 2020_03_21_175500) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "varieties", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
-    t.integer "altitude"
-    t.bigint "parent_1_id"
-    t.bigint "parent_2_id"
-    t.bigint "parent_3_id"
-    t.bigint "mutation_id"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mutation_id"], name: "index_varieties_on_mutation_id"
-  end
-
-  add_foreign_key "varieties", "mutations"
 end
