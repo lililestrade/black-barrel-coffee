@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# rails generate model Variety name:string country:string altitude:integer parent_1_id:bigint parent_2_id:bigint parent_3_id:bigint mutation:references description:text
