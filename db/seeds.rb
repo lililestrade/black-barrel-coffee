@@ -13,9 +13,9 @@ Month.destroy_all
 
 puts "Creatings mutations ..."
 
-natural_mutation = Mutation.create(name: "Naturally occurring genetic mutation.")
-hybrid_one = Mutation.create(name: "Hybrid mutation naturally occurring.")
-hybrid_two = Mutation.create(name: "Hybrid mutation selective breeding.")
+natural_mutation = Mutation.create(name: "Mutation génétique naturelle.")
+hybrid_one = Mutation.create(name: "Mutation hybride naturelle.")
+hybrid_two = Mutation.create(name: "Mutation hybride par reproduction sélective.")
 
 puts "Creatings months ..."
 
