@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_171013) do
+ActiveRecord::Schema.define(version: 2020_03_23_171539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 2020_03_23_171013) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "parents", force: :cascade do |t|
+    t.bigint "variety_id"
+    t.bigint "parent_variety_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["variety_id"], name: "index_parents_on_variety_id"
+  end
+
   create_table "productive_countries", force: :cascade do |t|
     t.bigint "variety_id"
     t.bigint "country_id"
@@ -108,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_171013) do
   add_foreign_key "country_process_links", "drying_processes"
   add_foreign_key "harvest_periods", "countries"
   add_foreign_key "harvest_periods", "months"
+  add_foreign_key "parents", "varieties"
   add_foreign_key "productive_countries", "countries"
   add_foreign_key "productive_countries", "varieties"
   add_foreign_key "varieties", "mutations"
