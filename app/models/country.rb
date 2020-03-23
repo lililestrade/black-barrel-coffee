@@ -3,4 +3,6 @@ class Country < ApplicationRecord
   has_many :harvest_periods
   has_many :productive_countries
 
+  validates :name, presence: true
+
 end

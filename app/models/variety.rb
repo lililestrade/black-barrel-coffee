@@ -6,4 +6,6 @@ class Variety < ApplicationRecord
       join_table: :parents,
       foreign_key: :variety_id,
       association_foreign_key: :parent_variety_id
+
+  validates :name, presence: true
 end
