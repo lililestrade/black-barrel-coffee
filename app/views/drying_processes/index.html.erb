@@ -3,6 +3,12 @@
 <hr>
 
 <p>
+  <% if policy(DryingProcess).create? %>
+    <%= link_to "Nouvelle Méthode", new_drying_process_path, class: "btn btn-primary" %>
+  <% end %>
+</p>
+
+<p>
   <% @drying_processes.each do |drying_process| %>
     <%= drying_process.name %>
   <% end %>

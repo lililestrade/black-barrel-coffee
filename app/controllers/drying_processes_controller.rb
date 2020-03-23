@@ -1,6 +1,10 @@
 class DryingProcessesController < ApplicationController
+
+
   def index
-    @drying_processes = DryingProcess.all
+    #policies = policy_scope(DryingProcess)
+    @drying_processes = policy_scope(DryingProcess)
+
   end
 
   def show
@@ -13,6 +17,7 @@ class DryingProcessesController < ApplicationController
 
   def create
     @drying_process = DryingProcess.new(drying_process_params)
+    authorize @drying_process
     if @drying_process.save!
       redirect_to drying_processes_path
     else
