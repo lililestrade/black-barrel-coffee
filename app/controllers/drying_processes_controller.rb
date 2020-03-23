@@ -9,10 +9,12 @@ class DryingProcessesController < ApplicationController
 
   def show
     @drying_process = DryingProcess.find(params[:id])
+    authorize @drying_process
   end
 
   def new
-    @drying_process = DryingProcess.new
+    @drying_process = DryingProcess.new()
+    authorize @drying_process
   end
 
   def create

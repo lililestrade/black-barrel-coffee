@@ -10,6 +10,6 @@
 
 <p>
   <% @drying_processes.each do |drying_process| %>
-    <%= drying_process.name %>
+    <%= link_to drying_process.name, drying_process_path(drying_process) %>
   <% end %>
 </p>
