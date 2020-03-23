@@ -1,0 +1,2 @@
+class DryingProcess < ApplicationRecord
+end
