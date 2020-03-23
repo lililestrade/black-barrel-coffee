@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_170322) do
+ActiveRecord::Schema.define(version: 2020_03_23_170709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,8 +77,26 @@ ActiveRecord::Schema.define(version: 2020_03_23_170322) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "varieties", force: :cascade do |t|
+    t.string "name"
+    t.boolean "arabica"
+    t.boolean "robusta"
+    t.integer "discover_year"
+    t.string "origin"
+    t.string "altitude"
+    t.bigint "mutation_id"
+    t.text "plant"
+    t.text "strenght"
+    t.text "cup"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mutation_id"], name: "index_varieties_on_mutation_id"
+  end
+
   add_foreign_key "country_process_links", "countries"
   add_foreign_key "country_process_links", "drying_processes"
   add_foreign_key "harvest_periods", "countries"
   add_foreign_key "harvest_periods", "months"
+  add_foreign_key "varieties", "mutations"
 end
