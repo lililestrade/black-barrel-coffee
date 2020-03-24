@@ -9,7 +9,6 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
     #@country = policy_scope(DryingProcess.find(params[:id]))
     authorize @country
-
   end
 
   def new
