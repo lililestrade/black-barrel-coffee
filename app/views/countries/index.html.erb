@@ -1,0 +1,16 @@
+<h1>TOUS LES PAYS PRODUCTEURS</h1>
+
+<hr>
+
+<p>
+  <% if policy(Country).create? %>
+    <%= link_to "Nouveau pays", new_country_path, class: "btn btn-primary" %>
+  <% end %>
+</p>
+
+<p>
+  <% @countries.each do |country| %>
+    <%= link_to country.name, country_path(country), class: "btn btn-warning" %>
+
+  <% end %>
+</p>

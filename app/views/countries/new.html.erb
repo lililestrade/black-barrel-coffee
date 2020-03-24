@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-center">CRÉATION D'UN NOUVEAU PAYS PRODUCTEUR</h1>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <%= simple_form_for @country do |f| %>
+        <%= f.input :name, label: false, placeholder: "Nom du pays ?" %>
+        <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
+        <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
+        <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
+        <%= f.input :description, label: false, placeholder: "Description ..."%>
+
+        <h2>Méthode de séchage en pratique dans ce pays :</h2>
+        <%= f.simple_fields_for :country_process_links, CountryProcessLink.new do |f2| %>
+          <%= f2.association :drying_process, label: false %>
+        <% end %>
+
+        <h2>Mois de récolte :</h2>
+        <%= f.simple_fields_for :harvest_periods, HarvestPeriod.new do |f3| %>
+          <%= f3.association :month, label: false %>
+        <% end %>
+
+        <%= f.submit 'Créer le pays', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

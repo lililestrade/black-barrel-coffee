@@ -1,6 +1,4 @@
 class DryingProcessesController < ApplicationController
-
-
   def index
     #policies = policy_scope(DryingProcess)
     @drying_processes = policy_scope(DryingProcess)
