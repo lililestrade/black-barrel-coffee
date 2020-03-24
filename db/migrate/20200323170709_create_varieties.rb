@@ -2,8 +2,8 @@ class CreateVarieties < ActiveRecord::Migration[5.2]
   def change
     create_table :varieties do |t|
       t.string :name
-      t.boolean :arabica
-      t.boolean :robusta
+      t.boolean :arabica, default: false
+      t.boolean :robusta, default: false
       t.integer :discover_year
       t.string :origin
       t.string :altitude
