@@ -9,7 +9,9 @@ class DryingProcessesController < ApplicationController
 
   def show
     @drying_process = DryingProcess.find(params[:id])
+    #@drying_process = policy_scope(DryingProcess.find(params[:id]))
     authorize @drying_process
+
   end
 
   def new

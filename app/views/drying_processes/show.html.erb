@@ -1,12 +1,16 @@
-<h1>UN PROCESS DE SÉCHAGE</h1>
+<h1>UNE MÉTHODE DE SÉCHAGE</h1>
 
 <hr>
+
+<%# if policy(DryingProcess).show? %>
 
 <h3>
   <%= @drying_process.name %>
 </h3>
 <p>
   <em><%= @drying_process.process_time %></em>
+  <br>
   <%= @drying_process.description %>
 </p>
 
+<%# end %>

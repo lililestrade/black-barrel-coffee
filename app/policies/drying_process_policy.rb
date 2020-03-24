@@ -7,6 +7,10 @@ class DryingProcessPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    return true
+  end
+
   def create?
     return true if user.admin?
   end
