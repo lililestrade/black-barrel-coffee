@@ -19,7 +19,6 @@ class VarietiesController < ApplicationController
   def create
     @variety = Variety.new(variety_params)
     authorize @variety
-
     if @variety.save!
       flash[:notice] = 'Successfully created variety.'
       redirect_to varieties_path
@@ -31,8 +30,8 @@ class VarietiesController < ApplicationController
   private
 
   def variety_params
-    params.require(:variety).permit(:name, :arabica, :robusta, :discover_year, :origin, :altitude, :mutation_id, :plant, :strenght, :cup, :description,
-                                      harvest_periods_attributes: [:id, :month_id, :_destroy])
+    params.require(:variety).permit(:name, :arabica, :robusta, :liberica, :discover_year, :origin, :altitude, :mutation_id, :plant, :strenght, :cup, :description,
+                                      productive_countries_attributes: [:id, :country_id, :_destroy],
+                                      parents_attributes: [:id, :parent_variety_id, :_destroy])
   end
-
 end

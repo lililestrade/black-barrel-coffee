@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="text-center">CRÉATION D'UN NOUVEAU PAYS PRODUCTEUR</h1>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <%= simple_form_for @variety do |f| %>
+        <%= f.input :name, label: false, placeholder: "Nom due la variété ?" %>
+        <%= f.input :arabica, as: :boolean, checked_value: true, unchecked_value: false %>
+        <%= f.input :robusta, as: :boolean, checked_value: true, unchecked_value: false %>
+        <%= f.input :liberica, as: :boolean, checked_value: true, unchecked_value: false %>
+
+        <p>Parents :</p>
+        <%= f.simple_fields_for :parents, Parent.new do |f3| %>
+          <%= f3.input :parent_variety_id, collection: Variety.all, label: false %>
+          <%#= f3.association :parent_variety_id, collection: Variety.all %>
+          <%#= f3.association :parent_variety_id, label: false %>
+        <% end %>
+
+        <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
+        <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
+
+        <p>Pays producteurs :</p>
+        <%= f.simple_fields_for :productive_countries, ProductiveCountry.new do |f2| %>
+          <%= f2.association :country, label: false %>
+          <%= f2.input :address, label: false, placeholder: "Adresse ?" %>
+        <% end %>
+
+        <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
+        <p>Type de mutation :</p>
+        <%= f.association :mutation, label: false %>
+        <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
+        <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
+        <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
+        <%= f.input :description, label: false, placeholder: "Description ..."%>
+
+
+
+        <%= f.submit 'Créer la variété', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

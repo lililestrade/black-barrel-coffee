@@ -1,15 +1,17 @@
-<h1>TOUTES LES VARIÉTÉS</h1>
-
-<hr>
-
-<p>
-  <% if policy(Variety).create? %>
-    <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
-  <% end %>
-</p>
-
-<p>
-  <% @varieties.each do |variety| %>
-    <%= link_to variety.name, variety_path(variety), class: "btn btn-warning" %>
-  <% end %>
-</p>
+<div class="container">
+  <h1 class="text-center">TOUTES LES VARIÉTÉS</h1>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <hr>
+      <% if policy(Variety).create? %>
+        <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
+      <% end %>
+      <hr>
+      <p>
+        <% @varieties.each do |variety| %>
+          <%= link_to variety.name, variety_path(variety), class: "btn btn-warning" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

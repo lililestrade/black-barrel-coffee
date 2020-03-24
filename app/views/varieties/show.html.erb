@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="text-center"><%= @variety.name %></h1>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <p><strong>Espèce : </strong></p>
+      <% if @variety.arabica %>
+      <p>arabica</p>
+      <% end %>
+      <% if @variety.robusta %>
+      <p>robusta</p>
+      <% end %>
+      <% if @variety.liberica %>
+      <p>liberica</p>
+      <% end %>
+      <br>
+      <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
+      <br>
+      <p><strong>Origine : </strong> <%= @variety.origin %></p>
+      <br>
+      <p><strong>Altitude : </strong> <%= @variety.altitude %></p>
+      <br>
+      <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
+      <br>
+      <p><strong>Plant : </strong> <%= @variety.plant %></p>
+      <br>
+      <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
+      <br>
+      <p><strong>Tasse : </strong> <%= @variety.cup %></p>
+      <br>
+      <p><strong>Caractéristiques : </strong> <%= @variety.description %></p>
+      <br>
+
+      <p><strong>Pays producteurs : </strong></p>
+      <ul>
+        <% @variety.productive_countries.each do |country| %>
+          <li><%= country.country.name %></li>
+        <% end %>
+      </ul>
+      <br>
+      <p><strong>Parents : </strong></p>
+      <ul>
+        <% @variety.parents.each do |parent| %>
+          <li><%= Variety.find(parent.parent_variety_id).name %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>
