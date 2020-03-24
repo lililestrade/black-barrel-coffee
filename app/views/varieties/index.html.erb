@@ -1,0 +1,15 @@
+<h1>TOUTES LES VARIÉTÉS</h1>
+
+<hr>
+
+<p>
+  <% if policy(Variety).create? %>
+    <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
+  <% end %>
+</p>
+
+<p>
+  <% @varieties.each do |variety| %>
+    <%= link_to variety.name, variety_path(variety), class: "btn btn-warning" %>
+  <% end %>
+</p>
