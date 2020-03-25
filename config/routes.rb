@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :parents, except: [:index, :show]
   resources :productive_countries, except: [:index, :show]
   resources :country_process_links, except: [:index, :show]
-  resources :harvest_periods, only: [:edit, :update]
+  resources :harvest_periods, except: [:index, :show]
 
   # resources :productive_country, only: [:new, :create]
   # resources :country_process_links, only: [:new, :create]

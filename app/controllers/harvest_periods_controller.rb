@@ -1,0 +1,2 @@
+class HarvestPeriodsController < ApplicationController
+end

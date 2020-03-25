@@ -12,6 +12,9 @@ class CountriesController < ApplicationController
 
     @country_process_link = CountryProcessLink.new()
     authorize @country_process_link
+
+    @harvest_period = HarvestPeriod.new()
+    authorize @harvest_period
   end
 
   def new
