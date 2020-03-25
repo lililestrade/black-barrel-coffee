@@ -8,7 +8,7 @@ class HarvestPeriodPolicy < ApplicationPolicy
   end
 
   def show?
-    return true if user.admin?
+    return true
   end
 
   def create?

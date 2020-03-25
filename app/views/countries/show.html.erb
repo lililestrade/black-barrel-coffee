@@ -19,17 +19,22 @@
       </button>
       <!-- END Button trigger modal new_country_process_link -->
       <br>
+      <br>
       <p><strong>Période de séchage : </strong></p>
       <ul>
         <% @country.harvest_periods.each do |harvest_period| %>
           <li><%= Month.find(harvest_period.month_id).name %></li>
         <% end %>
       </ul>
-
+      <!-- START Button trigger modal new_harvest_period -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
+        Ajouter un mois de récolte
+      </button>
+      <!-- END Button trigger modal new_harvest_period -->
     </div>
   </div>
 </div>
-<!-- START Modal new_country_process_link -->
+<!-- START Modal new_harvest_period -->
 <div class="modal fade" id="newCountryProcessLinkModalCenter" tabindex="-1" role="dialog" aria-labelledby="newCountryProcessLinkModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -51,5 +56,28 @@
     </div>
   </div>
 </div>
-<!-- END Modal new_country_process_link -->
-
+<!-- END Modal new_harvest_period -->
+<!-- START Modal new_parent -->
+<div class="modal fade" id="newHarvestPeriodModalCenter" tabindex="-1" role="dialog" aria-labelledby="newHarvestPeriodModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newHarvestPeriodModalCenterTitle">Ajouter un mois de récolte</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%#= simple_form_for @productive_country do |f| %>
+        <%= simple_form_for @harvest_period do |f| %>
+          <%= f.association :country, :as => :hidden, input_html: { value: @country.id } %>
+          <%= f.association :month, label: false %>
+          <div class =" mt-2 mb-2 d-flex justify-content-center">
+          <%= f.submit "Créer", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal new_harvest_period -->
