@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :countries
   resources :varieties
   resources :parents, only: [:edit, :update]
-  resources :productive_country, only: [:edit, :update]
+  resources :productive_countries, except: [:index, :show]
   resources :country_process_links, only: [:edit, :update]
   resources :harvest_periods, only: [:edit, :update]
 

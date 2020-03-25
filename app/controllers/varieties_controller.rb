@@ -9,6 +9,11 @@ class VarietiesController < ApplicationController
     @variety = Variety.find(params[:id])
     #@variety = policy_scope(Variety.find(params[:id]))
     authorize @variety
+    @productive_country = ProductiveCountry.new()
+    authorize @productive_country
+
+    # @variety = Variety.find(params[:variety_id])
+    # @productive_country = ProductiveCountry.new
   end
 
   def new

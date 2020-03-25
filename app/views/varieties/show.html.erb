@@ -12,23 +12,23 @@
       <% if @variety.liberica %>
       <p>liberica</p>
       <% end %>
-      <br>
+
       <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
-      <br>
+
       <p><strong>Origine : </strong> <%= @variety.origin %></p>
-      <br>
+
       <p><strong>Altitude : </strong> <%= @variety.altitude %></p>
-      <br>
+
       <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
-      <br>
+
       <p><strong>Plant : </strong> <%= @variety.plant %></p>
-      <br>
+
       <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
-      <br>
+
       <p><strong>Tasse : </strong> <%= @variety.cup %></p>
-      <br>
+
       <p><strong>Caractéristiques : </strong> <%= @variety.description %></p>
-      <br>
+
 
       <p><strong>Pays producteurs : </strong></p>
       <ul>
@@ -36,6 +36,11 @@
           <li><%= country.country.name %></li>
         <% end %>
       </ul>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Ajouter un pays producteur
+      </button>
+      <br>
       <br>
       <p><strong>Parents : </strong></p>
       <ul>
@@ -44,6 +49,35 @@
         <% end %>
       </ul>
 
+    </div>
+  </div>
+</div>
+
+<!-- Modal new_productive_country -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%#= simple_form_for @productive_country do |f| %>
+        <%= simple_form_for @productive_country do |f| %>
+          <%= f.association :variety, :as => :hidden, input_html: { value: @variety.id } %>
+          <%= f.association :country, label: false %>
+          <%= f.input :address, label: false, placeholder: "Adresse ?" %>
+          <div class =" mt-2 mb-2 d-flex justify-content-center">
+          <%= f.submit "Create", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>
