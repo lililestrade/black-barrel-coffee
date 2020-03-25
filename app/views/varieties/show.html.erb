@@ -1,4 +1,5 @@
 <div class="container">
+  <p><%= link_to "<- Retour", varieties_path %> </p>
   <h1 class="text-center"><%= @variety.name %></h1>
   <div class="row">
     <div class="col-md-8 offset-2">
@@ -36,10 +37,11 @@
           <li><%= country.country.name %></li>
         <% end %>
       </ul>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      <!-- START Button trigger modal new_productive_country -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductiveCountryModalCenter">
         Ajouter un pays producteur
       </button>
+      <!-- END Button trigger modal new_productive_country -->
       <br>
       <br>
       <p><strong>Parents : </strong></p>
@@ -48,17 +50,22 @@
           <li><%= Variety.find(parent.parent_variety_id).name %></li>
         <% end %>
       </ul>
+       <!-- START Button trigger modal new_parent -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newParentModalCenter">
+        Ajouter une variété parente
+      </button>
+      <!-- END Button trigger modal new_parent -->
 
     </div>
   </div>
 </div>
 
-<!-- Modal new_productive_country -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- START Modal new_productive_country -->
+<div class="modal fade" id="newProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="newProductiveCountryModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <h5 class="modal-title" id="newProductiveCountryModalCenterTitle">Ajouter un pays producteur</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -70,14 +77,35 @@
           <%= f.association :country, label: false %>
           <%= f.input :address, label: false, placeholder: "Adresse ?" %>
           <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%= f.submit "Create", class: "btn btn-primary" %>
+          <%= f.submit "Créer", class: "btn btn-primary" %>
           </div>
         <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
+<!-- END Modal new_productive_country -->
+<!-- START Modal new_parent -->
+<div class="modal fade" id="newParentModalCenter" tabindex="-1" role="dialog" aria-labelledby="newParentModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newParentModalCenterTitle">Ajouter une variété parente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%#= simple_form_for @productive_country do |f| %>
+        <%= simple_form_for @parent do |f| %>
+          <%= f.association :variety, :as => :hidden, input_html: { value: @variety.id } %>
+          <%= f.input :parent_variety_id, collection: Variety.all, label: false %>
+          <div class =" mt-2 mb-2 d-flex justify-content-center">
+          <%= f.submit "Créer", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal new_parent -->

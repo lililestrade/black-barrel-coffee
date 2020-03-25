@@ -1,15 +1,18 @@
-<h1>TOUS LES PROCESSUS DE SÉCHAGE</h1>
-
-<hr>
-
-<p>
-  <% if policy(DryingProcess).create? %>
-    <%= link_to "Nouvelle Méthode", new_drying_process_path, class: "btn btn-primary" %>
-  <% end %>
-</p>
-
-<p>
-  <% @drying_processes.each do |drying_process| %>
-    <%= link_to drying_process.name, drying_process_path(drying_process) %>
-  <% end %>
-</p>
+<div class="container">
+  <p><%= link_to "<- Retour", root_path %> </p>
+  <h1 class="text-center">TOUS LES PROCESSUS DE SÉCHAGE</h1>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <hr>
+      <% if policy(DryingProcess).create? %>
+        <%= link_to "Nouvelle Méthode", new_drying_process_path, class: "btn btn-primary" %>
+      <% end %>
+      <hr>
+      <p>
+      <% @drying_processes.each do |drying_process| %>
+        <%= link_to drying_process.name, drying_process_path(drying_process), class: "btn btn-warning" %>
+      <% end %>
+      </p>
+    </div>
+  </div>
+</div>

@@ -6,14 +6,17 @@ class VarietiesController < ApplicationController
   end
 
   def show
-    @variety = Variety.find(params[:id])
     #@variety = policy_scope(Variety.find(params[:id]))
+    @variety = Variety.find(params[:id])
     authorize @variety
-    @productive_country = ProductiveCountry.new()
-    authorize @productive_country
 
     # @variety = Variety.find(params[:variety_id])
     # @productive_country = ProductiveCountry.new
+    @productive_country = ProductiveCountry.new()
+    authorize @productive_country
+
+    @parent = Parent.new()
+    authorize @parent
   end
 
   def new
