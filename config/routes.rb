@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :varieties
   resources :parents, except: [:index, :show]
   resources :productive_countries, except: [:index, :show]
-  resources :country_process_links, only: [:edit, :update]
+  resources :country_process_links, except: [:index, :show]
   resources :harvest_periods, only: [:edit, :update]
 
   # resources :productive_country, only: [:new, :create]

@@ -30,24 +30,23 @@
   </div>
 </div>
 <!-- START Modal new_country_process_link -->
-<div class="modal fade" id="newCountryProcessLinkModalCenterModalCenter" tabindex="-1" role="dialog" aria-labelledby="newCountryProcessLinkModalCenterModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="newCountryProcessLinkModalCenter" tabindex="-1" role="dialog" aria-labelledby="newCountryProcessLinkModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newCountryProcessLinkModalCenterModalCenterTitle">Ajouter une méthode de séchage</h5>
+        <h5 class="modal-title" id="newCountryProcessLinkModalCenterTitle">Ajouter une méthode de séchage</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <%#= simple_form_for @country_process_link do |f| %>
-          <%#= f.association :variety, :as => :hidden, input_html: { value: @variety.id } %>
-          <%#= f.association :country, label: false %>
-          <%#= f.input :address, label: false, placeholder: "Adresse ?" %>
+        <%= simple_form_for @country_process_link do |f| %>
+          <%= f.association :country, :as => :hidden, input_html: { value: @country.id } %>
+          <%= f.association :drying_process, label: false %>
           <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%#= f.submit "Créer", class: "btn btn-primary" %>
+          <%= f.submit "Créer", class: "btn btn-primary" %>
           </div>
-        <%# end %>
+        <% end %>
       </div>
     </div>
   </div>

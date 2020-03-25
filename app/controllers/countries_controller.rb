@@ -6,9 +6,12 @@ class CountriesController < ApplicationController
   end
 
   def show
-    @country = Country.find(params[:id])
     #@country = policy_scope(DryingProcess.find(params[:id]))
+    @country = Country.find(params[:id])
     authorize @country
+
+    @country_process_link = CountryProcessLink.new()
+    authorize @country_process_link
   end
 
   def new
