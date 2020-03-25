@@ -1,0 +1,2 @@
+class CountryProcessLinksController < ApplicationController
+end

@@ -4,19 +4,20 @@
   <div class="row">
     <div class="col-md-8 offset-2">
       <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
-      <br>
       <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
-      <br>
       <p><strong>Rang mondial : </strong> <%= @country.world_rank %></p>
-      <br>
       <p><strong>Caractéristiques : </strong> <%= @country.description %></p>
-      <br>
       <p><strong>Méthode de séchage : </strong> </p>
       <ul>
         <% @country.country_process_links.each do |method| %>
           <li><%= method.drying_process.name %></li>
         <% end %>
       </ul>
+      <!-- START Button trigger modal new_country_process_link -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
+        Ajouter une méthode de séchage en pratique dans ce pays
+      </button>
+      <!-- END Button trigger modal new_country_process_link -->
       <br>
       <p><strong>Période de séchage : </strong></p>
       <ul>
@@ -28,5 +29,28 @@
     </div>
   </div>
 </div>
-
+<!-- START Modal new_country_process_link -->
+<div class="modal fade" id="newCountryProcessLinkModalCenterModalCenter" tabindex="-1" role="dialog" aria-labelledby="newCountryProcessLinkModalCenterModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newCountryProcessLinkModalCenterModalCenterTitle">Ajouter une méthode de séchage</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%#= simple_form_for @country_process_link do |f| %>
+          <%#= f.association :variety, :as => :hidden, input_html: { value: @variety.id } %>
+          <%#= f.association :country, label: false %>
+          <%#= f.input :address, label: false, placeholder: "Adresse ?" %>
+          <div class =" mt-2 mb-2 d-flex justify-content-center">
+          <%#= f.submit "Créer", class: "btn btn-primary" %>
+          </div>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal new_country_process_link -->
 
