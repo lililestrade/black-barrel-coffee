@@ -10,14 +10,20 @@ puts "Destroying database..."
 
 Mutation.destroy_all
 Month.destroy_all
+User.destroy_all
 
-puts "Creatings mutations ..."
+puts "Creating admin ..."
+
+admin_lulu = User.create(first_name: "Lulu", last_name: "Lestrade", email: "lili.lestrade@gmail.com", password:"azerty", admin: true)
+# admin_quentin = User.create(first_name: "Quentin", last_name: "Lanthiez", email: )
+
+puts "Creating mutations ..."
 
 natural_mutation = Mutation.create(name: "Mutation génétique naturelle.")
 hybrid_one = Mutation.create(name: "Mutation hybride naturelle.")
 hybrid_two = Mutation.create(name: "Mutation hybride par reproduction sélective.")
 
-puts "Creatings months ..."
+puts "Creating months ..."
 
 Month.create(name: "Janvier")
 Month.create(name: "Février")

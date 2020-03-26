@@ -11,12 +11,24 @@
       <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
       <p><strong>Rang mondial : </strong> <%= @country.world_rank %></p>
       <p><strong>Caractéristiques : </strong> <%= @country.description %></p>
-      <p><strong>Méthode de séchage : </strong> </p>
+      <p><strong>Variétés produites dans le pays : </strong></p>
+      <ul>
+        <% @country_varieties.each do |variety| %>
+          <li>
+            <% country_variety = Variety.find(variety.variety_id) %>
+            <%= country_variety.name %>
+            <%= link_to "| Voir", variety_path(country_variety)%>
+          </li>
+        <% end %>
+      </ul>
+      <p><strong>Méthode de séchage : </strong></p>
       <ul>
         <% @country.country_process_links.each do |process| %>
           <li>
             <%= process.drying_process.name %>
-            <%= link_to "Supprimer", country_process_link_path(process),
+            <%= link_to "| Voir", drying_process_path(process)%>
+
+            <%= link_to "| Supprimer", country_process_link_path(process),
                                   method: :delete,
                                   data: { confirm: "Are you sure?" } %>
           </li>
@@ -34,7 +46,7 @@
         <% @country.harvest_periods.each do |harvest_period| %>
           <li>
             <%= Month.find(harvest_period.month_id).name %>
-            <%= link_to "Supprimer", harvest_period_path(harvest_period),
+            <%= link_to "| Supprimer", harvest_period_path(harvest_period),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
           </li>

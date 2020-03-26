@@ -9,6 +9,7 @@ class CountriesController < ApplicationController
     #@country = policy_scope(DryingProcess.find(params[:id]))
     @country = Country.find(params[:id])
     authorize @country
+    @country_varieties = ProductiveCountry.where(country: params[:id])
 
     @country_process_link = CountryProcessLink.new()
     authorize @country_process_link
@@ -67,5 +68,4 @@ class CountriesController < ApplicationController
                                       harvest_periods_attributes: [:id, :month_id, :_destroy],
                                       country_process_links_attributes: [:id, :drying_process_id, :_destroy])
   end
-
 end

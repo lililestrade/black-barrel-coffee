@@ -40,7 +40,8 @@
         <% @variety.productive_countries.each do |country| %>
           <li>
             <%= country.country.name %>
-            <%= link_to "Supprimer", productive_country_path(country),
+            <%= link_to "| Voir", country_path(country.country)  %>
+            <%= link_to "| Supprimer", productive_country_path(country),
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
           </li>
@@ -58,7 +59,7 @@
         <% @variety.parents.each do |parent| %>
           <li>
             <%= Variety.find(parent.parent_variety_id).name %>
-            <%= link_to "Supprimer", parent_path(parent),
+            <%= link_to "| Supprimer", parent_path(parent),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
           </li>
