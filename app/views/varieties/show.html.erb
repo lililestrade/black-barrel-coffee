@@ -44,6 +44,8 @@
             <%= link_to "| Supprimer", productive_country_path(country),
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
+            <br>
+            <em>(<%= country.address %>)</em>
           </li>
         <% end %>
       </ul>
