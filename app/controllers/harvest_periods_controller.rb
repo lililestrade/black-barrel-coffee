@@ -14,6 +14,16 @@ class HarvestPeriodsController < ApplicationController
     end
   end
 
+  def destroy
+    @harvest_period = HarvestPeriod.find(params[:id])
+    authorize @harvest_period
+
+    @harvest_period.destroy
+
+    # no need for app/views/harvest_periods/destroy.html.erb
+    redirect_to country_path(@harvest_period.country_id)
+  end
+
   private
 
   def harvest_period_params

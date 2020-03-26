@@ -31,7 +31,12 @@
       <p><strong>Période de séchage : </strong></p>
       <ul>
         <% @country.harvest_periods.each do |harvest_period| %>
-          <li><%= Month.find(harvest_period.month_id).name %></li>
+          <li>
+            <%= Month.find(harvest_period.month_id).name %>
+            <%= link_to "Supprimer", harvest_period_path(harvest_period),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+          </li>
         <% end %>
       </ul>
       <!-- START Button trigger modal new_harvest_period -->
