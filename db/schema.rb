@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_180525) do
 
   create_table "varieties", force: :cascade do |t|
     t.string "name"
-    t.boolean "arabica"
-    t.boolean "robusta"
+    t.boolean "arabica", default: false
+    t.boolean "robusta", default: false
     t.integer "discover_year"
     t.string "origin"
     t.string "altitude"
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_180525) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "liberica"
+    t.boolean "liberica", default: false
     t.index ["mutation_id"], name: "index_varieties_on_mutation_id"
   end
 
