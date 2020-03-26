@@ -1,22 +1,4 @@
 class ProductiveCountriesController < ApplicationController
-  # def new
-  #   @variety = Variety.find(params[:variety_id])
-  #   @productive_country = ProductiveCountry.new
-  # end
-
-  # def create
-  #   @variety = Variety.find(params[:id])
-  #   @productive_country = ProductiveCountry.new(productive_country_params)
-  #   authorize @productive_country
-
-  #   if @productive_country.save!
-  #     flash[:notice] = 'Successfully created productive_country.'
-  #     redirect_to variety_path(@variety)
-  #   else
-  #     render :new
-  #   end
-  # end
-
   def create
     @productive_country = ProductiveCountry.new(productive_country_params)
     authorize @productive_country
@@ -30,6 +12,16 @@ class ProductiveCountriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @productive_country = ProductiveCountry.find(params[:id])
+    authorize @productive_country
+
+    @productive_country.destroy
+
+    # no need for app/views/productive_countrys/destroy.html.erb
+    redirect_to variety_path(@productive_country.variety_id)
   end
 
   private

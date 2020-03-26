@@ -14,4 +14,8 @@ class ProductiveCountryPolicy < ApplicationPolicy
   def create?
     return true if user.admin?
   end
+
+  def destroy?
+    return true if user.admin?
+  end
 end
