@@ -54,7 +54,12 @@
       <p><strong>Parents : </strong></p>
       <ul>
         <% @variety.parents.each do |parent| %>
-          <li><%= Variety.find(parent.parent_variety_id).name %></li>
+          <li>
+            <%= Variety.find(parent.parent_variety_id).name %>
+            <%= link_to "Supprimer", parent_path(parent),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+          </li>
         <% end %>
       </ul>
        <!-- START Button trigger modal new_parent -->

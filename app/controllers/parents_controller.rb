@@ -14,6 +14,16 @@ class ParentsController < ApplicationController
     end
   end
 
+  def destroy
+    @parent = Parent.find(params[:id])
+    authorize @parent
+
+    @parent.destroy
+
+    # no need for app/views/parents/destroy.html.erb
+    redirect_to variety_path(@parent.variety_id)
+  end
+
   private
 
   def parent_params
