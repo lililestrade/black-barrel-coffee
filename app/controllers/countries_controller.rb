@@ -7,7 +7,8 @@ class CountriesController < ApplicationController
     @markers = @productive_countries.map do |prod_variety|
       {
         lat: prod_variety.latitude,
-        lng: prod_variety.longitude
+        lng: prod_variety.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { prod_variety: prod_variety.variety_id })
       }
     end
   end
