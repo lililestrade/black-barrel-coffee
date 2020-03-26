@@ -12,8 +12,13 @@
       <p><strong>Caractéristiques : </strong> <%= @country.description %></p>
       <p><strong>Méthode de séchage : </strong> </p>
       <ul>
-        <% @country.country_process_links.each do |method| %>
-          <li><%= method.drying_process.name %></li>
+        <% @country.country_process_links.each do |process| %>
+          <li>
+            <%= process.drying_process.name %>
+            <%= link_to "Supprimer", country_process_link_path(process),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+          </li>
         <% end %>
       </ul>
       <!-- START Button trigger modal new_country_process_link -->

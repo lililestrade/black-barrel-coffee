@@ -14,6 +14,16 @@ class CountryProcessLinksController < ApplicationController
     end
   end
 
+  def destroy
+    @country_process_link = CountryProcessLink.find(params[:id])
+    authorize @country_process_link
+
+    @country_process_link.destroy
+
+    # no need for app/views/country_process_links/destroy.html.erb
+    redirect_to country_path(@country_process_link.country_id)
+  end
+
   private
 
   def country_process_link_params
