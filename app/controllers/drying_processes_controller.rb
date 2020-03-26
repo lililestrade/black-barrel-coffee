@@ -43,6 +43,16 @@ class DryingProcessesController < ApplicationController
     end
   end
 
+  def destroy
+    @drying_process = DryingProcess.find(params[:id])
+    authorize @drying_process
+
+    @drying_process.destroy
+
+    # no need for app/views/drying_processs/destroy.html.erb
+    redirect_to drying_processes_path
+  end
+
   private
 
   def drying_process_params
