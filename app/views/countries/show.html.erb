@@ -3,8 +3,9 @@
   <h1 class="text-center"><%= @country.name %></h1>
   <div class="row">
     <div class="col-md-8 offset-2">
+    <div class =" mt-2 mb-2 d-flex">
       <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-success text-center" %>
-      <br>
+    </div>
       <br>
       <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
       <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
@@ -44,6 +45,14 @@
         Ajouter un mois de récolte
       </button>
       <!-- END Button trigger modal new_harvest_period -->
+      <br>
+      <br>
+      <div class =" mt-2 mb-2 d-flex justify-content-center">
+        <%= link_to "Supprimer", country_path(@country),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "btn btn-danger" %>
+      </div>
     </div>
   </div>
 </div>

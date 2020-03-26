@@ -3,7 +3,9 @@
   <h1 class="text-center"><%= @drying_process.name %></h1>
   <div class="row">
     <div class="col-md-8 offset-2">
-      <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-success text-center" %>
+      <div class =" mt-2 mb-2 d-flex">
+        <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-success text-center" %>
+      </div>
       <br>
       <p><strong>Temps du processus : </strong> <%= @drying_process.process_time %></p>
       <p><strong>Description : </strong> <%= @drying_process.description %></p>

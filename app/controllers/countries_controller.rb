@@ -50,6 +50,16 @@ class CountriesController < ApplicationController
     end
   end
 
+  def destroy
+    @country = Country.find(params[:id])
+    authorize @country
+
+    @country.destroy
+
+    # no need for app/views/countrys/destroy.html.erb
+    redirect_to countries_path
+  end
+
   private
 
   def country_params

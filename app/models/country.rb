@@ -1,7 +1,7 @@
 class Country < ApplicationRecord
-  has_many :productive_countries
-  has_many :harvest_periods, inverse_of: :country
-  has_many :country_process_links, inverse_of: :country
+  has_many :productive_countries, dependent: :destroy
+  has_many :harvest_periods, inverse_of: :country, dependent: :destroy
+  has_many :country_process_links, inverse_of: :country, dependent: :destroy
 
   validates :name, presence: true
 
