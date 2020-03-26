@@ -27,6 +27,22 @@ class DryingProcessesController < ApplicationController
     end
   end
 
+  def edit
+    @drying_process = DryingProcess.find(params[:id])
+    authorize @drying_process
+
+  end
+
+  def update
+    @drying_process = DryingProcess.find(params[:id])
+    authorize @drying_process
+    if @drying_process.update(drying_process_params)
+      redirect_to drying_process_path(@drying_process)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def drying_process_params

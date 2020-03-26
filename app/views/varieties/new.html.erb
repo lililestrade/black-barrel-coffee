@@ -4,9 +4,9 @@
     <div class="col-md-8 offset-2">
       <%= simple_form_for @variety do |f| %>
         <%= f.input :name, label: false, placeholder: "Nom due la variété ?" %>
-        <%= f.input :arabica, as: :boolean, checked_value: true, unchecked_value: false %>
-        <%= f.input :robusta, as: :boolean, checked_value: true, unchecked_value: false %>
-        <%= f.input :liberica, as: :boolean, checked_value: true, unchecked_value: false %>
+        <%= f.input :arabica, as: :boolean %>
+        <%= f.input :robusta, as: :boolean %>
+        <%= f.input :liberica, as: :boolean %>
 
         <p>Parents :</p>
         <%= f.simple_fields_for :parents, Parent.new do |f3| %>
