@@ -1,7 +1,7 @@
 class Variety < ApplicationRecord
   belongs_to :mutation
-  has_many :productive_countries, inverse_of: :variety
-  has_many :parents, inverse_of: :variety
+  has_many :productive_countries, inverse_of: :variety, dependent: :destroy
+  has_many :parents, inverse_of: :variety, dependent: :destroy
   # has_and_belongs_to_many :parents, inverse_of: :variety
       # class_name: "Variety",
       # join_table: :parents,

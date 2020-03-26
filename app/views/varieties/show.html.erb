@@ -59,8 +59,8 @@
           <li>
             <%= Variety.find(parent.parent_variety_id).name %>
             <%= link_to "Supprimer", parent_path(parent),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
           </li>
         <% end %>
       </ul>
@@ -69,6 +69,12 @@
         Ajouter une variété parente
       </button>
       <!-- END Button trigger modal new_parent -->
+      <div class =" mt-2 mb-2 d-flex justify-content-center">
+        <%= link_to "Supprimer", variety_path(@variety),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "btn btn-danger" %>
+      </div>
     </div>
   </div>
 </div>

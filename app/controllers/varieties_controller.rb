@@ -51,10 +51,17 @@ class VarietiesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @variety = Variety.find(params[:id])
-  #   @variety.destroy
-  # end
+  def destroy
+    @variety = Variety.find(params[:id])
+    authorize @variety
+    parents_to_delete = Parent.where(parent_variety_id: params[:id])
+    parents_to_delete.each { |parent| parent.destroy }
+
+    @variety.destroy
+
+    # no need for app/views/varietys/destroy.html.erb
+    redirect_to varieties_path
+  end
 
   private
 
