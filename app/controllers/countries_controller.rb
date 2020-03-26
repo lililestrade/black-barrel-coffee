@@ -2,7 +2,14 @@ class CountriesController < ApplicationController
   def index
     @countries = policy_scope(Country)
     #@countries = Country.all
+    @productive_countries = ProductiveCountry.geocoded #returns flats with coordinates
 
+    @markers = @productive_countries.map do |prod_variety|
+      {
+        lat: prod_variety.latitude,
+        lng: prod_variety.longitude
+      }
+    end
   end
 
   def show
