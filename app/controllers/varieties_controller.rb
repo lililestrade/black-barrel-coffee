@@ -35,6 +35,27 @@ class VarietiesController < ApplicationController
     end
   end
 
+  def edit
+    @variety = Variety.find(params[:id])
+    authorize @variety
+
+  end
+
+  def update
+    @variety = Variety.find(params[:id])
+    authorize @variety
+    if @variety.update(variety_params)
+      redirect_to variety_path(@variety)
+    else
+      render :edit
+    end
+  end
+
+  # def destroy
+  #   @variety = Variety.find(params[:id])
+  #   @variety.destroy
+  # end
+
   private
 
   def variety_params

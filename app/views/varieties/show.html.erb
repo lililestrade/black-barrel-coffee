@@ -3,6 +3,8 @@
   <h1 class="text-center"><%= @variety.name %></h1>
   <div class="row">
     <div class="col-md-8 offset-2">
+      <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-success text-center" %>
+      <br>
       <p><strong>Espèce : </strong></p>
       <% if @variety.arabica %>
       <p>arabica</p>
@@ -22,7 +24,7 @@
 
       <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
 
-      <p><strong>Plant : </strong> <%= @variety.plant %></p>
+      <p><strong>Plante : </strong> <%= @variety.plant %></p>
 
       <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
 
@@ -55,7 +57,6 @@
         Ajouter une variété parente
       </button>
       <!-- END Button trigger modal new_parent -->
-
     </div>
   </div>
 </div>
