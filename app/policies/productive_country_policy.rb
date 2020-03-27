@@ -15,6 +15,10 @@ class ProductiveCountryPolicy < ApplicationPolicy
     return true if user.admin?
   end
 
+  def update?
+    return true if user.admin?
+  end
+
   def destroy?
     return true if user.admin?
   end

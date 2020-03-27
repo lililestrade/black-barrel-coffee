@@ -37,16 +37,48 @@
 
       <p><strong>Pays producteurs : </strong></p>
       <ul>
-        <% @variety.productive_countries.each do |country| %>
+        <% @variety.productive_countries.each do |productive_country| %>
           <li>
-            <%= country.country.name %>
-            <%= link_to "| Voir", country_path(country.country)  %>
-            <%= link_to "| Supprimer", productive_country_path(country),
+            <%= productive_country.country.name %>
+            <%= link_to "| Voir le pays", country_path(productive_country.country)  %>
+            <%= link_to "| Supprimer", productive_country_path(productive_country),
                       method: :delete,
                       data: { confirm: "Are you sure?" } %>
             <br>
-            <em>(<%= country.address %>)</em>
+            <em>(<%= productive_country.address %>)</em>
+            <!-- START Button trigger modal edit_productive_country -->
+            <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
+              | Changer l'adresse
+            </button>
+            <!-- END Button trigger modal edit_productive_country -->
           </li>
+          <br>
+
+          <!-- START Modal edit_productive_country -->
+          <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editProductiveCountryCenterTitle">Changement d'adresse de production</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for productive_country do |f| %>
+                    <%= f.association :variety, :as => :hidden %>
+                    <%= f.association :country, :as => :hidden %>
+                    <%= f.input :address, label: false, placeholder: "Adresse ?" %>
+                    <div class =" mt-2 mb-2 d-flex justify-content-center">
+                      <%= f.submit "Changer", class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Modal edit_productive_country -->
+
         <% end %>
       </ul>
       <!-- START Button trigger modal new_productive_country -->

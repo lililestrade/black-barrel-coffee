@@ -14,6 +14,23 @@ class ProductiveCountriesController < ApplicationController
     end
   end
 
+  def edit
+    @productive_country = ProductiveCountry.find(params[:id])
+    #@country = Country.find(@productive_country.country.id)
+    authorize @productive_country
+
+  end
+
+  def update
+    @productive_country = ProductiveCountry.find(params[:id])
+    authorize @productive_country
+    if @productive_country.update(productive_country_params)
+      redirect_to variety_path(@productive_country.variety_id)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @productive_country = ProductiveCountry.find(params[:id])
     authorize @productive_country

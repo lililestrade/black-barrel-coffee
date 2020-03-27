@@ -21,7 +21,7 @@
           </li>
         <% end %>
       </ul>
-      <p><strong>Méthode de séchage : </strong></p>
+      <p><strong>Méthodes de séchage pratiquées dans ce pays : </strong></p>
       <ul>
         <% @country.country_process_links.each do |process| %>
           <li>
@@ -36,12 +36,12 @@
       </ul>
       <!-- START Button trigger modal new_country_process_link -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
-        Ajouter une méthode de séchage en pratique dans ce pays
+        Ajouter une méthode de séchage dans ce pays
       </button>
       <!-- END Button trigger modal new_country_process_link -->
       <br>
       <br>
-      <p><strong>Période de séchage : </strong></p>
+      <p><strong>Périodes de récolte : </strong></p>
       <ul>
         <% @country.harvest_periods.each do |harvest_period| %>
           <li>
