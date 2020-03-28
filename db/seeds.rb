@@ -14,8 +14,8 @@ User.destroy_all
 
 puts "Creating admin ..."
 
-admin_lulu = User.create(first_name: "Lulu", last_name: "Lestrade", email: "lili.lestrade@gmail.com", password:"azerty", admin: true)
-# admin_quentin = User.create(first_name: "Quentin", last_name: "Lanthiez", email: )
+admin_quentin = User.create(first_name: "Quentin", last_name: "Lanthiez", email: "quentin608@gmail.com", password:"PouetPouet", admin: true)
+# admin_lulu = User.create(first_name: "Lulu", last_name: "Lestrade", email:"lili" )
 
 puts "Creating mutations ..."
 
