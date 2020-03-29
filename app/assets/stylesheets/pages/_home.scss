@@ -56,6 +56,54 @@
   z-index: 1;
 }
 
+.inner-text-home-log {
+  margin-top: 52px;
+}
+
+.inner-banner-text-side {
+  width: 228px;
+  margin-left: 59px;
+  margin-right: 59px;
+}
+.inner-banner-text-middle {
+  width: 257px;
+  margin-left: 59px;
+  margin-right: 59px;
+}
+
+.inner-number {
+  font-family: Prata;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.inner-description {
+  font-family: Prata;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+.inner-link {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  font-weight: lighter;
+  &:hover {
+    text-decoration: line-through;
+    color: white;
+  }
+}
+
 // .inner-text-home-log {
 //   text-align: center;
 //   display: flex;
