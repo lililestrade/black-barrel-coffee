@@ -34,13 +34,26 @@
 
 .logo-background {
   background: url(asset-path('2-logo.png'));
-  width: 650px;
+  // width: 650px;
   // height: 500px;
   // background-size: cover;
   background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   padding: 125px 0;
+  height: 700px;
   margin: auto;
+  z-index: 2;
+}
+
+/* Rectangle 8 */
+.banner {
+  width: 1440px;
+  height: 275px;
+  left: 0px;
+  top: 283px;
+  margin-top: 94px;
+  z-index: 1;
 }
 
 // .inner-text-home-log {

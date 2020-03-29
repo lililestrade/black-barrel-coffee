@@ -1,34 +1,42 @@
-<div class="container">
-  <!-- <div class="logo-background" style="background-image: url(asset-path('logo.png'));"> -->
-  <div class="logo-background">
-    <%#= image_tag 'logo.png', width: 700, id: 'logo' %>
+<!-- <div class="logo-background" style="background-image: url(asset-path('logo.png'));"> -->
+<div class="logo-background">
+  <div class="banner" style='background: rgba(61, 79, 61, 0.85);'>
+    <div class="container">
+      <%#= image_tag 'logo.png', width: 700, id: 'logo' %>
+      <div class="row my-5 d-flex justify-content-center">
+        <div class="inner-text-home-log">
+         <% if user_signed_in? %>
 
-    <div class="row my-5 d-flex justify-content-center">
-      <div class="inner-text-home-log">
-       <% if user_signed_in? %>
-        <div class="col-sm-4">
-          <div class="card-home my-3 justify-content-center">
-            <div class="card-home-text text-center">
-              <%= link_to "MÉTHODES DE SÉCHAGE", drying_processes_path %>
-            </div>
-          </div>
+
+
+         <% end %>
         </div>
-        <div class="col-sm-4">
-          <div class="card-home my-3 justify-content-center">
-            <div class="card-home-text text-center">
-              <%= link_to "PAYS PRODUCTEURS", countries_path %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card-home my-3 justify-content-center">
-            <div class="card-home-text text-center">
-              <%= link_to "VARIÉTÉS", varieties_path %>
-            </div>
-          </div>
-        </div>
-       <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- TEST
+<div class="col-sm-4">
+  <div class="card-home my-3 justify-content-center">
+    <div class="card-home-text text-center">
+      <%#= link_to "MÉTHODES DE SÉCHAGE", drying_processes_path %>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="card-home my-3 justify-content-center">
+    <div class="card-home-text text-center">
+      <%#= link_to "PAYS PRODUCTEURS", countries_path %>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="card-home my-3 justify-content-center">
+    <div class="card-home-text text-center">
+      <%#= link_to "VARIÉTÉS", varieties_path %>
+    </div>
+  </div>
+</div>
+END TEST -->
