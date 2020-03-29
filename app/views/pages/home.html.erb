@@ -1,29 +1,29 @@
 <div class="container">
   <div class="row my-5 d-flex justify-content-center">
-
-   <% if user_signed_in? %>
-    <div class="col-sm-4">
-      <div class="card-home my-3 justify-content-center">
-        <div class="card-home-text text-center">
-          <%= link_to "MÉTHODES DE SÉCHAGE", drying_processes_path %>
+    <div class="logo-background">
+     <% if user_signed_in? %>
+      <div class="col-sm-4">
+        <div class="card-home my-3 justify-content-center">
+          <div class="card-home-text text-center">
+            <%= link_to "MÉTHODES DE SÉCHAGE", drying_processes_path %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card-home my-3 justify-content-center">
-        <div class="card-home-text text-center">
-          <%= link_to "PAYS PRODUCTEURS", countries_path %>
+      <div class="col-sm-4">
+        <div class="card-home my-3 justify-content-center">
+          <div class="card-home-text text-center">
+            <%= link_to "PAYS PRODUCTEURS", countries_path %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card-home my-3 justify-content-center">
-        <div class="card-home-text text-center">
-          <%= link_to "VARIÉTÉS", varieties_path %>
+      <div class="col-sm-4">
+        <div class="card-home my-3 justify-content-center">
+          <div class="card-home-text text-center">
+            <%= link_to "VARIÉTÉS", varieties_path %>
+          </div>
         </div>
       </div>
+     <% end %>
     </div>
-   <% end %>
-
   </div>
 </div>
