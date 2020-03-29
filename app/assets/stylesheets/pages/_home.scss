@@ -32,17 +32,19 @@
   // };
 }
 
-/* LOGO 2 - svg */
-
 .logo-background {
-  // position: absolute;
-  // width: 518px;
-  // height: 590px;
-  // left: 411px;
-  // top: 75px;
-  // background: url('logo.png');
-  width: 100%;
-  height: 100%;
-  background: url('logo.png');
-  // background-position: left 2em bottom 10px;
+  background: url(asset-path('2-logo.png'));
+  width: 650px;
+  // height: 500px;
+  // background-size: cover;
+  background-size: contain;
+  background-position: center;
+  padding: 125px 0;
+  margin: auto;
 }
+
+// .inner-text-home-log {
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+// }
