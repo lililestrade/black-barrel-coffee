@@ -12,3 +12,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Pointer
+.circle {
+  position: absolute;
+  border: solid 1px #ccc;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 100
+}
+#circle {
+  pointer-events: none;
+  cursor:none;
+}
