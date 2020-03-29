@@ -16,8 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-gem 'pundit'
 gem 'geocoder'
+gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 
 group :development do

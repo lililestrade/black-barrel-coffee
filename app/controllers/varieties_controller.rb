@@ -67,7 +67,7 @@ class VarietiesController < ApplicationController
 
   def variety_params
     params.require(:variety).permit(:name, :arabica, :robusta, :liberica, :discover_year, :origin, :altitude, :mutation_id, :plant, :strenght, :cup, :description,
-                                      productive_countries_attributes: [:id, :country_id, :_destroy],
+                                      productive_countries_attributes: [:id, :country_id, :address, :_destroy],
                                       parents_attributes: [:id, :parent_variety_id, :_destroy])
   end
 end
