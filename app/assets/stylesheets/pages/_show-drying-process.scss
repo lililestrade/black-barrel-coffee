@@ -4,8 +4,7 @@
   // top: 174px;
   margin-top: 85px;
   width: 450px;
-  height: 500px;
-  // background: rgba(61, 79, 61, 0.85);
+  min-height: 595px;
   background: rgba(61, 79, 61, 0.75);
   border-radius: 4px;
   font-family: 'Roboto Condensed';
@@ -76,7 +75,7 @@
 
 .third-row-show-process {
   max-width: 380px;
-  min-height: 240px;
+  min-height: 335px;
   .container-show-process-description {
     margin: 15px;
     & p {
