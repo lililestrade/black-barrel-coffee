@@ -1,13 +1,37 @@
 <p><%= link_to "<- Retour", drying_processes_path %> </p>
-<div class="container container-process">
-  <h1 class="text-center"><%= @drying_process.name.upcase %></h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <br>
-      <p><strong>Temps du processus : </strong> <%= @drying_process.process_time %></p>
 
-      <p><strong>Description : </strong> <%= @drying_process.description %></p>
+<div class="container container-process d-flex justify-content-center">
+  <div class="container-content-show-process">
+
+    <div class="title-show-process mt-3">
+      <h1 class="text-center mb-3"><%= @drying_process.name.upcase %></h1>
     </div>
+
+    <div class="container-tab-show-process">
+      <div class="first-row-show-process d-flex align-items-center">
+        <div class="first-row-show-process-case-one d-flex justify-content-center">
+          <p class='text-center'>TEMPS DU PROCESSUS :</p>
+        </div>
+        <div class="first-row-show-process-case-two d-flex justify-content-center">
+          <p class='text-center'><%= @drying_process.process_time %></p>
+        </div>
+      </div>
+
+      <div class="second-row-show-process d-flex justify-content-center">
+        <p>DESCRIPTION :</p>
+      </div>
+
+      <div class="third-row-show-process d-flex justify-content-center">
+        <div class="container-show-process-description d-flex align-self-center">
+          <p class='text-center'><%= @drying_process.description %></p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
   </div>
 </div>
 

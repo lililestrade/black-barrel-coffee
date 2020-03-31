@@ -2,9 +2,85 @@
   // position: absolute;
   // left: 511px;
   // top: 174px;
-  margin-top: 99px;
-  width: 417px;
-  height: 471px;
-  background: rgba(61, 79, 61, 0.85);
+  margin-top: 85px;
+  width: 450px;
+  height: 500px;
+  // background: rgba(61, 79, 61, 0.85);
+  background: rgba(61, 79, 61, 0.75);
   border-radius: 4px;
+  font-family: 'Roboto Condensed';
+  color: white;
+  letter-spacing: 0.1em;
+
 }
+
+.container-content-show-process {
+  width: 380px;
+}
+
+.title-show-process {
+  // width: 357px;
+  border-bottom: 4px solid white;
+}
+
+.title-show-process h1 {
+  font-family: 'GT Pressura Mono Regular';
+  // font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  // display: flex;
+  // align-items: center;
+  // text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+.container-tab-show-process {
+  border: 2px solid white;
+  min-height: 328px;
+  margin-top: 32px;
+}
+
+.first-row-show-process {
+  border-bottom: 2px solid white;
+}
+.first-row-show-process-case-one {
+  width: 230px;
+  height: 51px;
+  border-right: 2px solid white;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.first-row-show-process-case-two {
+  width: 146px;
+  height: 51px;
+  & p {
+    margin: auto;
+  }
+}
+
+.second-row-show-process {
+  border-bottom: 2px solid white;
+  height: 51px;
+  & p {
+    font-weight: bold;
+    margin: auto;
+    font-size: 16px;
+  }
+}
+
+.third-row-show-process {
+  max-width: 380px;
+  min-height: 240px;
+  .container-show-process-description {
+    margin: 15px;
+    & p {
+    min-height: fit-content;
+    }
+  }
+}
+
