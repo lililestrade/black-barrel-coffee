@@ -28,20 +28,33 @@
       </div>
 
     </div>
-
-
-
-
   </div>
 </div>
 
-<div class =" mt-2 mb-2 d-flex justify-content-center">
+<div class =" mt-4 mb-2 d-flex justify-content-center">
   <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-success text-center" %>
 </div>
 
-<div class =" mt-2 mb-2 d-flex justify-content-center">
+<div class =" mt-2 mb-4 d-flex justify-content-center">
   <%= link_to "Supprimer", drying_process_path(@drying_process),
           method: :delete,
           data: { confirm: "Are you sure?" },
           class: "btn btn-danger" %>
+</div>
+
+<div class="footer footer-show d-flex justify-content-center">
+  <a href="#">About</a>
+  <div class="footer-logo d-flex align-items-center flex-column">
+    <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>
+    <div class="footer-copyright-show mt-2">
+      © 2020 BLACK BARREL COFFEE, INC. All rights reserved.
+    </div>
+  </div>
+  <a href="#">Contact</a>
+<!--   <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div> -->
 </div>

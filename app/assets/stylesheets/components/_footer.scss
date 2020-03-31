@@ -1,13 +1,13 @@
 .footer-home-log {
   background: #161F1D;
-  position: absolute;
+  // position: absolute;
   width: 1440px;
   height: 215px;
 }
 
 .footer-home-log a {
   color: white;
-  font-family: 'Prata';
+  font-family: 'ButlerRegular';
   font-size: 38px;
   // display: flex;
   // align-items: center;
@@ -31,6 +31,33 @@
   font-weight: lighter;
   font-size: 12px;
   // margin-bottom: 5px;
+}
+
+.footer-show {
+  background: #161F1D;
+  // position: absolute;
+  // width: 1440px;
+  height: 127px;
+  & a {
+    color: white;
+    font-family: 'ButlerRegular';
+    font-size: 22px;
+    text-decoration: none;
+    margin-top: 52px;
+    margin-left: 170px;
+    margin-right: 170px;
+  }
+  & img {
+    width: 71px;
+    max-height: 79px;
+    margin-top: 15px;
+  }
+}
+.footer-copyright-show {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: lighter;
+  font-size: 12px;
 }
 
 // .footer {
