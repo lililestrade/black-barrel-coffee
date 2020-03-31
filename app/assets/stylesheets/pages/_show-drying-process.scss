@@ -4,7 +4,10 @@
   // top: 174px;
   margin-top: 85px;
   width: 485px;
-  min-height: 635px;
+  // min-height: 635px;
+  // min-height: 612px;
+  // min-height: 605px;
+  min-height: 580px;
   background: rgba(61, 79, 61, 0.75);
   border-radius: 4px;
   font-family: 'Roboto Condensed';
@@ -41,6 +44,7 @@
   border: 2px solid white;
   min-height: 328px;
   margin-top: 32px;
+  margin-bottom: 35px;
 }
 
 .first-row-show-process {
@@ -75,7 +79,9 @@
 
 .third-row-show-process {
   // max-width: 380px;
-  min-height: 325px;
+  // min-height: 325px;
+  // min-height: 340px;
+  min-height: 320px;
   .container-show-process-description {
     margin: 15px;
     & p {
