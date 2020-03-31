@@ -1,7 +1,7 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap");
-// @import url(//db.onlinewebfonts.com/c/226f58ab113a6d821def90a7d6dc2427?family=GT+Pressura+Mono+Regular);
+@import url(//db.onlinewebfonts.com/c/226f58ab113a6d821def90a7d6dc2427?family=GT+Pressura+Mono+Regular);
 // @import url('https://fonts.googleapis.com/css?family=Prata|Roboto+Condensed:300,400,700&display=swap');
 // @import url(//db.onlinewebfonts.com/c/df5b7cd170605126c6ecbc10ab2cd27c?family=FreightBigW01-BookRegular);
 
@@ -21,3 +21,11 @@ $headers-font: 'ButlerRegular', "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+@font-face {
+  font-family: "GT Pressura Mono Regular";
+  src: url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.eot");
+  src: url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/226f58ab113a6d821def90a7d6dc2427.svg#GT Pressura Mono Regular") format("svg"); }
