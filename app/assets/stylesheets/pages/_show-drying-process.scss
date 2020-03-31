@@ -3,8 +3,8 @@
   // left: 511px;
   // top: 174px;
   margin-top: 85px;
-  width: 450px;
-  min-height: 595px;
+  width: 485px;
+  min-height: 635px;
   background: rgba(61, 79, 61, 0.75);
   border-radius: 4px;
   font-family: 'Roboto Condensed';
@@ -15,7 +15,7 @@
 }
 
 .container-content-show-process {
-  width: 380px;
+  width: 415px;
 }
 
 .title-show-process {
@@ -74,8 +74,8 @@
 }
 
 .third-row-show-process {
-  max-width: 380px;
-  min-height: 335px;
+  // max-width: 380px;
+  min-height: 325px;
   .container-show-process-description {
     margin: 15px;
     & p {
