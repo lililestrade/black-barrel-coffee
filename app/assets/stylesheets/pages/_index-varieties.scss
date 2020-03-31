@@ -1,4 +1,11 @@
-/*Now the CSS*/
+/*MAIN CSS*/
+.container-index-varieties {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+
+/*TREE CSS*/
 * {margin: 0; padding: 0;}
 
 .tree ul {
@@ -75,8 +82,10 @@ right connector from last child*/
   // color: #666;
   color: white;
   background-color: $kaki;
-  font-family: arial, verdana, tahoma;
-  font-size: 11px;
+  // font-family: arial, verdana, tahoma;
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  letter-spacing: 0.1em;
   display: inline-block;
 
   border-radius: 5px;
@@ -102,5 +111,3 @@ right connector from last child*/
   border-color:  #94a0b4;
 }
 
-/*Thats all. I hope you enjoyed it.
-Thanks :)*/

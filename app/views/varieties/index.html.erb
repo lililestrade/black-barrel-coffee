@@ -1,38 +1,29 @@
-<div class="container">
-  <p><%= link_to "<- Retour", root_path %> </p>
-  <h1 class="text-center">TOUTES LES VARIÉTÉS</h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <hr>
-      <% if policy(Variety).create? %>
-        <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
-      <% end %>
-      <hr>
-      <p>
-        <% @varieties.each do |variety| %>
-          <%= link_to variety.name, variety_path(variety), class: "btn btn-warning" %>
-        <% end %>
-      </p>
-    </div>
+<%= link_to "<- Retour", root_path %>
+<div class="container-index-varieties d-flex justify-content-center flex-column">
+  <h1 class="text-center">Toutes les variétés.</h1>
+  <hr>
+  <div class="d-flex justify-content-center">
+    <% if policy(Variety).create? %>
+      <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
-</div>
-<!--
-We will create a family tree using just CSS(3)
-The markup will be simple nested lists
--->
-<% parents = [] %>
-<% @varieties.each do |variety| %>
-  <% if Parent.where(variety_id: variety) == [] %>
-    <% parents << variety %>
-  <% end %>
-<% end %>
+  <hr>
 
-<div class="container d-flex justify-content-center">
-  <div class="tree">
+  <!--
+  We will create a family tree using just CSS(3)
+  The markup will be simple nested lists
+  -->
+  <% parents = [] %>
+  <% @varieties.each do |variety| %>
+    <% if Parent.where(variety_id: variety) == [] %>
+      <% parents << variety %>
+    <% end %>
+  <% end %>
+  <div class="tree d-flex justify-content-center mt-5 mb-5">
     <ul>
       <% parents.each do |parent| %>
         <li>
-          <%= link_to parent.name, variety_path(parent) %>
+          <%= link_to parent.name.upcase, variety_path(parent) %>
 
           <% children = [] %>
           <% if Parent.where(parent_variety_id: parent) %>
@@ -42,7 +33,7 @@ The markup will be simple nested lists
             <ul>
               <% children.each do |child| %>
                 <li>
-                <%= link_to child.name, variety_path(child) %>
+                <%= link_to child.name.upcase, variety_path(child) %>
 
                 <% grand_children = [] %>
                 <% if Parent.where(parent_variety_id: child) %>
@@ -52,7 +43,7 @@ The markup will be simple nested lists
                   <ul>
                     <% grand_children.each do |grand_child| %>
                       <li>
-                      <%= link_to grand_child.name, variety_path(grand_child) %>
+                      <%= link_to grand_child.name.upcase, variety_path(grand_child) %>
                       </li>
                     <% end %>
                   </ul>
@@ -65,9 +56,12 @@ The markup will be simple nested lists
       <% end %>
     </ul>
   </div>
+
+  <br>
+  <hr>
+  <div class="list-varieties d-flex justify-content-center">
+    <% @varieties.each do |variety| %>
+      <%= link_to variety.name, variety_path(variety), class: "btn btn-warning m-2" %>
+    <% end %>
+  </div>
 </div>
-
-
-
-
-
