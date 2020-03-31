@@ -16,3 +16,58 @@
     </div>
   </div>
 </div>
+<!--
+We will create a family tree using just CSS(3)
+The markup will be simple nested lists
+-->
+<% parents = [] %>
+<% @varieties.each do |variety| %>
+  <% if Parent.where(variety_id: variety) == [] %>
+    <% parents << variety %>
+  <% end %>
+<% end %>
+
+<div class="container d-flex justify-content-center">
+  <div class="tree">
+    <ul>
+      <% parents.each do |parent| %>
+        <li>
+          <%= link_to parent.name, variety_path(parent) %>
+
+          <% children = [] %>
+          <% if Parent.where(parent_variety_id: parent) %>
+            <% Parent.where(parent_variety_id: parent).each do |child| %>
+              <% children << Variety.find(child.variety_id) %>
+            <% end %>
+            <ul>
+              <% children.each do |child| %>
+                <li>
+                <%= link_to child.name, variety_path(child) %>
+
+                <% grand_children = [] %>
+                <% if Parent.where(parent_variety_id: child) %>
+                  <% Parent.where(parent_variety_id: child).each do |grand_child| %>
+                    <% grand_children << Variety.find(grand_child.variety_id) %>
+                  <% end %>
+                  <ul>
+                    <% grand_children.each do |grand_child| %>
+                      <li>
+                      <%= link_to grand_child.name, variety_path(grand_child) %>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+

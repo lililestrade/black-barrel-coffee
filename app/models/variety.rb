@@ -16,4 +16,6 @@ class Variety < ApplicationRecord
   accepts_nested_attributes_for :productive_countries,
                                 reject_if: proc { |attributes| attributes[:country_id].blank? },
                                 allow_destroy: true
+
+
 end
