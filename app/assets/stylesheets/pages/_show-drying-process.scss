@@ -11,7 +11,8 @@
   font-family: 'Roboto Condensed';
   color: white;
   letter-spacing: 0.1em;
-
+  position: relative;
+  z-index: 2;
 }
 
 .container-content-show-process {
@@ -84,3 +85,10 @@
   }
 }
 
+.sun {
+  position: absolute;
+  right: 0px;
+  & img {
+    z-index: 1;
+  }
+}
