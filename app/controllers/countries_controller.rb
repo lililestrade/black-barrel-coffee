@@ -77,7 +77,7 @@ class CountriesController < ApplicationController
   private
 
   def country_params
-    params.require(:country).permit(:name, :annual_prod, :world_rank, :world_market_share, :description,
+    params.require(:country).permit(:name,:altitude_growth, :annual_prod, :world_rank, :world_market_share, :description,
                                       harvest_periods_attributes: [:id, :month_id, :_destroy],
                                       country_process_links_attributes: [:id, :drying_process_id, :_destroy])
   end
