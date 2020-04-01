@@ -18,6 +18,31 @@
             </div>
           </div>
 
+          <div class="first-row-show-country d-flex align-items-center">
+            <div class="first-row-show-country-case-one d-flex justify-content-center flex-column">
+              <p class='text-center'>MÉTHODES DE SÉCHAGE PRATIQUÉES DANS CE PAYS :</p>
+              <!-- START Button trigger modal new_country_process_link -->
+              <div class='button d-flex justify-content-center' data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
+                <%= image_tag "button-plus.svg", alt: "alttext" %>
+              </div>
+              <!-- END Button trigger modal new_country_process_link -->
+            </div>
+            <div class="first-row-show-country-case-two d-flex justify-content-center">
+              <ul>
+                <% @country.country_process_links.each do |process| %>
+                  <li>
+                    <%= process.drying_process.name %>
+                    <%= link_to "| Voir", drying_process_path(process)%>
+
+                    <%= link_to "| Supprimer", country_process_link_path(process),
+                                          method: :delete,
+                                          data: { confirm: "Are you sure?" } %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
 
           <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
           <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
