@@ -81,6 +81,7 @@
   & ul {
     margin: auto;
     list-style: none;
+    text-align: center;
   }
   & .name {
     text-decoration: none;
@@ -88,7 +89,6 @@
     color: #FFFFFF;
     font-size: 16px;
     letter-spacing: 0.1em;
-    text-align: center;
   // text-decoration: underline;
   // font-weight: lighter;
     &:hover {

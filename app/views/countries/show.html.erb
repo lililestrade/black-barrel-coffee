@@ -42,6 +42,30 @@
             </div>
           </div>
 
+          <div class="second-row-show-country d-flex align-items-center">
+            <div class="second-row-show-country-case-one d-flex justify-content-center flex-column">
+              <p class='text-center'>PÉRIODES DE RÉCOLTE :</p>
+              <!-- START Button trigger modal new_harvest_period -->
+              <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
+                <%= image_tag "button-plus.svg", alt: "alttext" %>
+              </div>
+              <!-- END Button trigger modal new_harvest_period -->
+            </div>
+            <div class="second-row-show-country-case-two d-flex justify-content-center">
+              <ul>
+                <% @country.harvest_periods.each do |harvest_period| %>
+                  <li>
+                    <%= Month.find(harvest_period.month_id).name.upcase %>
+
+                    <%= link_to "| X", harvest_period_path(harvest_period),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
 
           <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
           <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
@@ -57,26 +81,7 @@
               </li>
             <% end %>
           </ul>
-          <br>
-          <br>
 
-          <p><strong>Périodes de récolte : </strong></p>
-          <ul>
-            <% @country.harvest_periods.each do |harvest_period| %>
-              <li>
-                <%= Month.find(harvest_period.month_id).name %>
-                <%= link_to "| Supprimer", harvest_period_path(harvest_period),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %>
-              </li>
-            <% end %>
-          </ul>
-
-          <!-- START Button trigger modal new_harvest_period -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
-            Ajouter un mois de récolte
-          </button>
-          <!-- END Button trigger modal new_harvest_period -->
         </div>
       </div>
     </div>
