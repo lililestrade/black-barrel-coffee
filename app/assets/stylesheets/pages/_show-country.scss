@@ -1,0 +1,48 @@
+.container-country-one {
+  // position: absolue;
+  // left: 154px;
+  // top: 193px;
+  width: 430px;
+  min-height: 471px;
+  margin-top: 35px;
+  background: rgba(61, 79, 61, 0.75);
+  border-radius: 4px;
+  font-family: 'Roboto Condensed';
+  color: white;
+  letter-spacing: 0.1em;
+  // position: relative;
+  z-index: 2;
+}
+
+.container-show-country-one {
+  width: 415px;
+}
+
+.title-show-country {
+  // width: 357px;
+  border-bottom: 4px solid white;
+}
+
+.title-show-country h1 {
+  font-family: 'GT Pressura Mono Regular';
+  // font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  // display: flex;
+  // align-items: center;
+  // text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+.container-country-two {
+  // position: absolute;
+  // left: 877px;
+  // top: 305px;
+  width: 393px;
+  height: 202px;
+  background: rgba(61, 79, 61, 0.75);
+  border-radius: 4px;
+}
