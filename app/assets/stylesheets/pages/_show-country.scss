@@ -63,6 +63,27 @@
   }
 }
 
+.second-row-show-country {
+  border-bottom: 2px solid white;
+}
+.second-row-show-country-case-one {
+  width: 235px;
+  height: 105px;
+  border-right: 2px solid white;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.second-row-show-country-case-two {
+  width: 170px;
+  height: 105px;
+  & p {
+    margin: auto;
+  }
+}
+
+
 .container-country-two {
   // position: absolute;
   // left: 877px;
