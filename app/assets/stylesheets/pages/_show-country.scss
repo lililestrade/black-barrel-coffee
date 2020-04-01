@@ -68,7 +68,7 @@
 }
 .second-row-show-country-case-one {
   width: 255px;
-  height: 105px;
+  min-height: 105px;
   & p {
     margin: auto;
     font-weight: bold;
@@ -76,7 +76,7 @@
 }
 .second-row-show-country-case-two {
   width: 200px;
-  height: 105px;
+  min-height: 105px;
   border-left: 2px solid white;
   & ul {
     margin: auto;
