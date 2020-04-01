@@ -130,6 +130,43 @@
   }
 }
 
+.fourth-row-show-country {
+  border-bottom: 2px solid white;
+}
+.fourth-row-show-country-case-one {
+  width: 255px;
+  min-height: 105px;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.fourth-row-show-country-case-two {
+  border-left: 2px solid white;
+  width: 200px;
+  min-height: 105px;
+  & ul {
+    margin: auto;
+    list-style: none;
+    text-align: center;
+  }
+  & .name {
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  // text-decoration: underline;
+  // font-weight: lighter;
+    &:hover {
+      // text-decoration: line-through;
+      font-weight: bolder;
+      font-style: italic;
+      color: white;
+    }
+  }
+}
+
 
 .container-country-two {
   // position: absolute;

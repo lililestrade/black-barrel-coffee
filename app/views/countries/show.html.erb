@@ -66,18 +66,18 @@
             </div>
           </div>
 
-          <div class="third-row-show-country d-flex align-items-center">
-            <div class="third-row-show-country-case-one d-flex justify-content-center flex-column">
+          <div class="fourth-row-show-country d-flex align-items-center">
+            <div class="fourth-row-show-country-case-one d-flex justify-content-center flex-column">
               <p class='text-center'>VARIÉTÉS PRODUITES DANS LE PAYS :</p>
             </div>
-            <div class="third-row-show-country-case-two d-flex justify-content-center">
+            <div class="fourth-row-show-country-case-two d-flex justify-content-center">
               <ul>
                 <% @country_varieties.each do |variety| %>
                   <li>
                     <% country_variety = Variety.find(variety.variety_id) %>
-                    <%= country_variety.name %>
+                    <%#= country_variety.name %>
 
-                    <%= link_to "| Voir", variety_path(country_variety)%>
+                    <%= link_to country_variety.name.upcase, variety_path(country_variety), class: 'name' %>
                   </li>
                 <% end %>
               </ul>
