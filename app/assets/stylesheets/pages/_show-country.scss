@@ -100,6 +100,36 @@
   }
 }
 
+.third-row-show-country {
+  border-bottom: 2px solid white;
+}
+.third-row-show-country-case-one {
+  width: 255px;
+  min-height: 105px;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.third-row-show-country-case-two {
+  border-left: 2px solid white;
+  width: 200px;
+  min-height: 105px;
+  & ul {
+    margin: auto;
+    list-style: none;
+    text-align: center;
+  }
+  & li {
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+
+  }
+}
+
 
 .container-country-two {
   // position: absolute;

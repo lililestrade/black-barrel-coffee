@@ -31,7 +31,7 @@
               <ul>
                 <% @country.country_process_links.each do |process| %>
                   <li>
-                    <%= link_to process.drying_process.name.upcase, drying_process_path(process), class: 'name'%>
+                    <%= link_to process.drying_process.name.upcase, drying_process_path(process.drying_process), class: 'name'%>
 
                     <%= link_to "| X", country_process_link_path(process),
                                           method: :delete,
@@ -42,8 +42,8 @@
             </div>
           </div>
 
-          <div class="second-row-show-country d-flex align-items-center">
-            <div class="second-row-show-country-case-one d-flex justify-content-center flex-column">
+          <div class="third-row-show-country d-flex align-items-center">
+            <div class="third-row-show-country-case-one d-flex justify-content-center flex-column">
               <p class='text-center'>PÉRIODES DE RÉCOLTE :</p>
               <!-- START Button trigger modal new_harvest_period -->
               <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
@@ -51,7 +51,7 @@
               </div>
               <!-- END Button trigger modal new_harvest_period -->
             </div>
-            <div class="second-row-show-country-case-two d-flex justify-content-center">
+            <div class="third-row-show-country-case-two d-flex justify-content-center">
               <ul>
                 <% @country.harvest_periods.each do |harvest_period| %>
                   <li>
