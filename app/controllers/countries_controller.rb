@@ -5,11 +5,13 @@ class CountriesController < ApplicationController
     @productive_countries = ProductiveCountry.geocoded #returns flats with coordinates
     #@productive_countries = ProductiveCountry.all
     if params[:query].present?
-      @prod_var = Variety.find_by(name: (params[:query].downcase))
-      @productive_countries = @productive_countries.where(variety: @prod_var)
-    else
+      if Variety.find_by(name: (params[:query].downcase))
+        @prod_var = Variety.find_by(name: (params[:query].downcase))
+        @productive_countries = @productive_countries.where(variety: @prod_var)
+      else
       @prod_var = Variety.find_by(name: (params[:query].upcase))
       @productive_countries = @productive_countries.where(variety: @prod_var)
+      end
     end
 
     @markers = @productive_countries.map do |prod_variety|
