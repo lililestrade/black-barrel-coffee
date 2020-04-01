@@ -3,93 +3,99 @@
 
   <div class="container container-tabs-country d-flex justify-content-around">
 
-    <div class="container-country-one d-flex justify-content-center flex-column">
+    <div class="container-country-one d-flex justify-content-center">
       <div class="container-content-show-country-one">
         <div class="title-show-country mt-3">
           <h1 class="text-center mb-3"><%= @country.name.upcase %></h1>
         </div>
+        <div class="container-tab-show-country-one">
+          <div class="first-row-show-country d-flex align-items-center">
+            <div class="first-row-show-country-case-one d-flex justify-content-center">
+              <p class='text-center'>ALTITUDE DE PRODUCTION :</p>
+            </div>
+            <div class="first-row-show-country-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @country.altitude_growth %></p>
+            </div>
+          </div>
 
 
-        <br>
-        <p><strong>Altitude de production : </strong> <%= @country.altitude_growth %></p>
-        <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
-        <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
-        <p><strong>Rang mondial : </strong> <%= @country.world_rank %></p>
-        <p><strong>Variétés produites dans le pays : </strong></p>
+          <p><strong>Production annuelle : </strong> <%= @country.annual_prod %></p>
+          <p><strong>Part du marché mondial : </strong> <%= @country.world_market_share %></p>
+          <p><strong>Rang mondial : </strong> <%= @country.world_rank %></p>
+          <p><strong>Variétés produites dans le pays : </strong></p>
 
-        <ul>
-          <% @country_varieties.each do |variety| %>
-            <li>
-              <% country_variety = Variety.find(variety.variety_id) %>
-              <%= country_variety.name %>
-              <%= link_to "| Voir", variety_path(country_variety)%>
-            </li>
-          <% end %>
-        </ul>
+          <ul>
+            <% @country_varieties.each do |variety| %>
+              <li>
+                <% country_variety = Variety.find(variety.variety_id) %>
+                <%= country_variety.name %>
+                <%= link_to "| Voir", variety_path(country_variety)%>
+              </li>
+            <% end %>
+          </ul>
 
-        <p><strong>Méthodes de séchage pratiquées dans ce pays : </strong></p>
-        <ul>
-          <% @country.country_process_links.each do |process| %>
-            <li>
-              <%= process.drying_process.name %>
-              <%= link_to "| Voir", drying_process_path(process)%>
+          <p><strong>Méthodes de séchage pratiquées dans ce pays : </strong></p>
+          <ul>
+            <% @country.country_process_links.each do |process| %>
+              <li>
+                <%= process.drying_process.name %>
+                <%= link_to "| Voir", drying_process_path(process)%>
 
-              <%= link_to "| Supprimer", country_process_link_path(process),
-                                    method: :delete,
-                                    data: { confirm: "Are you sure?" } %>
-            </li>
-          <% end %>
-        </ul>
+                <%= link_to "| Supprimer", country_process_link_path(process),
+                                      method: :delete,
+                                      data: { confirm: "Are you sure?" } %>
+              </li>
+            <% end %>
+          </ul>
 
-        <!-- START Button trigger modal new_country_process_link -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
-          Ajouter une méthode de séchage dans ce pays
-        </button>
-        <!-- END Button trigger modal new_country_process_link -->
-        <br>
-        <br>
+          <!-- START Button trigger modal new_country_process_link -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
+            Ajouter une méthode de séchage dans ce pays
+          </button>
+          <!-- END Button trigger modal new_country_process_link -->
+          <br>
+          <br>
 
-        <p><strong>Périodes de récolte : </strong></p>
-        <ul>
-          <% @country.harvest_periods.each do |harvest_period| %>
-            <li>
-              <%= Month.find(harvest_period.month_id).name %>
-              <%= link_to "| Supprimer", harvest_period_path(harvest_period),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-            </li>
-          <% end %>
-        </ul>
+          <p><strong>Périodes de récolte : </strong></p>
+          <ul>
+            <% @country.harvest_periods.each do |harvest_period| %>
+              <li>
+                <%= Month.find(harvest_period.month_id).name %>
+                <%= link_to "| Supprimer", harvest_period_path(harvest_period),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+              </li>
+            <% end %>
+          </ul>
 
-        <!-- START Button trigger modal new_harvest_period -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
-          Ajouter un mois de récolte
-        </button>
-        <!-- END Button trigger modal new_harvest_period -->
-        <br>
-        <br>
+          <!-- START Button trigger modal new_harvest_period -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
+            Ajouter un mois de récolte
+          </button>
+          <!-- END Button trigger modal new_harvest_period -->
+        </div>
       </div>
     </div>
-    <div class="container-country-two">
+    <div class="container-country-two d-flex justify-content-center">
       <div class="container-content-show-country-two">
         <p><strong>Caractéristiques : </strong> <%= @country.description %></p>
       </div>
     </div>
   </div>
-</div>
 
-<div class ="mt-4 mb-2 d-flex justify-content-center">
-  <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-success text-center" %>
-</div>
+  <div class ="mt-4 mb-2 d-flex justify-content-center">
+    <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-success text-center" %>
+  </div>
 
-<div class ="mt-2 mb-4 d-flex justify-content-center">
-  <%= link_to "Supprimer", country_path(@country),
-          method: :delete,
-          data: { confirm: "Are you sure?" },
-          class: "btn btn-danger" %>
+  <div class ="mt-2 mb-4 d-flex justify-content-center">
+    <%= link_to "Supprimer", country_path(@country),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
+  </div>
+  <br>
+  <br>
 </div>
-<br>
-<br>
 <div class="footer footer-show d-flex justify-content-center">
   <a href="#">About</a>
   <div class="footer-logo d-flex align-items-center flex-column">

@@ -29,7 +29,8 @@
 
 //Rice Paper
 .rice-paper {
-  background:  url(asset-path('ricepaper2.jpg'));
+  background-image:  url(asset-path('ricepaper2.jpg'));
+  background-attachment: fixed;
   background-repeat: repeat;
   z-index: 10;
 }

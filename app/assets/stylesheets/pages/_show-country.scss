@@ -2,7 +2,7 @@
   // position: absolue;
   // left: 154px;
   // top: 193px;
-  width: 430px;
+  width: 470px;
   min-height: 471px;
   margin-top: 35px;
   background: rgba(61, 79, 61, 0.75);
@@ -14,8 +14,8 @@
   z-index: 2;
 }
 
-.container-show-country-one {
-  width: 415px;
+.container-content-show-country-one {
+  width: 410px;
 }
 
 .title-show-country {
@@ -24,8 +24,7 @@
 }
 
 .title-show-country h1 {
-  font-family: 'GT Pressura Mono Regular';
-  // font-family: 'Roboto Condensed';
+  font-family: 'GT Pressura Mono Regular', 'Roboto Condensed';
   font-style: normal;
   font-weight: bold;
   font-size: 42px;
@@ -37,6 +36,33 @@
   color: white;
 }
 
+.container-tab-show-country-one {
+  border: 2px solid white;
+  min-height: 328px;
+  margin-top: 32px;
+  margin-bottom: 35px;
+}
+
+.first-row-show-country {
+  border-bottom: 2px solid white;
+}
+.first-row-show-country-case-one {
+  width: 235px;
+  height: 51px;
+  border-right: 2px solid white;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.first-row-show-country-case-two {
+  width: 170px;
+  height: 51px;
+  & p {
+    margin: auto;
+  }
+}
+
 .container-country-two {
   // position: absolute;
   // left: 877px;
@@ -46,3 +72,8 @@
   background: rgba(61, 79, 61, 0.75);
   border-radius: 4px;
 }
+
+.container-content-show-country-two {
+  width: 357px;
+}
+
