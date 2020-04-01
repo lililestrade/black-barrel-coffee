@@ -58,20 +58,6 @@
             <% end %>
           </ul>
 
-          <p><strong>Méthodes de séchage pratiquées dans ce pays : </strong></p>
-          <ul>
-            <% @country.country_process_links.each do |process| %>
-              <li>
-                <%= process.drying_process.name %>
-                <%= link_to "| Voir", drying_process_path(process)%>
-
-                <%= link_to "| Supprimer", country_process_link_path(process),
-                                      method: :delete,
-                                      data: { confirm: "Are you sure?" } %>
-              </li>
-            <% end %>
-          </ul>
-
           <!-- START Button trigger modal new_country_process_link -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
             Ajouter une méthode de séchage dans ce pays
