@@ -31,10 +31,9 @@
               <ul>
                 <% @country.country_process_links.each do |process| %>
                   <li>
-                    <%= process.drying_process.name %>
-                    <%= link_to "| Voir", drying_process_path(process)%>
+                    <%= link_to process.drying_process.name.upcase, drying_process_path(process), class: 'name'%>
 
-                    <%= link_to "| Supprimer", country_process_link_path(process),
+                    <%= link_to "| X", country_process_link_path(process),
                                           method: :delete,
                                           data: { confirm: "Are you sure?" } %>
                   </li>

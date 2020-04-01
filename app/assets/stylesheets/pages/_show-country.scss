@@ -2,7 +2,7 @@
   // position: absolue;
   // left: 154px;
   // top: 193px;
-  width: 470px;
+  width: 490px;
   min-height: 471px;
   margin-top: 35px;
   background: rgba(61, 79, 61, 0.75);
@@ -15,7 +15,7 @@
 }
 
 .container-content-show-country-one {
-  width: 410px;
+  width: 420px;
 }
 
 .title-show-country {
@@ -47,7 +47,7 @@
   border-bottom: 2px solid white;
 }
 .first-row-show-country-case-one {
-  width: 235px;
+  width: 255px;
   height: 51px;
   border-right: 2px solid white;
   & p {
@@ -56,7 +56,7 @@
   }
 }
 .first-row-show-country-case-two {
-  width: 170px;
+  width: 180px;
   height: 51px;
   & p {
     margin: auto;
@@ -67,7 +67,7 @@
   border-bottom: 2px solid white;
 }
 .second-row-show-country-case-one {
-  width: 235px;
+  width: 255px;
   height: 105px;
   border-right: 2px solid white;
   & p {
@@ -76,10 +76,26 @@
   }
 }
 .second-row-show-country-case-two {
-  width: 170px;
+  width: 180px;
   height: 105px;
   & ul {
     margin: auto;
+    list-style: none;
+  }
+  & .name {
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  // text-decoration: underline;
+  // font-weight: lighter;
+    &:hover {
+      // text-decoration: line-through;
+      font-weight: bolder;
+      font-style: italic;
+      color: white;
+    }
   }
 }
 
