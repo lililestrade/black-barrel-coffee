@@ -10,7 +10,7 @@
 
         <p>Parents :</p>
         <%= f.simple_fields_for :parents, Parent.new do |f3| %>
-          <%= f3.input :parent_variety_id, collection: Variety.all, label: false %>
+          <%= f3.input :parent_variety_id, collection: Variety.all.sort_by { |c| c.name }, label: false %>
           <%#= f3.association :parent_variety_id, collection: Variety.all %>
           <%#= f3.association :parent_variety_id, label: false %>
         <% end %>
