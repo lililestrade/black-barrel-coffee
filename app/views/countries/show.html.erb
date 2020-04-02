@@ -117,10 +117,23 @@
 
     <div class="container-country-two d-flex justify-content-center">
       <div class="container-content-show-country-two">
-        <p><strong>Caractéristiques : </strong> <%= @country.description %></p>
+        <div class="container-tab-show-country-two">
+          <div class="first-row-show-country-two d-flex justify-content-center">
+            <p>CARACTÉRISTIQUES :</p>
+          </div>
+          <div class="second-row-show-country-two d-flex justify-content-center">
+            <p class='text-center'><%= @country.description %></p>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </div>
+
+
+
+
 
   <div class ="mt-4 mb-2 d-flex justify-content-center">
     <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-success text-center" %>
