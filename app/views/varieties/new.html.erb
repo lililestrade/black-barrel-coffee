@@ -20,7 +20,8 @@
 
         <p>Pays producteurs :</p>
         <%= f.simple_fields_for :productive_countries, ProductiveCountry.new do |f2| %>
-          <%= f2.association :country, label: false %>
+          <%= f2.association :country, collection: Country.order('name') ,label: false %>
+
           <%= f2.input :address, label: false, placeholder: "Adresse ?" %>
         <% end %>
 
