@@ -55,6 +55,20 @@
                           <% great_children.each do |great_child| %>
                           <li>
                             <%= link_to great_child.name.upcase, variety_path(great_child) %>
+
+                            <% great_grand_children = [] %>
+                            <% if Parent.where(parent_variety_id: great_child) %>
+                              <% Parent.where(parent_variety_id: great_child).each do |great_grand_child| %>
+                                <% great_grand_children << Variety.find(great_grand_child.variety_id) %>
+                              <% end %>
+                              <ul>
+                                <% great_grand_children.each do |great_grand_child| %>
+                                  <li>
+                                    <%= link_to great_grand_child.name.upcase, variety_path(great_grand_child) %>
+                                  </li>
+                                <% end %>
+                              </ul>
+                            <% end %>
                           </li>
                           <% end %>
                         </ul>
