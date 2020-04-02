@@ -60,7 +60,7 @@
 
   <br>
   <hr>
-  <div class="list-varieties d-flex justify-content-center">
+  <div class="list-varieties">
     <% @varieties.each do |variety| %>
       <%= link_to variety.name, variety_path(variety), class: "btn btn-warning m-2" %>
     <% end %>
