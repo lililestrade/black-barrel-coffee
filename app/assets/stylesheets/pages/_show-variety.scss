@@ -1,0 +1,37 @@
+//Leaf Background
+.leaf-background {
+  background-image:  url(asset-path('leaf-background.png'));
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: cover;
+  z-index: 10;
+}
+
+.container-show-variety {
+  width: 1181px;
+  height: 632px;
+  background: $black;
+  margin-top: 85px;
+  border-radius: 4px;
+  font-family: 'Roboto Condensed';
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.container-content-show-variety {
+  width: 944px;
+}
+
+.title-show-variety {
+  border-bottom: 4px solid white;
+}
+
+.title-show-variety h1 {
+  font-family: 'GT Pressura Mono Regular';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  letter-spacing: 0.1em;
+  color: white;
+}

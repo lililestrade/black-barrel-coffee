@@ -1,117 +1,146 @@
-<div class="container">
+<div class="leaf-background">
   <p><%= link_to "<- Retour", varieties_path %> </p>
-  <h1 class="text-center"><%= @variety.name %></h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <div class =" mt-2 mb-2 d-flex">
-        <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-success text-center" %>
+
+  <div class="container container-show-variety d-flex justify-content-center">
+    <div class="container-content-show-variety">
+
+      <div class="title-show-variety mt-3">
+        <h1 class="text-center mb-3"><%= @variety.name.upcase %></h1>
       </div>
-      <br>
-      <p><strong>Espèce : </strong></p>
-      <% if @variety.arabica %>
-      <p>arabica</p>
-      <% end %>
-      <% if @variety.robusta %>
-      <p>robusta</p>
-      <% end %>
-      <% if @variety.liberica %>
-      <p>liberica</p>
-      <% end %>
 
-      <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
+      <div class="row">
+        <div class="col-md-8 offset-2">
 
-      <p><strong>Origine : </strong> <%= @variety.origin %></p>
-
-      <p><strong>Altitude : </strong> <%= @variety.altitude %></p>
-
-      <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
-
-      <p><strong>Plante : </strong> <%= @variety.plant %></p>
-
-      <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
-
-      <p><strong>Tasse : </strong> <%= @variety.cup %></p>
-
-      <p><strong>Caractéristiques : </strong> <%= @variety.description %></p>
-
-
-      <p><strong>Pays producteurs : </strong></p>
-      <ul>
-        <% @variety.productive_countries.each do |productive_country| %>
-          <li>
-            <%= productive_country.country.name %>
-            <%= link_to "| Voir le pays", country_path(productive_country.country)  %>
-            <%= link_to "| Supprimer", productive_country_path(productive_country),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-            <br>
-            <em>(<%= productive_country.address %>)</em>
-            <!-- START Button trigger modal edit_productive_country -->
-            <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
-              | Changer l'adresse
-            </button>
-            <!-- END Button trigger modal edit_productive_country -->
-          </li>
           <br>
+          <p><strong>Espèce : </strong></p>
+          <% if @variety.arabica %>
+          <p>arabica</p>
+          <% end %>
+          <% if @variety.robusta %>
+          <p>robusta</p>
+          <% end %>
+          <% if @variety.liberica %>
+          <p>liberica</p>
+          <% end %>
 
-          <!-- START Modal edit_productive_country -->
-          <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editProductiveCountryCenterTitle">Changement d'adresse de production</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for productive_country do |f| %>
-                    <%= f.association :variety, :as => :hidden %>
-                    <%= f.association :country, :as => :hidden %>
-                    <%= f.input :address, label: false, placeholder: "Adresse ?" %>
-                    <div class =" mt-2 mb-2 d-flex justify-content-center">
-                      <%= f.submit "Changer", class: "btn btn-primary" %>
+          <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
+
+          <p><strong>Origine : </strong> <%= @variety.origin %></p>
+
+          <p><strong>Altitude : </strong> <%= @variety.altitude %></p>
+
+          <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
+
+          <p><strong>Plante : </strong> <%= @variety.plant %></p>
+
+          <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
+
+          <p><strong>Tasse : </strong> <%= @variety.cup %></p>
+
+          <p><strong>Caractéristiques : </strong> <%= @variety.description %></p>
+
+
+          <p><strong>Pays producteurs : </strong></p>
+          <ul>
+            <% @variety.productive_countries.each do |productive_country| %>
+              <li>
+                <%= productive_country.country.name %>
+                <%= link_to "| Voir le pays", country_path(productive_country.country)  %>
+                <%= link_to "| Supprimer", productive_country_path(productive_country),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
+                <br>
+                <em>(<%= productive_country.address %>)</em>
+                <!-- START Button trigger modal edit_productive_country -->
+                <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
+                  | Changer l'adresse
+                </button>
+                <!-- END Button trigger modal edit_productive_country -->
+              </li>
+              <br>
+
+              <!-- START Modal edit_productive_country -->
+              <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editProductiveCountryCenterTitle">Changement d'adresse de production</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
-                  <% end %>
+                    <div class="modal-body">
+                      <%= simple_form_for productive_country do |f| %>
+                        <%= f.association :variety, :as => :hidden %>
+                        <%= f.association :country, :as => :hidden %>
+                        <%= f.input :address, label: false, placeholder: "Adresse ?" %>
+                        <div class =" mt-2 mb-2 d-flex justify-content-center">
+                          <%= f.submit "Changer", class: "btn btn-primary" %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- END Modal edit_productive_country -->
+              <!-- END Modal edit_productive_country -->
 
-        <% end %>
-      </ul>
-      <!-- START Button trigger modal new_productive_country -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductiveCountryModalCenter">
-        Ajouter un pays producteur
-      </button>
-      <!-- END Button trigger modal new_productive_country -->
-      <br>
-      <br>
-      <p><strong>Parents : </strong></p>
-      <ul>
-        <% @variety.parents.each do |parent| %>
-          <li>
-            <%= Variety.find(parent.parent_variety_id).name %>
-            <%= link_to "| Supprimer", parent_path(parent),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-          </li>
-        <% end %>
-      </ul>
-       <!-- START Button trigger modal new_parent -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newParentModalCenter">
-        Ajouter une variété parente
-      </button>
-      <!-- END Button trigger modal new_parent -->
-      <div class =" mt-2 mb-2 d-flex justify-content-center">
-        <%= link_to "Supprimer", variety_path(@variety),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: "btn btn-danger" %>
+            <% end %>
+          </ul>
+          <!-- START Button trigger modal new_productive_country -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductiveCountryModalCenter">
+            Ajouter un pays producteur
+          </button>
+          <!-- END Button trigger modal new_productive_country -->
+          <br>
+          <br>
+          <p><strong>Parents : </strong></p>
+          <ul>
+            <% @variety.parents.each do |parent| %>
+              <li>
+                <%= Variety.find(parent.parent_variety_id).name %>
+                <%= link_to "| Supprimer", parent_path(parent),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+              </li>
+            <% end %>
+          </ul>
+           <!-- START Button trigger modal new_parent -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newParentModalCenter">
+            Ajouter une variété parente
+          </button>
+          <!-- END Button trigger modal new_parent -->
+        </div>
       </div>
+
     </div>
   </div>
+
+  <div class =" mt-2 mb-2 d-flex justify-content-center">
+    <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-success text-center" %>
+  </div>
+  <div class =" mt-2 d-flex justify-content-center">
+    <%= link_to "Supprimer", variety_path(@variety),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
+  </div>
+
+</div>
+<div class="footer footer-show d-flex justify-content-center">
+  <a href="#">About</a>
+  <div class="footer-logo d-flex align-items-center flex-column">
+    <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>
+    <div class="footer-copyright-show mt-2">
+      © 2020 BLACK BARREL COFFEE, INC. All rights reserved.
+    </div>
+  </div>
+  <a href="#">Contact</a>
+<!--   <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div> -->
 </div>
 
 <!-- START Modal new_productive_country -->
