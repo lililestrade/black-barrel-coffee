@@ -8,20 +8,24 @@
         <h1 class="text-center mb-3"><%= @variety.name.upcase %></h1>
       </div>
 
-      <div class="row">
-        <div class="col-md-8 offset-2">
+      <div class="container-tab-show-variety">
+        <div class="first-row-show-process d-flex align-items-center">
+          <div class="first-row-show-process-case-one d-flex justify-content-center">
+            <p class='text-center'>ESPÈCE :</p>
+          </div>
+          <div class="first-row-show-process-case-two d-flex justify-content-center">
+            <% if @variety.arabica %>
+              <p class='text-center'>arabica</p>
+            <% end %>
+            <% if @variety.robusta %>
+              <p class='text-center'>robusta</p>
+            <% end %>
+            <% if @variety.liberica %>
+              <p class='text-center'>liberica</p>
+            <% end %>
+          </div>
+        </div>
 
-          <br>
-          <p><strong>Espèce : </strong></p>
-          <% if @variety.arabica %>
-          <p>arabica</p>
-          <% end %>
-          <% if @variety.robusta %>
-          <p>robusta</p>
-          <% end %>
-          <% if @variety.liberica %>
-          <p>liberica</p>
-          <% end %>
 
           <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
 
@@ -109,7 +113,7 @@
             Ajouter une variété parente
           </button>
           <!-- END Button trigger modal new_parent -->
-        </div>
+
       </div>
 
     </div>
