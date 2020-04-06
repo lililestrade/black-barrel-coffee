@@ -9,8 +9,10 @@
 
 .container-show-variety {
   width: 1181px;
-  height: 632px;
-  background: $black;
+  min-height: 632px;
+  // background: $black;
+  background: #171717;
+  opacity: 0.985;
   margin-top: 85px;
   border-radius: 4px;
   font-family: 'Roboto Condensed';
@@ -41,4 +43,111 @@
   min-height: 435px;
   margin-top: 32px;
   margin-bottom: 35px;
+}
+
+
+.first-row-show-variety {
+  border-bottom: 2px solid white;
+}
+.first-row-show-variety-case-one {
+  width: 305px;
+  min-height: 90px;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.first-row-show-variety-case-two {
+  width: 639px;
+  min-height: 90px;
+  border-left: 2px solid white;
+  & ul {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+    text-align: center;
+  }
+  & .name {
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  // text-decoration: underline;
+  // font-weight: lighter;
+    &:hover {
+      // text-decoration: line-through;
+      font-weight: bolder;
+      font-style: italic;
+      color: white;
+    }
+  }
+}
+
+.second-row-show-variety {
+  border-bottom: 2px solid white;
+}
+.second-row-show-variety-case-one {
+  width: 309px;
+  height: 51px;
+  border-right: 2px solid white;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.second-row-show-variety-case-two {
+  width: 639px;
+  height: 51px;
+  & p {
+    margin: auto;
+  }
+}
+
+.infos-row-show-variety {
+  // border-bottom: 2px solid white;
+  width: 940px;
+  & p {
+    padding: 12px;
+  }
+}
+
+.last-row-show-variety {
+  border-bottom: 2px solid white;
+}
+.last-row-show-variety-case-one {
+  width: 305px;
+  min-height: 90px;
+  & p {
+    margin: auto;
+    font-weight: bold;
+  }
+}
+.last-row-show-variety-case-two {
+  width: 639px;
+  min-height: 90px;
+  border-left: 2px solid white;
+  & ul {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+    text-align: center;
+  }
+  & .name {
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  // text-decoration: underline;
+  // font-weight: lighter;
+    &:hover {
+      // text-decoration: line-through;
+      font-weight: bolder;
+      font-style: italic;
+      color: white;
+    }
+  }
 }

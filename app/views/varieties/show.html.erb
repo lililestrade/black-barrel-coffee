@@ -9,11 +9,46 @@
       </div>
 
       <div class="container-tab-show-variety">
-        <div class="first-row-show-process d-flex align-items-center">
-          <div class="first-row-show-process-case-one d-flex justify-content-center">
+
+        <div class="first-row-show-variety d-flex align-items-center">
+          <div class="first-row-show-variety-case-one d-flex justify-content-center flex-column">
+            <p class='text-center'>PARENTS :</p>
+            <!-- START Button trigger modal new_parent -->
+            <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newParentModalCenter">
+              <%= image_tag "button-plus.svg", alt: "alttext" %>
+            </div>
+            <!-- END Button trigger modal new_parent -->
+          </div>
+          <div class="first-row-show-variety-case-two d-flex justify-content-center">
+            <ul>
+              <% @variety.parents.each do |parent| %>
+                <li>
+                  <%#= Variety.find(parent.parent_variety_id).name %>
+                  <%= link_to Variety.find(parent.parent_variety_id).name.upcase, variety_path(parent.parent_variety_id), class: 'name'%>
+
+                  <%= link_to "| X", parent_path(parent),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>MUTATION :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.mutation.name %></p>
+          </div>
+        </div>
+
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
             <p class='text-center'>ESPÈCE :</p>
           </div>
-          <div class="first-row-show-process-case-two d-flex justify-content-center">
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
             <% if @variety.arabica %>
               <p class='text-center'>arabica</p>
             <% end %>
@@ -27,92 +62,119 @@
         </div>
 
 
-          <p><strong>Année de découverte : </strong> <%= @variety.discover_year %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>ORIGINE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.origin %></p>
+          </div>
+        </div>
 
-          <p><strong>Origine : </strong> <%= @variety.origin %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>ANNÉE DE DÉCOUVERTE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.discover_year %></p>
+          </div>
+        </div>
 
-          <p><strong>Altitude : </strong> <%= @variety.altitude %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>ALTITUDE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.altitude %></p>
+          </div>
+        </div>
 
-          <p><strong>Mutation : </strong> <%= @variety.mutation.name %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>PLANTE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.plant %></p>
+          </div>
+        </div>
 
-          <p><strong>Plante : </strong> <%= @variety.plant %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>RÉSISTANCE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.strenght %></p>
+          </div>
+        </div>
 
-          <p><strong>Résistance : </strong> <%= @variety.strenght %></p>
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>TASSE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+              <p class='text-center'><%= @variety.cup %></p>
+          </div>
+        </div>
 
-          <p><strong>Tasse : </strong> <%= @variety.cup %></p>
 
-          <p><strong>Caractéristiques : </strong> <%= @variety.description %></p>
+        <div class="last-row-show-variety d-flex align-items-center">
+          <div class="last-row-show-variety-case-one d-flex justify-content-center flex-column">
+            <p class='text-center'>PAYS PRODUCTEURS :</p>
+            <!-- START Button trigger modal new_parent -->
+            <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newProductiveCountryModalCenter">
+              <%= image_tag "button-plus.svg", alt: "alttext" %>
+            </div>
+            <!-- END Button trigger modal new_parent -->
+          </div>
+          <div class="last-row-show-variety-case-two d-flex justify-content-center">
+            <ul>
+              <% @variety.productive_countries.each do |productive_country| %>
+                <li>
+                  <%#= Variety.find(parent.parent_variety_id).name %>
+                  <%= link_to productive_country.country.name.upcase, country_path(productive_country.country), class: 'name'%>
 
-
-          <p><strong>Pays producteurs : </strong></p>
-          <ul>
-            <% @variety.productive_countries.each do |productive_country| %>
-              <li>
-                <%= productive_country.country.name %>
-                <%= link_to "| Voir le pays", country_path(productive_country.country)  %>
-                <%= link_to "| Supprimer", productive_country_path(productive_country),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" } %>
-                <br>
-                <em>(<%= productive_country.address %>)</em>
-                <!-- START Button trigger modal edit_productive_country -->
-                <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
-                  | Changer l'adresse
-                </button>
-                <!-- END Button trigger modal edit_productive_country -->
-              </li>
-              <br>
-
-              <!-- START Modal edit_productive_country -->
-              <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="editProductiveCountryCenterTitle">Changement d'adresse de production</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= simple_form_for productive_country do |f| %>
-                        <%= f.association :variety, :as => :hidden %>
-                        <%= f.association :country, :as => :hidden %>
-                        <%= f.input :address, label: false, placeholder: "Adresse ?" %>
-                        <div class =" mt-2 mb-2 d-flex justify-content-center">
-                          <%= f.submit "Changer", class: "btn btn-primary" %>
-                        </div>
-                      <% end %>
+                  <%= link_to "| X", productive_country_path(productive_country),
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+                  <em>(<%= productive_country.address %>)</em>
+                  <!-- START Button trigger modal edit_productive_country -->
+                  <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
+                    | Changer l'adresse
+                  </button>
+                  <!-- END Button trigger modal edit_productive_country -->
+                </li>
+                <!-- START Modal edit_productive_country -->
+                <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="editProductiveCountryCenterTitle">Changement d'adresse de production</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= simple_form_for productive_country do |f| %>
+                          <%= f.association :variety, :as => :hidden %>
+                          <%= f.association :country, :as => :hidden %>
+                          <%= f.input :address, label: false, placeholder: "Adresse ?" %>
+                          <div class =" mt-2 mb-2 d-flex justify-content-center">
+                            <%= f.submit "Changer", class: "btn btn-primary" %>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- END Modal edit_productive_country -->
+                <!-- END Modal edit_productive_country -->
+              <% end %>
+            </ul>
+          </div>
+        </div>
 
-            <% end %>
-          </ul>
-          <!-- START Button trigger modal new_productive_country -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductiveCountryModalCenter">
-            Ajouter un pays producteur
-          </button>
-          <!-- END Button trigger modal new_productive_country -->
-          <br>
-          <br>
-          <p><strong>Parents : </strong></p>
-          <ul>
-            <% @variety.parents.each do |parent| %>
-              <li>
-                <%= Variety.find(parent.parent_variety_id).name %>
-                <%= link_to "| Supprimer", parent_path(parent),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %>
-              </li>
-            <% end %>
-          </ul>
-           <!-- START Button trigger modal new_parent -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newParentModalCenter">
-            Ajouter une variété parente
-          </button>
-          <!-- END Button trigger modal new_parent -->
+        <div class="infos-row-show-variety d-flex justify-content-center">
+            <p class='text-center'><%= @variety.description %></p>
+        </div>
 
       </div>
 
@@ -130,7 +192,7 @@
   </div>
 
 </div>
-<div class="footer footer-show d-flex justify-content-center">
+<div class="footer footer-show d-flex justify-content-center" style=" background: #171717;">
   <a href="#">About</a>
   <div class="footer-logo d-flex align-items-center flex-column">
     <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>
