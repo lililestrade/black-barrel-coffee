@@ -5,7 +5,10 @@
   width: 510px;
   min-height: 471px;
   margin-top: 35px;
-  background: rgba(61, 79, 61, 0.75);
+  // background: rgba(61, 79, 61, 0.75);
+  // background: #171717;
+  background: $black;
+  opacity: 0.955;
   border-radius: 4px;
   font-family: 'Roboto Condensed';
   color: white;
@@ -142,6 +145,7 @@
   min-height: 105px;
   & p {
     margin: auto;
+    padding: 12px;
     font-weight: bold;
   }
 }
@@ -199,7 +203,9 @@
   // height: fit-content;
   height: 202px;
   margin-top: 35px;
-  background: rgba(61, 79, 61, 0.75);
+  // background: rgba(61, 79, 61, 0.75);
+  background: $black;
+  opacity: 0.955;
   border-radius: 4px;
   font-family: 'Roboto Condensed';
   color: white;

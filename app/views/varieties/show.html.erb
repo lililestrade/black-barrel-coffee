@@ -1,5 +1,5 @@
 <div class="leaf-background">
-  <p><%= link_to "<- Retour", varieties_path %> </p>
+  <p><%= link_to "<- Retour", varieties_path, class: "btn btn-secondary mt-3" %> </p>
 
   <div class="container container-show-variety d-flex justify-content-center">
     <div class="container-content-show-variety">
@@ -181,18 +181,19 @@
     </div>
   </div>
 
-  <div class =" mt-2 mb-2 d-flex justify-content-center">
-    <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-success text-center" %>
+  <div class ="mt-5 mb-2 d-flex justify-content-center">
+    <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-info text-center" %>
   </div>
-  <div class =" mt-2 d-flex justify-content-center">
+  <div class ="mt-2 mb-2 d-flex justify-content-center">
     <%= link_to "Supprimer", variety_path(@variety),
             method: :delete,
             data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
+            class: "btn btn-warning" %>
   </div>
-
+  <br>
 </div>
-<div class="footer footer-show d-flex justify-content-center" style=" background: #171717;">
+
+<div class="footer footer-show d-flex justify-content-center">
   <a href="#">About</a>
   <div class="footer-logo d-flex align-items-center flex-column">
     <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>

@@ -1,11 +1,12 @@
-<div class="rice-paper">
-  <p><%= link_to "<- Retour", drying_processes_path %> </p>
-  <div class="sun d-flex justify-content-end mr-5">
+<!-- <div class="rice-paper"> -->
+<div class="leaf-background">
+  <p><%= link_to "<- Retour", drying_processes_path, class: "btn btn-secondary mt-3" %> </p>
+<!--   <div class="sun d-flex justify-content-end mr-5">
     <%= image_tag "sun.svg", alt: "sun" %>
   </div>
   <div class="palm-tree d-flex justify-content-start ml-5">
     <%= image_tag "palm-tree.svg", alt: "sun" %>
-  </div>
+  </div> -->
 
   <div class="container container-process d-flex justify-content-center">
     <div class="container-content-show-process">
@@ -38,17 +39,16 @@
     </div>
   </div>
 
-  <div class =" mt-4 mb-2 d-flex justify-content-center">
-    <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-success text-center" %>
+  <div class ="mt-5 mb-2 d-flex justify-content-center">
+    <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-info text-center" %>
   </div>
 
-  <div class =" mt-2 mb-4 d-flex justify-content-center">
+  <div class ="mt-2 mb-2 d-flex justify-content-center">
     <%= link_to "Supprimer", drying_process_path(@drying_process),
             method: :delete,
             data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
+            class: "btn btn-warning" %>
   </div>
-  <br>
   <br>
 </div>
 
