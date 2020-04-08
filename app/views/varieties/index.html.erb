@@ -65,6 +65,34 @@
                                 <% great_grand_children.each do |great_grand_child| %>
                                   <li>
                                     <%= link_to great_grand_child.name.upcase, variety_path(great_grand_child) %>
+
+                                    <% great_great_grand_children = [] %>
+                                    <% if Parent.where(parent_variety_id: great_grand_child) %>
+                                      <% Parent.where(parent_variety_id: great_grand_child).each do |great_great_grand_child| %>
+                                        <% great_great_grand_children << Variety.find(great_great_grand_child.variety_id) %>
+                                      <% end %>
+                                      <ul>
+                                        <% great_great_grand_children.each do |great_great_grand_child| %>
+                                          <li>
+                                            <%= link_to great_great_grand_child.name.upcase, variety_path(great_great_grand_child) %>
+
+                                            <% g_g_g_grand_children = [] %>
+                                            <% if Parent.where(parent_variety_id: great_great_grand_child) %>
+                                              <% Parent.where(parent_variety_id: great_great_grand_child).each do |g_g_g_grand_child| %>
+                                                <% g_g_g_grand_children << Variety.find(g_g_g_grand_child.variety_id) %>
+                                              <% end %>
+                                              <ul>
+                                                <% g_g_g_grand_children.each do |g_g_g_grand_child| %>
+                                                  <li>
+                                                    <%= link_to g_g_g_grand_child.name.upcase, variety_path(g_g_g_grand_child) %>
+                                                  </li>
+                                                <% end %>
+                                              </ul>
+                                            <% end %>
+                                          </li>
+                                        <% end %>
+                                      </ul>
+                                    <% end %>
                                   </li>
                                 <% end %>
                               </ul>
