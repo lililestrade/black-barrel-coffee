@@ -1,11 +1,59 @@
 <div class="container-tree d-flex justify-content-center mt-5 mb-5">
   <div class="tree d-flex flex-row flex-nowrap" style="overflow:auto; width: 1400px;">
 
-    <ul>
+    <ul class='first-list d-flex flex-row flex-nowrap'>
       <% @varieties.each do |variety| %>
         <% if variety.parents.empty? %>
         <li>
           <%= link_to variety.name.upcase, variety_path(variety) %>
+          <ul class='d-flex flex-row flex-nowrap'>
+            <% variety.kids.each do |variety_kid| %>
+              <% kid = Variety.find(variety_kid.variety_id) %>
+              <li>
+                <%= link_to kid.name.upcase, variety_path(kid) %>
+                <ul class='d-flex flex-row flex-nowrap'>
+                  <% kid.kids.each do |kid_kid| %>
+                    <% second_kid = Variety.find(kid_kid.variety_id) %>
+                    <li>
+                      <%= link_to second_kid.name.upcase, variety_path(second_kid) %>
+                      <ul class='d-flex flex-row flex-nowrap'>
+                        <% second_kid.kids.each do |second| %>
+                          <% third_kid = Variety.find(second.variety_id) %>
+                          <li>
+                            <%= link_to third_kid.name.upcase, variety_path(third_kid) %>
+                            <ul class='d-flex flex-row flex-nowrap'>
+                              <% third_kid.kids.each do |third| %>
+                                <% fourth_kid = Variety.find(third.variety_id) %>
+                                <li>
+                                  <%= link_to fourth_kid.name.upcase, variety_path(fourth_kid) %>
+                                  <ul class='d-flex flex-row flex-nowrap'>
+                                    <% fourth_kid.kids.each do |fourth| %>
+                                      <% fifth_kid = Variety.find(fourth.variety_id) %>
+                                      <li>
+                                        <%= link_to fifth_kid.name.upcase, variety_path(fifth_kid) %>
+                                        <ul class='d-flex flex-row flex-nowrap'>
+                                          <% fifth_kid.kids.each do |fifth| %>
+                                            sixth_kid = Variety.find(fifth.variety_id)
+                                            <li>
+                                              <%= link_to sixth_kid.name.upcase, variety_path(sixth_kid) %>
+                                            </li>
+                                          <% end %>
+                                        </ul>
+                                      </li>
+                                    <% end %>
+                                  </ul>
+                                </li>
+                              <% end %>
+                            </ul>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
         </li>
         <% end %>
       <% end %>
@@ -13,4 +61,3 @@
 
   </div>
 </div>
-
