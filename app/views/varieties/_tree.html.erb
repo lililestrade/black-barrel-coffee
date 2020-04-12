@@ -2,13 +2,15 @@
   We will create a family tree using just CSS(3)
   The markup will be simple nested lists
   -->
+
 <% parents = [] %>
 <% @varieties.each do |variety| %>
   <% if Parent.where(variety_id: variety) == [] %>
     <% parents << variety %>
   <% end %>
 <% end %>
-<div class="tree d-flex justify-content-center mt-5 mb-5" style="overflow-x:scroll; width:1400px; background:gray">
+
+<div class="tree d-flex justify-content-center mt-5 mb-5" style="overflow-x:scroll; min-width:1550px;">
   <ul>
     <% parents.each do |parent| %>
       <li>
