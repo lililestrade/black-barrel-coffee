@@ -2,17 +2,30 @@
 .container-index-varieties {
   margin-left: auto;
   margin-right: auto;
+  & h1 {
+    color: white;
+        font-size: 52px;
+  }
 }
 
-// .container-tree {
-//   width: 1400px;
-//   overflow-y: scroll;
-// }
-
-.tree .first-list {
+.container-tree {
+  // background: $black;
+  // opacity: 0.955;
+  // background: rgba(22, 31, 29, 0.5);
+  background: rgba(51, 54, 51, 0.5);
+  border-radius: 4px;
+  // width: 1385px;
+  margin: auto 32px;
   overflow-x: scroll;
-  width: 1400px;
+  & .tree {
+    padding: 10px;
+  }
 }
+
+// .tree .first-list {
+//   overflow-x: scroll;
+//   // width: 1385px;
+// }
 
 
 /*TREE CSS*/
@@ -67,14 +80,14 @@ right connector from last child*/
 /*Adding back the vertical connector to the last nodes*/
 .tree li:last-child::before{
   border-right: 1px solid #ccc;
-  border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  -moz-border-radius: 0 5px 0 0;
+  border-radius: 0 4px 0 0;
+  -webkit-border-radius: 0 4px 0 0;
+  -moz-border-radius: 0 4px 0 0;
 }
 .tree li:first-child::after{
-  border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  -moz-border-radius: 5px 0 0 0;
+  border-radius: 4px 0 0 0;
+  -webkit-border-radius: 4px 0 0 0;
+  -moz-border-radius: 4px 0 0 0;
 }
 
 /*Time to add downward connectors from parents*/
@@ -89,18 +102,18 @@ right connector from last child*/
   border: 1px solid #ccc;
   padding: 5px 10px;
   text-decoration: none;
-  // color: #666;
   color: white;
-  background-color: $kaki;
-  // font-family: arial, verdana, tahoma;
+  // background-color: $kaki;
+  background-color: $black;
+  opacity: 0.955;
   font-family: 'Roboto Condensed';
   font-size: 12px;
   letter-spacing: 0.1em;
   display: inline-block;
 
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -111,7 +124,7 @@ right connector from last child*/
 /*We will apply the hover effect the the lineage of the element also*/
 .tree li a:hover, .tree li a:hover+ul li a {
   // background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-  background: white; color: $kaki; border: 1px solid $kaki;
+  background: #EAEFE7; color: $black; border: 1px solid $black; opacity: 0.955;
 }
 /*Connector styles on hover*/
 .tree li a:hover+ul li::after,

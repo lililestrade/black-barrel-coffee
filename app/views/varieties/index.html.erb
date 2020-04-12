@@ -1,23 +1,26 @@
-<%= link_to "<- Retour", root_path %>
-<div class="container-index-varieties d-flex justify-content-center flex-column">
-  <!-- <h1 class="text-center">Toutes les variétés.</h1> -->
-  <h1 class="text-center">Les variétés du Bon Dieu.</h1>
-  <hr>
-  <div class="d-flex justify-content-center">
-    <% if policy(Variety).create? %>
-      <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <hr>
+<div class="leaf-background">
+  <p><%= link_to "<- Retour", root_path, class: "btn btn-secondary mt-3" %> </p>
 
-  <%#= render 'varieties/tree' %>
-  <%= render 'varieties/secondtree' %>
+  <div class="container-index-varieties d-flex justify-content-center flex-column">
+    <!-- <h1 class="text-center">Toutes les variétés.</h1> -->
+    <h1 class="text-center">Les variétés du Bon Dieu.</h1>
+    <hr>
+    <div class="d-flex justify-content-center">
+      <% if policy(Variety).create? %>
+        <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <hr>
 
-  <br>
-  <hr>
-  <div class="list-varieties d-flex flex-row" style="overflow:auto; width: 800px;">
-    <% @varieties.each do |variety| %>
-      <%= link_to variety.name, variety_path(variety), class: "btn btn-warning m-2" %>
-    <% end %>
+    <%#= render 'varieties/tree' %>
+    <%= render 'varieties/secondtree' %>
+
+    <br>
+    <hr>
+    <div class="list-varieties d-flex justify-content-center flex-wrap">
+      <% @varieties.each do |variety| %>
+        <%= link_to variety.name, variety_path(variety), class: "btn btn-warning m-2" %>
+      <% end %>
+    </div>
   </div>
 </div>
