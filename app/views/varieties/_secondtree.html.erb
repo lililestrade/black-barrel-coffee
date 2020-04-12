@@ -26,16 +26,19 @@
                                 <% fourth_kid = Variety.find(third.variety_id) %>
                                 <li>
                                   <%= link_to fourth_kid.name.upcase, variety_path(fourth_kid) %>
+
                                   <ul class='d-flex flex-row flex-nowrap'>
                                     <% fourth_kid.kids.each do |fourth| %>
                                       <% fifth_kid = Variety.find(fourth.variety_id) %>
                                       <li>
                                         <%= link_to fifth_kid.name.upcase, variety_path(fifth_kid) %>
+
                                         <ul class='d-flex flex-row flex-nowrap'>
                                           <% fifth_kid.kids.each do |fifth| %>
-                                            sixth_kid = Variety.find(fifth.variety_id)
+                                            <% sixth_kid = Variety.find(fifth.variety_id) %>
                                             <li>
                                               <%= link_to sixth_kid.name.upcase, variety_path(sixth_kid) %>
+
                                             </li>
                                           <% end %>
                                         </ul>
