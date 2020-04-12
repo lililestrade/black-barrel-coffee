@@ -5,102 +5,106 @@
 
 <% parents = [] %>
 <% @varieties.each do |variety| %>
-  <% if Parent.where(variety_id: variety) == [] %>
+  <% if variety.parents.empty? %>
     <% parents << variety %>
   <% end %>
 <% end %>
 
-<div class="tree d-flex justify-content-center mt-5 mb-5" style="overflow-x:scroll; min-width:1550px;">
-  <ul>
-    <% parents.each do |parent| %>
-      <li>
-        <%= link_to parent.name.upcase, variety_path(parent) %>
+<div class="container-tree d-flex justify-content-center mt-5 mb-5">
+  <div class="tree d-flex flex-row flex-nowrap" style="overflow:auto; width: 1400px;">
 
-        <% children = [] %>
-        <% if Parent.where(parent_variety_id: parent) %>
-          <% Parent.where(parent_variety_id: parent).each do |child| %>
-            <% children << Variety.find(child.variety_id) %>
-          <% end %>
-          <ul>
-            <% children.each do |child| %>
-              <li>
-              <%= link_to child.name.upcase, variety_path(child) %>
+    <ul>
+      <% parents.each do |parent| %>
+        <li>
+          <%= link_to parent.name.upcase, variety_path(parent) %>
 
-              <% grand_children = [] %>
-              <% if Parent.where(parent_variety_id: child) %>
-                <% Parent.where(parent_variety_id: child).each do |grand_child| %>
-                  <% grand_children << Variety.find(grand_child.variety_id) %>
-                <% end %>
-                <ul>
-                  <% grand_children.each do |grand_child| %>
-                    <li>
-                    <%= link_to grand_child.name.upcase, variety_path(grand_child) %>
-
-                    <% great_children = [] %>
-                    <% if Parent.where(parent_variety_id: grand_child) %>
-                      <% Parent.where(parent_variety_id: grand_child).each do |great_child| %>
-                        <% great_children << Variety.find(great_child.variety_id) %>
-                      <% end %>
-                      <ul>
-                        <% great_children.each do |great_child| %>
-                        <li>
-                          <%= link_to great_child.name.upcase, variety_path(great_child) %>
-
-                          <% great_grand_children = [] %>
-                          <% if Parent.where(parent_variety_id: great_child) %>
-                            <% Parent.where(parent_variety_id: great_child).each do |great_grand_child| %>
-                              <% great_grand_children << Variety.find(great_grand_child.variety_id) %>
-                            <% end %>
-                            <ul>
-                              <% great_grand_children.each do |great_grand_child| %>
-                                <li>
-                                  <%= link_to great_grand_child.name.upcase, variety_path(great_grand_child) %>
-
-                                  <% great_great_grand_children = [] %>
-                                  <% if Parent.where(parent_variety_id: great_grand_child) %>
-                                    <% Parent.where(parent_variety_id: great_grand_child).each do |great_great_grand_child| %>
-                                      <% great_great_grand_children << Variety.find(great_great_grand_child.variety_id) %>
-                                    <% end %>
-                                    <ul>
-                                      <% great_great_grand_children.each do |great_great_grand_child| %>
-                                        <li>
-                                          <%= link_to great_great_grand_child.name.upcase, variety_path(great_great_grand_child) %>
-
-                                          <% g_g_g_grand_children = [] %>
-                                          <% if Parent.where(parent_variety_id: great_great_grand_child) %>
-                                            <% Parent.where(parent_variety_id: great_great_grand_child).each do |g_g_g_grand_child| %>
-                                              <% g_g_g_grand_children << Variety.find(g_g_g_grand_child.variety_id) %>
-                                            <% end %>
-                                            <ul>
-                                              <% g_g_g_grand_children.each do |g_g_g_grand_child| %>
-                                                <li>
-                                                  <%= link_to g_g_g_grand_child.name.upcase, variety_path(g_g_g_grand_child) %>
-                                                </li>
-                                              <% end %>
-                                            </ul>
-                                          <% end %>
-                                        </li>
-                                      <% end %>
-                                    </ul>
-                                  <% end %>
-                                </li>
-                              <% end %>
-                            </ul>
-                          <% end %>
-                        </li>
-                        <% end %>
-                      </ul>
-                    <% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              <% end %>
-              </li>
+          <% children = [] %>
+          <% if Parent.where(parent_variety_id: parent) %>
+            <% Parent.where(parent_variety_id: parent).each do |child| %>
+              <% children << Variety.find(child.variety_id) %>
             <% end %>
-          </ul>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+            <ul>
+              <% children.each do |child| %>
+                <li>
+                <%= link_to child.name.upcase, variety_path(child) %>
+
+                <% grand_children = [] %>
+                <% if Parent.where(parent_variety_id: child) %>
+                  <% Parent.where(parent_variety_id: child).each do |grand_child| %>
+                    <% grand_children << Variety.find(grand_child.variety_id) %>
+                  <% end %>
+                  <ul>
+                    <% grand_children.each do |grand_child| %>
+                      <li>
+                      <%= link_to grand_child.name.upcase, variety_path(grand_child) %>
+
+                      <% great_children = [] %>
+                      <% if Parent.where(parent_variety_id: grand_child) %>
+                        <% Parent.where(parent_variety_id: grand_child).each do |great_child| %>
+                          <% great_children << Variety.find(great_child.variety_id) %>
+                        <% end %>
+                        <ul>
+                          <% great_children.each do |great_child| %>
+                          <li>
+                            <%= link_to great_child.name.upcase, variety_path(great_child) %>
+
+                            <% great_grand_children = [] %>
+                            <% if Parent.where(parent_variety_id: great_child) %>
+                              <% Parent.where(parent_variety_id: great_child).each do |great_grand_child| %>
+                                <% great_grand_children << Variety.find(great_grand_child.variety_id) %>
+                              <% end %>
+                              <ul>
+                                <% great_grand_children.each do |great_grand_child| %>
+                                  <li>
+                                    <%= link_to great_grand_child.name.upcase, variety_path(great_grand_child) %>
+
+                                    <% great_great_grand_children = [] %>
+                                    <% if Parent.where(parent_variety_id: great_grand_child) %>
+                                      <% Parent.where(parent_variety_id: great_grand_child).each do |great_great_grand_child| %>
+                                        <% great_great_grand_children << Variety.find(great_great_grand_child.variety_id) %>
+                                      <% end %>
+                                      <ul>
+                                        <% great_great_grand_children.each do |great_great_grand_child| %>
+                                          <li>
+                                            <%= link_to great_great_grand_child.name.upcase, variety_path(great_great_grand_child) %>
+
+                                            <% g_g_g_grand_children = [] %>
+                                            <% if Parent.where(parent_variety_id: great_great_grand_child) %>
+                                              <% Parent.where(parent_variety_id: great_great_grand_child).each do |g_g_g_grand_child| %>
+                                                <% g_g_g_grand_children << Variety.find(g_g_g_grand_child.variety_id) %>
+                                              <% end %>
+                                              <ul>
+                                                <% g_g_g_grand_children.each do |g_g_g_grand_child| %>
+                                                  <li>
+                                                    <%= link_to g_g_g_grand_child.name.upcase, variety_path(g_g_g_grand_child) %>
+                                                  </li>
+                                                <% end %>
+                                              </ul>
+                                            <% end %>
+                                          </li>
+                                        <% end %>
+                                      </ul>
+                                    <% end %>
+                                  </li>
+                                <% end %>
+                              </ul>
+                            <% end %>
+                          </li>
+                          <% end %>
+                        </ul>
+                      <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
 </div>
 

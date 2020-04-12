@@ -10,11 +10,12 @@
   </div>
   <hr>
 
-  <%= render 'varieties/tree' %>
+  <%#= render 'varieties/tree' %>
+  <%= render 'varieties/secondtree' %>
 
   <br>
   <hr>
-  <div class="list-varieties">
+  <div class="list-varieties d-flex flex-row" style="overflow:auto; width: 800px;">
     <% @varieties.each do |variety| %>
       <%= link_to variety.name, variety_path(variety), class: "btn btn-warning m-2" %>
     <% end %>

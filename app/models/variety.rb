@@ -17,5 +17,7 @@ class Variety < ApplicationRecord
                                 reject_if: proc { |attributes| attributes[:country_id].blank? },
                                 allow_destroy: true
 
-
+  def kids
+    Parent.where(parent_variety_id: self)
+  end
 end

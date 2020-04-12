@@ -2,6 +2,10 @@ class VarietiesController < ApplicationController
   def index
     @varieties = policy_scope(Variety)
     #@varieties = Variety.all
+    #@kids = Variety.where()
+    # Parent.where(parent_variety_id: parent).each do |child|
+    #   children << Variety.find(child.variety_id)
+    # end
 
   end
 
@@ -62,6 +66,7 @@ class VarietiesController < ApplicationController
     # no need for app/views/varietys/destroy.html.erb
     redirect_to varieties_path
   end
+
 
   private
 

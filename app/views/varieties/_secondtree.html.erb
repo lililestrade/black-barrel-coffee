@@ -1,0 +1,16 @@
+<div class="container-tree d-flex justify-content-center mt-5 mb-5">
+  <div class="tree d-flex flex-row flex-nowrap" style="overflow:auto; width: 1400px;">
+
+    <ul>
+      <% @varieties.each do |variety| %>
+        <% if variety.parents.empty? %>
+        <li>
+          <%= link_to variety.name.upcase, variety_path(variety) %>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
+
