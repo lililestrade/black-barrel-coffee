@@ -5,43 +5,43 @@
       <% @varieties.each do |variety| %>
         <% if variety.parents.empty? %>
         <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
+          <%= link_to variety.name.upcase, variety_path(variety), class: 'variety-tree' %>
           <ul class='d-flex flex-row flex-nowrap'>
             <% variety.kids.each do |variety_kid| %>
               <% kid = Variety.find(variety_kid.variety_id) %>
               <li>
-                <%= link_to kid.name.upcase, variety_path(kid) %>
+                <%= link_to kid.name.upcase, variety_path(kid), class: 'variety-tree' %>
                 <ul class='d-flex flex-row flex-nowrap'>
                   <% kid.kids.each do |kid_kid| %>
                     <% second_kid = Variety.find(kid_kid.variety_id) %>
                     <li>
-                      <%= link_to second_kid.name.upcase, variety_path(second_kid) %>
+                      <%= link_to second_kid.name.upcase, variety_path(second_kid), class: 'variety-tree' %>
                       <ul class='d-flex flex-row flex-nowrap'>
                         <% second_kid.kids.each do |second| %>
                           <% third_kid = Variety.find(second.variety_id) %>
                           <li>
-                            <%= link_to third_kid.name.upcase, variety_path(third_kid) %>
+                            <%= link_to third_kid.name.upcase, variety_path(third_kid), class: 'variety-tree' %>
                             <ul class='d-flex flex-row flex-nowrap'>
                               <% third_kid.kids.each do |third| %>
                                 <% fourth_kid = Variety.find(third.variety_id) %>
                                 <li>
-                                  <%= link_to fourth_kid.name.upcase, variety_path(fourth_kid) %>
+                                  <%= link_to fourth_kid.name.upcase, variety_path(fourth_kid), class: 'variety-tree' %>
                                   <ul class='d-flex flex-row flex-nowrap'>
                                     <% fourth_kid.kids.each do |fourth| %>
                                       <% fifth_kid = Variety.find(fourth.variety_id) %>
                                       <li>
-                                        <%= link_to fifth_kid.name.upcase, variety_path(fifth_kid) %>
+                                        <%= link_to fifth_kid.name.upcase, variety_path(fifth_kid), class: 'variety-tree' %>
                                         <ul class='d-flex flex-row flex-nowrap'>
                                           <% fifth_kid.kids.each do |fifth| %>
                                             <% sixth_kid = Variety.find(fifth.variety_id) %>
                                             <li>
-                                              <%= link_to sixth_kid.name.upcase, variety_path(sixth_kid) %>
+                                              <%= link_to sixth_kid.name.upcase, variety_path(sixth_kid), class: 'variety-tree' %>
 
                                               <ul class='d-flex flex-row flex-nowrap'>
                                                 <% sixth_kid.kids.each do |sixth| %>
                                                   <% seventh_kid = Variety.find(sixth.variety_id) %>
                                                   <li>
-                                                    <%= link_to seventh_kid.name.upcase, variety_path(seventh_kid) %>
+                                                    <%= link_to seventh_kid.name.upcase, variety_path(seventh_kid), class: 'variety-tree' %>
 
                                                   </li>
                                                 <% end %>

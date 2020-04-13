@@ -4,7 +4,8 @@
   margin-right: auto;
   & h1 {
     color: white;
-        font-size: 52px;
+    font-size: 52px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 }
 
@@ -134,3 +135,9 @@ right connector from last child*/
   border-color:  #94a0b4;
 }
 
+.hover {
+  background: #EAEFE7 !important;
+  color: $black !important;
+  border: 1px solid $black !important;
+  opacity: 0.955 !important;
+}

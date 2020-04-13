@@ -28,3 +28,7 @@ jQuery(document).ready(function() {
   }, 20);
 
 });
+
+// Hover on Variety Index
+import { toggleVarietyHover } from '../plugins/init_hover';
+toggleVarietyHover();
