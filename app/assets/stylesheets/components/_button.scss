@@ -1,3 +1,18 @@
 .button-plus {
 
 }
+.btn-login {
+  background-color: $black;
+  opacity: 0.85;
+  &:hover {
+  opacity: 1;
+  }
+  & input {
+    color: white;
+    font-size: 18px;
+    &:hover {
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
