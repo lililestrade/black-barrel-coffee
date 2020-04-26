@@ -1,5 +1,5 @@
 <div class="leaf-background">
-  <%= render 'shared/navbar' %>
+  <%= render 'shared/secondnavbar' %>
   <p><%= link_to "<- Retour", root_path, class: "btn btn-secondary mt-3" %> </p>
 
   <div class="container-index-varieties d-flex justify-content-center flex-column">
@@ -8,10 +8,9 @@
     <hr>
     <div class="d-flex justify-content-center">
       <% if policy(Variety).create? %>
-        <%= link_to "Nouvelle variété", new_variety_path, class: "btn btn-primary" %>
+        <%= link_to "CRÉER UNE NOUVELLE VARIÉTÉ", new_variety_path, class: "btn btn-primary" %>
       <% end %>
     </div>
-    <hr>
 
     <%#= render 'varieties/tree' %>
     <%= render 'varieties/secondtree' %>
