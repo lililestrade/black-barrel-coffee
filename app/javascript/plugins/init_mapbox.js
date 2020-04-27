@@ -15,9 +15,8 @@ const initMapbox = () => {
 
     const map = new mapboxgl.Map({
       container: 'map',
-      // style: 'mapbox://styles/mapbox/streets-v10'
-      // style: 'mapbox://styles/lililestrade/ck8hupipi0fxj1inyvfmkusqf'
-      style: 'mapbox://styles/mapbox/streets-v11'
+      // style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/lililestrade/ck8huzc2h09891iqdate9pkw5'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
