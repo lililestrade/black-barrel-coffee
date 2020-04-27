@@ -19,7 +19,7 @@
     <br>
     <div
       id="map"
-      style="width: 90%;
+      style="width: 80%;
       height: 500px;
       margin: auto;"
       data-markers="<%= @markers.to_json %>"
@@ -27,20 +27,32 @@
     ></div>
   </div>
 
-    <br>
-    <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="container-index-countries-list d-flex justify-content-center flex-column">
     <h1 class="text-center">Liste Des Pays Producteurs</h1>
     <br>
+    <br>
+    <div class='d-flex justify-content-center align-items-center'>
       <% if policy(Country).create? %>
         <%= link_to "Nouveau pays", new_country_path, class: "btn btn-primary" %>
       <% end %>
-      <hr>
-      <p>
+    </div>
+    <br>
+    <br>
+    <div class="list-countries d-flex justify-content-center align-items-center">
+      <p style="margin: 0px">
         <% @countries = @countries.sort_by { |c| c.name } %>
         <% @countries.each do |country| %>
           <%= link_to country.name, country_path(country), class: "btn btn-warning m-2" %>
         <% end %>
       </p>
+    </div>
+    <br>
+    <br>
+  </div>
 </div>
 
 <div class="footer footer-show d-flex justify-content-center">
