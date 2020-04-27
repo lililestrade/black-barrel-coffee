@@ -1,19 +1,43 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <p><%= link_to "<- Retour", root_path %> </p>
-  <h1 class="text-center">TOUS LES PROCESSUS DE SÉCHAGE</h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <hr>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
+  <br>
+  <br>
+  <div class="container-index-processes d-flex justify-content-center flex-column">
+    <h1 class="text-center">Méthodes De Séchage</h1>
+    <br>
+    <div class='d-flex justify-content-center align-items-center'>
       <% if policy(DryingProcess).create? %>
         <%= link_to "Nouvelle Méthode", new_drying_process_path, class: "btn btn-primary" %>
       <% end %>
-      <hr>
+    </div>
+    <br>
+    <div class="index-countries-text-one d-flex justify-content-center">
       <p>
-      <% @drying_processes.each do |drying_process| %>
-        <%= link_to drying_process.name, drying_process_path(drying_process), class: "btn btn-warning m-2" %>
-      <% end %>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae deserunt enim reiciendis dolor error repellat corporis, amet qui asperiores expedita ipsam, aperiam, quia debitis dolorum voluptatum quae aliquid doloremque ex!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eaque, temporibus odit eum! Neque vero sit delectus tempore eius culpa repudiandae molestias odit voluptate ratione dicta, possimus magni suscipit dolor.
       </p>
     </div>
+    <br>
+    <div class='d-flex justify-content-center align-items-center'>
+    <% @drying_processes.each do |drying_process| %>
+      <%= link_to drying_process.name, drying_process_path(drying_process), class: "btn btn-warning m-2" %>
+    <% end %>
+    </div>
   </div>
+</div>
+<div class="footer footer-show d-flex justify-content-center">
+  <a href="#">About</a>
+  <div class="footer-logo d-flex align-items-center flex-column">
+    <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>
+    <div class="footer-copyright-show mt-2">
+      © 2020 BLACK BARREL COFFEE, INC. All rights reserved.
+    </div>
+  </div>
+  <a href="#">Contact</a>
+<!--   <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div> -->
 </div>
