@@ -1,0 +1,15 @@
+/*MAIN CSS*/
+.container-index-countries {
+  margin-left: auto;
+  margin-right: auto;
+  & h1 {
+    color: white;
+    font-size: 52px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+}
+.search-map {
+  & input {
+    width: 400px;
+  }
+}
