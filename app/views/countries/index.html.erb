@@ -1,22 +1,9 @@
 <%= render 'shared/navbar' %>
 <div class="container">
-  <p><%= link_to "<- Retour", root_path %> </p>
-  <h1 class="text-center">TOUS LES PAYS PRODUCTEURS</h1>
+  <br>
+  <h1 class="text-center">Localisation Des Variétés</h1>
   <div class="row">
     <div class="col-md-8 offset-2">
-      <hr>
-      <% if policy(Country).create? %>
-        <%= link_to "Nouveau pays", new_country_path, class: "btn btn-primary" %>
-      <% end %>
-      <hr>
-      <p>
-
-        <% @countries = @countries.sort_by { |c| c.name } %>
-        <% @countries.each do |country| %>
-          <%= link_to country.name, country_path(country), class: "btn btn-warning m-2" %>
-        <% end %>
-      </p>
-      <hr>
       <br>
       <%= form_tag countries_path, method: :get do %>
         <%= text_field_tag :query,
@@ -26,7 +13,7 @@
         %>
         <%= submit_tag "Search", class: "btn btn-infos" %>
       <% end %>
-      <br>
+
       <hr>
       <div
         id="map"
@@ -34,7 +21,41 @@
         height: 500px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
+      >
+      </div>
     </div>
   </div>
+
+  <br>
+  <br>
+  <h1 class="text-center">Liste Des Pays Producteurs</h1>
+  <br>
+    <% if policy(Country).create? %>
+      <%= link_to "Nouveau pays", new_country_path, class: "btn btn-primary" %>
+    <% end %>
+    <hr>
+    <p>
+      <% @countries = @countries.sort_by { |c| c.name } %>
+      <% @countries.each do |country| %>
+        <%= link_to country.name, country_path(country), class: "btn btn-warning m-2" %>
+      <% end %>
+    </p>
+</div>
+<br>
+
+<div class="footer footer-show d-flex justify-content-center">
+  <a href="#">About</a>
+  <div class="footer-logo d-flex align-items-center flex-column">
+    <%= image_tag "logo-beige-png.png", alt: "coffee bean logo in beige" %>
+    <div class="footer-copyright-show mt-2">
+      © 2020 BLACK BARREL COFFEE, INC. All rights reserved.
+    </div>
+  </div>
+  <a href="#">Contact</a>
+<!--   <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div> -->
 </div>
