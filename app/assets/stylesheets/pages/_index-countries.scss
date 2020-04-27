@@ -8,6 +8,19 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 }
+
+.index-countries-text-one {
+  width: 950px;
+  border: 1px solid white;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-style: italic;
+  & p {
+    margin: 0px;
+  }
+}
+
 .search-map {
   & input {
     width: 400px;
