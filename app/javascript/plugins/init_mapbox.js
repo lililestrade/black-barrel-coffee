@@ -16,6 +16,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       // style: 'mapbox://styles/mapbox/streets-v11'
+      // style: 'mapbox://styles/lililestrade/ck8huzc2h09891iqdate9pkw5'
       style: 'mapbox://styles/lililestrade/ck8huzc2h09891iqdate9pkw5'
     });
 
