@@ -1,10 +1,12 @@
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
-  <p><%= link_to "<- Retour", root_path, class: "btn btn-secondary mt-3" %> </p>
+  <br>
+  <br>
+  <br>
 
   <div class="container-index-varieties d-flex justify-content-center flex-column">
     <!-- <h1 class="text-center">Toutes les variétés.</h1> -->
-    <h1 class="text-center">Les variétés du Bon Dieu.</h1>
+    <h1 class="text-center">L'Arbre Des Variétés</h1>
     <hr>
     <div class="d-flex justify-content-center">
       <% if policy(Variety).create? %>
@@ -16,7 +18,14 @@
     <%= render 'varieties/secondtree' %>
 
   </div>
+  <br>
+  <div class="container-index-varieties d-flex justify-content-center flex-column">
+    <!-- <h1 class="text-center">Toutes les variétés.</h1> -->
+    <h1 class="text-center">La Liste Des Variétés</h1>
+    <hr>
+  </div>
 </div>
+
 <div class="footer footer-show d-flex justify-content-center">
   <a href="#">About</a>
   <div class="footer-logo d-flex align-items-center flex-column">
