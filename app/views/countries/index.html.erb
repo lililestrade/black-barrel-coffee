@@ -7,20 +7,24 @@
     <br>
     <div class="index-countries-text-one d-flex justify-content-center">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae deserunt enim reiciendis dolor error repellat corporis, amet qui asperiores expedita ipsam, aperiam, quia debitis dolorum voluptatum quae aliquid doloremque ex!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eaque, temporibus odit eum! Neque vero sit delectus tempore eius culpa repudiandae molestias odit voluptate ratione dicta, possimus magni suscipit dolor.
-      </p>
+      “La carte interractive du Black Barrel vous permet de continuer votre voyage autour du café.
+      <br>Deux options s’offrent à vos recherchent.
+      <br>Partir dans un pays producteur identifié pour rescenser toutes les variétés qui ont fait sa renomé.
+      <br>Poursuivre sans relâche le grain qui vous réveille le matin et vous empêche de dormir la nuit.”      </p>
     </div>
     <br>
     <br>
-    <div class="search-map d-flex justify-content-center align-items-center">
+    <div class="search-map d-flex justify-content-center">
       <%= form_tag countries_path, method: :get do %>
+      <div class="form-inline">
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Chercher une variété"
+          placeholder: "Chercher une variété",
+          style: "font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 6px 35px;"
         %>
-        <%= submit_tag "Search 🔍", class: "btn btn-infos" %>
+      </div>
+        <%= submit_tag "Search 🔍", class: "btn btn-primary" %>
       <% end %>
     </div>
     <br>
@@ -32,6 +36,7 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
+    <!-- <div id="geocoder" class="geocoder"></div> -->
   </div>
 
   <br>
@@ -39,7 +44,7 @@
   <br>
 
   <div class="container-index-countries-list d-flex justify-content-center flex-column">
-    <h1 class="text-center">Liste Des Pays Producteurs</h1>
+    <h1 class="text-center">Pays Producteurs</h1>
     <br>
     <br>
     <div class='d-flex justify-content-center align-items-center'>
@@ -50,8 +55,7 @@
     <br>
     <div class="index-countries-text-one d-flex justify-content-center">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae deserunt enim reiciendis dolor error repellat corporis, amet qui asperiores expedita ipsam, aperiam, quia debitis dolorum voluptatum quae aliquid doloremque ex!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eaque, temporibus odit eum! Neque vero sit delectus tempore eius culpa repudiandae molestias odit voluptate ratione dicta, possimus magni suscipit dolor.
+        “Au fil des siècles, les pays producteurs ont écrit leur propre histoire autour du fameux caféier, découvrez la sans plus attendre.”
       </p>
     </div>
     <br>
