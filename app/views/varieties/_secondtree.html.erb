@@ -43,6 +43,42 @@
                                                   <li>
                                                     <%= link_to seventh_kid.name.upcase, variety_path(seventh_kid), class: 'variety-tree' %>
 
+                                                    <ul class='d-flex flex-row flex-nowrap'>
+                                                      <% seventh_kid.kids.each do |seventh| %>
+                                                        <% eighth_kid = Variety.find(seventh.variety_id) %>
+                                                        <li>
+                                                          <%= link_to eighth_kid.name.upcase, variety_path(eighth_kid), class: 'variety-tree' %>
+
+                                                          <ul class='d-flex flex-row flex-nowrap'>
+                                                            <% eighth_kid.kids.each do |eighth| %>
+                                                              <% ninth_kid = Variety.find(eighth.variety_id) %>
+                                                              <li>
+                                                                <%= link_to ninth_kid.name.upcase, variety_path(ninth_kid), class: 'variety-tree' %>
+
+                                                                <ul class='d-flex flex-row flex-nowrap'>
+                                                                  <% ninth_kid.kids.each do |ninth| %>
+                                                                    <% tenth_kid = Variety.find(ninth.variety_id) %>
+                                                                    <li>
+                                                                      <%= link_to tenth_kid.name.upcase, variety_path(tenth_kid), class: 'variety-tree' %>
+
+                                                                      <ul class='d-flex flex-row flex-nowrap'>
+                                                                        <% tenth_kid.kids.each do |tenth| %>
+                                                                          <% eleventh_kid = Variety.find(tenth.variety_id) %>
+                                                                          <li>
+                                                                            <%= link_to eleventh_kid.name.upcase, variety_path(eleventh_kid), class: 'variety-tree' %>
+
+                                                                          </li>
+                                                                        <% end %>
+                                                                      </ul>
+                                                                    </li>
+                                                                  <% end %>
+                                                                </ul>
+                                                              </li>
+                                                            <% end %>
+                                                          </ul>
+                                                        </li>
+                                                      <% end %>
+                                                    </ul>
                                                   </li>
                                                 <% end %>
                                               </ul>
