@@ -7,14 +7,29 @@
   z-index: 10;
 }
 
-.container-show-variety {
+// CONTAINER BACKGROUND TABLEAU
+.container-show-variety-one {
   width: 1181px;
-  min-height: 632px;
+  min-height: 528px;
   background: $black;
   // background: #171717;
   // opacity: 0.985;
   opacity: 0.955;
   margin-top: 85px;
+  border-radius: 4px;
+  font-family: 'Roboto Condensed';
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.container-show-variety-two {
+  width: 1181px;
+  min-height: 418px;
+  background: $black;
+  // background: #171717;
+  // opacity: 0.985;
+  opacity: 0.955;
+  margin-top: 62px;
   border-radius: 4px;
   font-family: 'Roboto Condensed';
   color: white;
@@ -50,8 +65,8 @@
 
 .container-tab-show-variety-two {
   border: 2px solid white;
-  min-height: 161px;
-  margin-top: 32px;
+  min-height: 153px;
+  margin-top: 50px;
   margin-bottom: 35px;
 }
 

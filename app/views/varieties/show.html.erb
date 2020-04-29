@@ -1,7 +1,7 @@
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
 
-  <div class="container container-show-variety d-flex justify-content-center">
+  <div class="container container-show-variety-one d-flex justify-content-center">
     <div class="container-content-show-variety">
 
       <div class="title-show-variety mt-3">
@@ -85,6 +85,8 @@
         </div>
 
       </div>
+    </div>
+  </div>
 <!--         <div class="second-row-show-variety d-flex align-items-center">
           <div class="second-row-show-variety-case-one d-flex justify-content-center">
             <p class='text-center'>ALTITUDE :</p>
@@ -93,6 +95,8 @@
               <p class='text-center'><%#= @variety.altitude %></p>
           </div>
         </div> -->
+  <div class="container container-show-variety-two d-flex justify-content-center">
+    <div class="container-content-show-variety">
 
       <div class="container-tab-show-variety-two">
 
@@ -122,7 +126,6 @@
               <p class='text-center'><%= @variety.cup %></p>
           </div>
         </div>
-
       </div>
 
       <div class="container-tab-show-variety-three">
@@ -183,11 +186,12 @@
         </div>
 
       </div>
-
-
-
     </div>
   </div>
+
+
+
+
 
   <div class ="mt-5 mb-2 d-flex justify-content-center">
     <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-info text-center" %>
