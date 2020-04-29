@@ -34,14 +34,18 @@
   </div>
 
   <div class ="mt-5 mb-2 d-flex justify-content-center">
-    <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-info text-center" %>
+    <% if policy(DryingProcess).update? %>
+      <%= link_to "Modifier la méthode de séchage", edit_drying_process_path(@drying_process), class: "btn btn-info text-center" %>
+    <% end %>
   </div>
 
   <div class ="mt-2 mb-2 d-flex justify-content-center">
-    <%= link_to "Supprimer", drying_process_path(@drying_process),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "btn btn-warning" %>
+    <% if policy(DryingProcess).destroy? %>
+      <%= link_to "Supprimer", drying_process_path(@drying_process),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-warning" %>
+    <% end %>
   </div>
   <br>
 </div>

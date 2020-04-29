@@ -135,15 +135,20 @@
 
 
   <div class ="mt-5 mb-2 d-flex justify-content-center">
-    <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-info text-center" %>
+    <% if policy(Country).update? %>
+      <%= link_to "Modifier le pays", edit_country_path(@country), class: "btn btn-info text-center" %>
+    <% end %>
   </div>
 
   <div class ="mt-2 mb-2 d-flex justify-content-center">
-    <%= link_to "Supprimer", country_path(@country),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "btn btn-warning" %>
+    <% if policy(Country).destroy? %>
+      <%= link_to "Supprimer", country_path(@country),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-warning" %>
+    <% end %>
   </div>
+
   <br>
 </div>
 <div class="footer footer-show d-flex justify-content-center">

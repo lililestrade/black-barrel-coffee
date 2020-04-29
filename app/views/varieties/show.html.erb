@@ -194,13 +194,17 @@
 
 
   <div class ="mt-5 mb-2 d-flex justify-content-center">
-    <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-info text-center" %>
+    <% if policy(Variety).update? %>
+      <%= link_to "Modifier la variété", edit_variety_path(@variety), class: "btn btn-info text-center" %>
+    <% end %>
   </div>
   <div class ="mt-2 mb-2 d-flex justify-content-center">
-    <%= link_to "Supprimer", variety_path(@variety),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "btn btn-warning" %>
+    <% if policy(Variety).destroy? %>
+      <%= link_to "Supprimer", variety_path(@variety),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-warning" %>
+    <% end %>
   </div>
   <br>
 </div>
