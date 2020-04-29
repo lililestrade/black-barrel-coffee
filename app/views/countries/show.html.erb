@@ -13,21 +13,24 @@
           <div class="second-row-show-country d-flex align-items-center">
             <div class="second-row-show-country-case-one d-flex justify-content-center flex-column">
               <p class='text-center'>MÉTHODES DE SÉCHAGE PRATIQUÉES DANS CE PAYS :</p>
-              <!-- START Button trigger modal new_country_process_link -->
-              <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
-                <%= image_tag "button-plus.svg", alt: "alttext" %>
-              </div>
-              <!-- END Button trigger modal new_country_process_link -->
+              <% if current_user.admin? %>
+                <!-- START Button trigger modal new_country_process_link -->
+                <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newCountryProcessLinkModalCenter">
+                  <%= image_tag "button-plus.svg", alt: "alttext" %>
+                </div>
+                <!-- END Button trigger modal new_country_process_link -->
+              <% end %>
             </div>
             <div class="second-row-show-country-case-two d-flex justify-content-center">
               <ul>
                 <% @country.country_process_links.each do |process| %>
                   <li>
                     <%= link_to process.drying_process.name.upcase, drying_process_path(process.drying_process), class: 'name'%>
-
-                    <%= link_to "| X", country_process_link_path(process),
-                                          method: :delete,
-                                          data: { confirm: "Are you sure?" } %>
+                    <% if current_user.admin? %>
+                      <%= link_to "| X", country_process_link_path(process),
+                                            method: :delete,
+                                            data: { confirm: "Are you sure?" } %>
+                    <% end %>
                   </li>
                 <% end %>
               </ul>
@@ -37,21 +40,24 @@
           <div class="third-row-show-country d-flex align-items-center">
             <div class="third-row-show-country-case-one d-flex justify-content-center flex-column">
               <p class='text-center'>PÉRIODES DE RÉCOLTE :</p>
-              <!-- START Button trigger modal new_harvest_period -->
-              <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
-                <%= image_tag "button-plus.svg", alt: "alttext" %>
-              </div>
-              <!-- END Button trigger modal new_harvest_period -->
+              <% if current_user.admin? %>
+                <!-- START Button trigger modal new_harvest_period -->
+                <div class='button mb-3 d-flex justify-content-center' data-toggle="modal" data-target="#newHarvestPeriodModalCenter">
+                  <%= image_tag "button-plus.svg", alt: "alttext" %>
+                </div>
+                <!-- END Button trigger modal new_harvest_period -->
+              <% end %>
             </div>
             <div class="third-row-show-country-case-two d-flex justify-content-center">
               <ul>
                 <% @country.harvest_periods.each do |harvest_period| %>
                   <li>
                     <%= Month.find(harvest_period.month_id).name.upcase %>
-
-                    <%= link_to "| X", harvest_period_path(harvest_period),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %>
+                    <% if current_user.admin? %>
+                      <%= link_to "| X", harvest_period_path(harvest_period),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
+                  <% end %>
                   </li>
                 <% end %>
               </ul>
