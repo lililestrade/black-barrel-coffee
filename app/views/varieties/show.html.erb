@@ -145,16 +145,17 @@
                 <li>
                   <%#= Variety.find(parent.parent_variety_id).name %>
                   <%= link_to productive_country.country.name.upcase, country_path(productive_country.country), class: 'name'%>
-
-                  <%= link_to "| X", productive_country_path(productive_country),
-                                method: :delete,
-                                data: { confirm: "Are you sure?" } %>
-                  <em>(<%= productive_country.address %>)</em>
-                  <!-- START Button trigger modal edit_productive_country -->
-                  <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
-                    | Changer l'adresse
-                  </button>
-                  <!-- END Button trigger modal edit_productive_country -->
+                  <% if current_user.admin? %>
+                    <%= link_to "| X", productive_country_path(productive_country),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+                    <em>(<%= productive_country.address %>)</em>
+                    <!-- START Button trigger modal edit_productive_country -->
+                    <button type="button" data-toggle="modal" data-target="#editProductiveCountryModalCenter">
+                      | Changer l'adresse
+                    </button>
+                    <!-- END Button trigger modal edit_productive_country -->
+                  <% end %>
                 </li>
                 <!-- START Modal edit_productive_country -->
                 <div class="modal fade" id="editProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="editProductiveCountryCenterTitle" aria-hidden="true">

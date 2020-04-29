@@ -3,8 +3,14 @@ class VarietyPolicy < ApplicationPolicy
     def resolve
       if user.admin?
         scope.all
+      else
+        scope.all
       end
     end
+  end
+
+  def index?
+    return true
   end
 
   def show?

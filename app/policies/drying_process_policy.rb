@@ -3,6 +3,8 @@ class DryingProcessPolicy < ApplicationPolicy
     def resolve
       if user.admin?
         scope.all
+      else
+        scope.all
       end
     end
   end
