@@ -8,7 +8,24 @@
         <h1 class="text-center mb-3"><%= @variety.name.upcase %></h1>
       </div>
 
-      <div class="container-tab-show-variety">
+      <div class="container-tab-show-variety-one">
+
+        <div class="second-row-show-variety d-flex align-items-center">
+          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+            <p class='text-center'>ESPÈCE :</p>
+          </div>
+          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+            <% if @variety.arabica %>
+              <p class='text-center'>arabica</p>
+            <% end %>
+            <% if @variety.robusta %>
+              <p class='text-center'>robusta</p>
+            <% end %>
+            <% if @variety.liberica %>
+              <p class='text-center'>liberica</p>
+            <% end %>
+          </div>
+        </div>
 
         <div class="first-row-show-variety d-flex align-items-center">
           <div class="first-row-show-variety-case-one d-flex justify-content-center flex-column">
@@ -36,6 +53,7 @@
         </div>
 
         <div class="second-row-show-variety d-flex align-items-center">
+
           <div class="second-row-show-variety-case-one d-flex justify-content-center">
             <p class='text-center'>MUTATION :</p>
           </div>
@@ -43,24 +61,6 @@
               <p class='text-center'><%= @variety.mutation.name %></p>
           </div>
         </div>
-
-        <div class="second-row-show-variety d-flex align-items-center">
-          <div class="second-row-show-variety-case-one d-flex justify-content-center">
-            <p class='text-center'>ESPÈCE :</p>
-          </div>
-          <div class="second-row-show-variety-case-two d-flex justify-content-center">
-            <% if @variety.arabica %>
-              <p class='text-center'>arabica</p>
-            <% end %>
-            <% if @variety.robusta %>
-              <p class='text-center'>robusta</p>
-            <% end %>
-            <% if @variety.liberica %>
-              <p class='text-center'>liberica</p>
-            <% end %>
-          </div>
-        </div>
-
 
         <div class="second-row-show-variety d-flex align-items-center">
           <div class="second-row-show-variety-case-one d-flex justify-content-center">
@@ -80,14 +80,21 @@
           </div>
         </div>
 
-        <div class="second-row-show-variety d-flex align-items-center">
+        <div class="infos-row-show-variety d-flex justify-content-center">
+          <p class='text-center'><%= @variety.description %></p>
+        </div>
+
+      </div>
+<!--         <div class="second-row-show-variety d-flex align-items-center">
           <div class="second-row-show-variety-case-one d-flex justify-content-center">
             <p class='text-center'>ALTITUDE :</p>
           </div>
           <div class="second-row-show-variety-case-two d-flex justify-content-center">
-              <p class='text-center'><%= @variety.altitude %></p>
+              <p class='text-center'><%#= @variety.altitude %></p>
           </div>
-        </div>
+        </div> -->
+
+      <div class="container-tab-show-variety-two">
 
         <div class="second-row-show-variety d-flex align-items-center">
           <div class="second-row-show-variety-case-one d-flex justify-content-center">
@@ -107,15 +114,18 @@
           </div>
         </div>
 
-        <div class="second-row-show-variety d-flex align-items-center">
-          <div class="second-row-show-variety-case-one d-flex justify-content-center">
+        <div class="last-row-variety-two d-flex align-items-center">
+          <div class="last-row-variety-two-case-one d-flex justify-content-center">
             <p class='text-center'>TASSE :</p>
           </div>
-          <div class="second-row-show-variety-case-two d-flex justify-content-center">
+          <div class="last-row-variety-two-case-two d-flex justify-content-center">
               <p class='text-center'><%= @variety.cup %></p>
           </div>
         </div>
 
+      </div>
+
+      <div class="container-tab-show-variety-three">
 
         <div class="last-row-show-variety d-flex align-items-center">
           <div class="last-row-show-variety-case-one d-flex justify-content-center flex-column">
@@ -172,11 +182,9 @@
           </div>
         </div>
 
-        <div class="infos-row-show-variety d-flex justify-content-center">
-            <p class='text-center'><%= @variety.description %></p>
-        </div>
-
       </div>
+
+
 
     </div>
   </div>
