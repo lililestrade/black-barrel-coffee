@@ -148,11 +148,14 @@ right connector from last child*/
   margin-top: 35px;
 }
 
-.letter h2 {
+.letter {
+  width : 181px;
+  & h2 {
   font-family: "ButlerRegular", "Playfair Display", serif;
   color: white;
   font-size: 48px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
 }
 
 .names {
