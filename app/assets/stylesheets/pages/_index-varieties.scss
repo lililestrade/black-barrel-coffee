@@ -141,3 +141,24 @@ right connector from last child*/
   border: 1px solid $black !important;
   opacity: 0.955 !important;
 }
+
+// ABCD
+
+.abcd {
+  margin-top: 35px;
+}
+
+.letter h2 {
+  font-family: "ButlerRegular", "Playfair Display", serif;
+  color: white;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.names {
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
