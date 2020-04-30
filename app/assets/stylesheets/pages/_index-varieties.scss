@@ -145,11 +145,14 @@ right connector from last child*/
 // ABCD
 
 .abcd {
-  margin-top: 35px;
+  margin-top: 40px;
+  padding-left: 30px;
 }
 
 .letter {
   width : 181px;
+  min-height: 95px
+  margin-bottom: 15px;;
   & h2 {
   font-family: "ButlerRegular", "Playfair Display", serif;
   color: white;
