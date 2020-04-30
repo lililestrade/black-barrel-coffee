@@ -144,15 +144,26 @@ right connector from last child*/
 
 // ABCD
 
-.abcd {
-  margin-top: 40px;
-  padding-left: 30px;
+.container-abcd {
+  // background: $black;
+  // opacity: 0.955;
+  // background: rgba(22, 31, 29, 0.5);
+  background: rgba(51, 54, 51, 0.5);
+  border-radius: 4px;
+  // width: 1385px;
+  margin: auto 32px;
+  overflow-x: scroll;
+  & .abcd {
+    margin-top: 40px;
+    padding-left: 30px;
+  }
 }
 
+
 .letter {
-  width : 181px;
-  min-height: 95px
-  margin-bottom: 15px;;
+  width: 181px;
+  min-height: 95px;
+  margin-bottom : 15px;
   & h2 {
   font-family: "ButlerRegular", "Playfair Display", serif;
   color: white;
