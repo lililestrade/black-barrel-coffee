@@ -146,6 +146,20 @@
     <% end %>
   </div>
 
+  <br>
+
+  <div class="button-delete">
+    <ol>
+      <li>
+        <button class="menu-toggle">
+          Menu
+        </button>
+      </li>
+    </ol>
+  </div>
+
+  <br>
+
   <div class ="mt-2 mb-2 d-flex justify-content-center">
     <% if policy(Country).destroy? %>
       <%= link_to "Supprimer", country_path(@country),
