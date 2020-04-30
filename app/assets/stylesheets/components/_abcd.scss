@@ -1,0 +1,46 @@
+// ABCD
+
+.container-abcd {
+  // background: rgba(51, 54, 51, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 35px 32px;
+  overflow-x: scroll;
+  & .abcd {
+    margin-top: 35px;
+    // padding-left: 40px;
+    padding-left: 95px;
+  }
+}
+
+
+.letter {
+  // width: 195px;
+  width: 165px;
+  min-height: 95px;
+  margin-bottom : 25px;
+  & h2 {
+  font-family: "ButlerRegular", "Playfair Display", serif;
+  color: white;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+}
+
+.names {
+  & a {
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  & ul {
+    margin-bottom: 3px;
+    color: white;
+  }
+}
+
+.names a:hover {
+    text-decoration: line-through;
+  }

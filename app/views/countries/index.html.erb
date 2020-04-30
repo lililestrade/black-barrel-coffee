@@ -58,7 +58,7 @@
         “Au fil des siècles, les pays producteurs ont écrit leur propre histoire autour du fameux caféier, découvrez la sans plus attendre.”
       </p>
     </div>
-    <br>
+
     <div class="list-countries d-flex justify-content-center align-items-center">
       <p style="margin: 0px">
         <% @countries = @countries.sort_by { |c| c.name } %>
@@ -67,6 +67,13 @@
         <% end %>
       </p>
     </div>
+
+    <div class="container-abcd">
+      <div class="abcd d-flex flex-wrap justify-content-around">
+        <%= render 'countries/abcd' %>
+      </div>
+    </div>
+
     <br>
     <br>
   </div>
