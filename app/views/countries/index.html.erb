@@ -49,22 +49,13 @@
     <br>
     <div class='d-flex justify-content-center align-items-center'>
       <% if policy(Country).create? %>
-        <%= link_to "Nouveau pays", new_country_path, class: "btn btn-primary" %>
+        <%= link_to "NOUVEAU PAYS", new_country_path, class: "btn btn-black" %>
       <% end %>
     </div>
     <br>
     <div class="index-countries-text-one d-flex justify-content-center">
       <p>
         “Au fil des siècles, les pays producteurs ont écrit leur propre histoire autour du fameux caféier, découvrez la sans plus attendre.”
-      </p>
-    </div>
-
-    <div class="list-countries d-flex justify-content-center align-items-center">
-      <p style="margin: 0px">
-        <% @countries = @countries.sort_by { |c| c.name } %>
-        <% @countries.each do |country| %>
-          <%= link_to country.name, country_path(country), class: "btn btn-warning m-2" %>
-        <% end %>
       </p>
     </div>
 
