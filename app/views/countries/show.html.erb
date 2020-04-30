@@ -1,6 +1,21 @@
 <!-- <div class="rice-paper"> -->
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
+
+  <% if policy(Country).destroy? %>
+    <div class="button-delete d-flex justify-content-end">
+      <ol>
+        <li>
+          <%= link_to "Supprimer", country_path(@country),
+                  method: :delete,
+                  data: { confirm: "Es-tu vraiment sûr de vouloir supprimer ce pays ?" } %>
+    <!--  <button class="menu-toggle">
+            Menu
+          </button> -->
+        </li>
+      </ol>
+    </div>
+  <% end %>
   <div class="container container-tabs-country d-flex justify-content-between">
 
     <div class="container-country-one d-flex justify-content-center">
@@ -134,38 +149,13 @@
         </div>
       <!-- </div> -->
     </div>
+
+
   </div>
-
-
-
-
 
   <div class ="mt-5 mb-2 d-flex justify-content-center">
     <% if policy(Country).update? %>
       <%= link_to "MODIFIER LE PAYS", edit_country_path(@country), class: "btn btn-white text-center" %>
-    <% end %>
-  </div>
-
-  <br>
-
-  <div class="button-delete d-flex justify-content-center">
-    <ol>
-      <li>
-        <button class="menu-toggle">
-          Menu
-        </button>
-      </li>
-    </ol>
-  </div>
-
-  <br>
-
-  <div class ="mt-2 mb-2 d-flex justify-content-center">
-    <% if policy(Country).destroy? %>
-      <%= link_to "Supprimer", country_path(@country),
-              method: :delete,
-              data: { confirm: "Are you sure?" },
-              class: "btn btn-warning" %>
     <% end %>
   </div>
 
