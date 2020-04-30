@@ -1,6 +1,21 @@
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
 
+  <% if policy(Variety).destroy? %>
+    <div class="button-delete d-flex justify-content-end">
+      <ol>
+        <li>
+          <%= link_to "Supprimer", variety_path(@variety),
+                  method: :delete,
+                  data: { confirm: "Es-tu vraiment sûr de vouloir supprimer cette variété ?" } %>
+    <!--  <button class="menu-toggle">
+            Menu
+          </button> -->
+        </li>
+      </ol>
+    </div>
+  <% end %>
+
   <div class="container container-show-variety-one d-flex justify-content-center">
     <div class="container-content-show-variety">
 
@@ -203,14 +218,7 @@
       <%= link_to "MODIFIER LA VARIÉTÉ", edit_variety_path(@variety), class: "btn btn-white text-center" %>
     <% end %>
   </div>
-  <div class ="mt-2 mb-2 d-flex justify-content-center">
-    <% if policy(Variety).destroy? %>
-      <%= link_to "Supprimer", variety_path(@variety),
-              method: :delete,
-              data: { confirm: "Are you sure?" },
-              class: "btn btn-warning" %>
-    <% end %>
-  </div>
+
   <br>
 </div>
 
