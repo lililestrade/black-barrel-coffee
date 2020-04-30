@@ -1,389 +1,597 @@
-<div class="letter">
-  <h2>A</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'A' || variety.name.chars.first == 'a' %>
-        <ul>
+<!-- A -->
+<% a = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'A' || variety.name.chars.first == 'a' %>
+    <% a << variety %>
+  <% end %>
+<% end %>
+
+<% if !a.empty? %>
+  <div class="letter">
+    <h2>A</h2>
+    <div class="names">
+      <ul>
+        <% a.each do |variety| %>
           <li>
             <%= link_to variety.name.upcase, variety_path(variety) %>
           </li>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="letter">
-  <h2>B</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'B' || variety.name.chars.first == 'b' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>C</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'C' || variety.name.chars.first == 'c' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- B -->
+<% b = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'B' || variety.name.chars.first == 'b' %>
+    <% b << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>D</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'D' || variety.name.chars.first == 'd' %>
+<% if !b.empty? %>
+  <div class="letter">
+    <h2>B</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% b.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>E</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'E' || variety.name.chars.first == 'e' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- C -->
+<% c = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'C' || variety.name.chars.first == 'c' %>
+    <% c << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>F</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'F' || variety.name.chars.first == 'f' %>
+<% if !c.empty? %>
+  <div class="letter">
+    <h2>C</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% c.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>G</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'G' || variety.name.chars.first == 'g' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- D -->
+<% d = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'D' || variety.name.chars.first == 'd' %>
+    <% d << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>H</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'H' || variety.name.chars.first == 'h' %>
+<% if !d.empty? %>
+  <div class="letter">
+    <h2>D</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% d.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>I</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'I' || variety.name.chars.first == 'i' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- E -->
+<% e = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'E' || variety.name.chars.first == 'e' %>
+    <% e << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>J</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'J' || variety.name.chars.first == 'j' %>
+<% if !e.empty? %>
+  <div class="letter">
+    <h2>E</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% e.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>K</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'K' || variety.name.chars.first == 'k' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- F -->
+<% f = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'F' || variety.name.chars.first == 'f' %>
+    <% f << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>L</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'L' || variety.name.chars.first == 'l' %>
+<% if !f.empty? %>
+  <div class="letter">
+    <h2>F</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% f.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>M</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'M' || variety.name.chars.first == 'm' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- G -->
+<% g = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'G' || variety.name.chars.first == 'g' %>
+    <% g << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>N</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'N' || variety.name.chars.first == 'n' %>
+<% if !g.empty? %>
+  <div class="letter">
+    <h2>G</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% g.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>O</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'O' || variety.name.chars.first == 'o' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- H -->
+<% h = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'H' || variety.name.chars.first == 'h' %>
+    <% h << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>P</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'P' || variety.name.chars.first == 'p' %>
+<% if !h.empty? %>
+  <div class="letter">
+    <h2>H</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% h.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>Q</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'Q' || variety.name.chars.first == 'q' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- I -->
+<% i = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'I' || variety.name.chars.first == 'i' %>
+    <% i << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>R</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'R' || variety.name.chars.first == 'r' %>
+<% if !i.empty? %>
+  <div class="letter">
+    <h2>I</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% i.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>S</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'S' || variety.name.chars.first == 's' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- J -->
+<% j = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'J' || variety.name.chars.first == 'j' %>
+    <% j << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>T</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'T' || variety.name.chars.first == 't' %>
+<% if !j.empty? %>
+  <div class="letter">
+    <h2>J</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% j.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>U</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'U' || variety.name.chars.first == 'u' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- K -->
+<% k = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'K' || variety.name.chars.first == 'k' %>
+    <% k << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>V</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'V' || variety.name.chars.first == 'v' %>
+<% if !k.empty? %>
+  <div class="letter">
+    <h2>K</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% k.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>W</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'W' || variety.name.chars.first == 'w' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- L -->
+<% l = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'L' || variety.name.chars.first == 'l' %>
+    <% l << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>X</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'X' || variety.name.chars.first == 'x' %>
+<% if !l.empty? %>
+  <div class="letter">
+    <h2>L</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% l.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="letter">
-  <h2>Y</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'Y' || variety.name.chars.first == 'y' %>
-      <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<!-- M -->
+<% m = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'M' || variety.name.chars.first == 'm' %>
+    <% m << variety %>
+  <% end %>
+<% end %>
 
-<div class="letter">
-  <h2>Z</h2>
-  <div class="names">
-    <% @varieties.each do |variety| %>
-      <% if variety.name.chars.first == 'Z' || variety.name.chars.first == 'z' %>
+<% if !m.empty? %>
+  <div class="letter">
+    <h2>M</h2>
+    <div class="names">
       <ul>
-        <li>
-          <%= link_to variety.name.upcase, variety_path(variety) %>
-        </li>
+        <% m.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
       </ul>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
+
+<!-- N -->
+<% n = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'N' || variety.name.chars.first == 'n' %>
+    <% n << variety %>
+  <% end %>
+<% end %>
+
+<% if !n.empty? %>
+  <div class="letter">
+    <h2>N</h2>
+    <div class="names">
+      <ul>
+        <% n.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- O -->
+<% o = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'O' || variety.name.chars.first == 'o' %>
+    <% o << variety %>
+  <% end %>
+<% end %>
+
+<% if !o.empty? %>
+  <div class="letter">
+    <h2>O</h2>
+    <div class="names">
+      <ul>
+        <% o.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- P -->
+<% p = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'P' || variety.name.chars.first == 'p' %>
+    <% p << variety %>
+  <% end %>
+<% end %>
+
+<% if !p.empty? %>
+  <div class="letter">
+    <h2>P</h2>
+    <div class="names">
+      <ul>
+        <% p.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- Q -->
+<% q = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'Q' || variety.name.chars.first == 'q' %>
+    <% q << variety %>
+  <% end %>
+<% end %>
+
+<% if !q.empty? %>
+  <div class="letter">
+    <h2>Q</h2>
+    <div class="names">
+      <ul>
+        <% q.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- R -->
+<% r = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'R' || variety.name.chars.first == 'r' %>
+    <% r << variety %>
+  <% end %>
+<% end %>
+
+<% if !r.empty? %>
+  <div class="letter">
+    <h2>R</h2>
+    <div class="names">
+      <ul>
+        <% r.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- S -->
+<% s = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'S' || variety.name.chars.first == 's' %>
+    <% s << variety %>
+  <% end %>
+<% end %>
+
+<% if !s.empty? %>
+  <div class="letter">
+    <h2>S</h2>
+    <div class="names">
+      <ul>
+        <% s.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- T -->
+<% t = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'T' || variety.name.chars.first == 't' %>
+    <% t << variety %>
+  <% end %>
+<% end %>
+
+<% if !t.empty? %>
+  <div class="letter">
+    <h2>T</h2>
+    <div class="names">
+      <ul>
+        <% t.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- U -->
+<% u = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'U' || variety.name.chars.first == 'u' %>
+    <% u << variety %>
+  <% end %>
+<% end %>
+
+<% if !u.empty? %>
+  <div class="letter">
+    <h2>U</h2>
+    <div class="names">
+      <ul>
+        <% u.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- V -->
+<% v = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'V' || variety.name.chars.first == 'v' %>
+    <% v << variety %>
+  <% end %>
+<% end %>
+
+<% if !v.empty? %>
+  <div class="letter">
+    <h2>V</h2>
+    <div class="names">
+      <ul>
+        <% v.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- W -->
+<% w = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'W' || variety.name.chars.first == 'w' %>
+    <% w << variety %>
+  <% end %>
+<% end %>
+
+<% if !w.empty? %>
+  <div class="letter">
+    <h2>W</h2>
+    <div class="names">
+      <ul>
+        <% w.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- X -->
+<% x = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'X' || variety.name.chars.first == 'x' %>
+    <% x << variety %>
+  <% end %>
+<% end %>
+
+<% if !x.empty? %>
+  <div class="letter">
+    <h2>X</h2>
+    <div class="names">
+      <ul>
+        <% x.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- Y -->
+<% y = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'Y' || variety.name.chars.first == 'y' %>
+    <% y << variety %>
+  <% end %>
+<% end %>
+
+<% if !y.empty? %>
+  <div class="letter">
+    <h2>Y</h2>
+    <div class="names">
+      <ul>
+        <% y.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<!-- Z -->
+<% z = [] %>
+<% @varieties.each do |variety| %>
+  <% if variety.name.chars.first == 'Z' || variety.name.chars.first == 'z' %>
+    <% z << variety %>
+  <% end %>
+<% end %>
+
+<% if !z.empty? %>
+  <div class="letter">
+    <h2>Z</h2>
+    <div class="names">
+      <ul>
+        <% z.each do |variety| %>
+          <li>
+            <%= link_to variety.name.upcase, variety_path(variety) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
