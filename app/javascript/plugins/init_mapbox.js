@@ -33,9 +33,14 @@ const initMapbox = () => {
 
     fitMapToMarkers(map, markers);
 
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //                                     mapboxgl: mapboxgl,
+    //                                     placeholder: 'Chercher un pays' }));
+
+    const geocoder = new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                         mapboxgl: mapboxgl,
-                                        placeholder: 'Chercher un pays' }));
+                                        placeholder: 'Chercher un pays' });
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
   }
 };
 
