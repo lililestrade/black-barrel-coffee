@@ -1,0 +1,17 @@
+.container-about {
+  margin-left: auto;
+  margin-right: auto;
+  & h1 {
+    color: white;
+    font-size: 52px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  & h3 {
+    color: white;
+    font-size: 28px;
+    font-family: 'Roboto Condensed';
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        letter-spacing: 2.9px;
+  }
+}
