@@ -68,6 +68,23 @@
   height: 36px;
 }
 
+#map {
+  padding: 3px;
+  // background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+  // background: radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  // background: radial-gradient(ellipse farthest-corner at left top, #FFFFFF 5%, #FFFFAC 20%, #D1B464 45%, #5d4a1f 85%, #5d4a1f 100%);
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  border-radius: 4px;
+}
+
+.mapboxgl-canvas {
+    position: absolute;
+    padding: 2px;
+    left: 0px;
+    top: 0px;
+}
+
 // @media screen and (min-width: 640px)
 // .loupe-input {
 //     left: 7px;
