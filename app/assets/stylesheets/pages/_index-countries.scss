@@ -43,7 +43,26 @@
   }
 }
 
-#query {
+.search-varieties .form-inline {
   width: 240px;
   height: 36px;
+}
+
+// #query {
+//   width: 240px;
+//   height: 36px;
+// }
+
+// @media screen and (min-width: 640px)
+.loupe-input {
+    left: 7px;
+    width: 20px;
+    height: 20px;
+}
+.loupe-input {
+    display: inline-block;
+    vertical-align: middle;
+    speak: none;
+    fill: #757575;
+    top: 15px;
 }
