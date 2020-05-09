@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get "/pages/:page" => "pages#show"
+
   resources :drying_processes
   resources :countries
   resources :varieties
