@@ -74,20 +74,19 @@
   // animation: MoveBackgroundPosition 6s ease-in-out infinite;
   border-radius: 4px;
 }
+// @keyframes MoveBackgroundPosition {
+//   0% {
+//       background-position: 0% 50%
+//   }
 
-@keyframes MoveBackgroundPosition {
-  0% {
-      background-position: 0% 50%
-  }
+//   50% {
+//     background-position: 100% 50%
+//   }
 
-  50% {
-    background-position: 100% 50%
-  }
-
-  100% {
-    background-position: 0% 50%
-  }
-}
+//   100% {
+//     background-position: 0% 50%
+//   }
+// }
 
 .mapboxgl-canvas {
     position: absolute;
