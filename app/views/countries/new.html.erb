@@ -9,7 +9,9 @@
         <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
         <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
         <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
-        <%= f.input :description, label: false, placeholder: "Description ..."%>
+        <%#= f.input :description, label: false, placeholder: "Description ..."%>
+        <%= f.hidden_field :description, label: false, id: :country_description %>
+        <trix-editor input="country_description" placeholder="Description..."></trix-editor>
 
         <h2>Méthode de séchage en pratique dans ce pays :</h2>
         <%= f.simple_fields_for :country_process_links, CountryProcessLink.new do |f2| %>
