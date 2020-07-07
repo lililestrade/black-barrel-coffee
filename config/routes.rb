@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :country_process_links, only: [:new, :create, :destroy]
   resources :harvest_periods, only: [:new, :create, :destroy]
 
+  resources :images, only: [:create]
+
   # resources :productive_country, only: [:new, :create]
   # resources :country_process_links, only: [:new, :create]
   # resources :harvest_periods, only: [:new, :create]

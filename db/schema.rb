@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_171154) do
+ActiveRecord::Schema.define(version: 2020_07_07_112704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2020_04_01_171154) do
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_harvest_periods_on_country_id"
     t.index ["month_id"], name: "index_harvest_periods_on_month_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "months", force: :cascade do |t|

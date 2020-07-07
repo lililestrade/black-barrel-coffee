@@ -22,6 +22,9 @@ gem 'pg_search', '~> 2.3.0'
 gem 'cookies_eu'
 gem 'turbolinks', '~> 5.2.0'
 
+gem 'shrine'
+gem 'trix'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
