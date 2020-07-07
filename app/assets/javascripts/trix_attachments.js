@@ -1,3 +1,9 @@
+// $(document).ready(function() {
+//   Trix.config.attachments.preview.caption = {
+//     name: false,
+//     size: false
+//   };
+
 function uploadAttachment(attachment) {
   // var csrfToken = $('meta[name="csrf-token"]').attr('content');
   var file = attachment.file;
@@ -14,15 +20,25 @@ function uploadAttachment(attachment) {
     attachment.setUploadProgress(progress);
   };
 
+  // xhr.onload = function() {
+  //   if (xhr.status === 201) {
+  //     var data = JSON.parse(xhr.responseText);
+  //     return attachment.setAttributes({
+  //       url: data.image_url,
+  //       href: data.image_url
+  //     })
+  //   }
+  // }
+
   xhr.onload = function() {
-    if (xhr.status === 201) {
-      var data = JSON.parse(xhr.responseText);
+    if (this.status >= 200 && this.status < 300) {
+      var data = JSON.parse(this.responseText);
       return attachment.setAttributes({
         url: data.url,
         href: data.url
-      })
+      });
     }
-  }
+  };
 
   return xhr.send(form);
 }
