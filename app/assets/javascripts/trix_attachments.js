@@ -1,8 +1,7 @@
-// $(document).ready(function() {
-//   Trix.config.attachments.preview.caption = {
+// Trix.config.attachments.preview.caption = {
 //     name: false,
 //     size: false
-//   };
+// };
 
 function uploadAttachment(attachment) {
   // var csrfToken = $('meta[name="csrf-token"]').attr('content');
