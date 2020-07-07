@@ -6,7 +6,8 @@
       <%= simple_form_for @drying_process do |f| %>
         <%= f.input :name, label: false, placeholder: "Nom de la méthode" %>
         <%= f.input :process_time, label: false, placeholder: "Combien de temps cela prend-il ?" %>
-        <%= f.hidden_field :description, label: false, id: :method_description %>
+        <%#= f.hidden_field :description, label: false, id: :method_description %>
+        <%= f.text_area :description, label: false, id: :method_description %>
         <trix-editor input="method_description" placeholder="Description de la méthode ..."></trix-editor>
 
         <%#= f.hidden_field :description, id: :description_method %>
