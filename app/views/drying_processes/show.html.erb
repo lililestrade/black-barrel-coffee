@@ -40,7 +40,7 @@
 
         <div class="third-row-show-process d-flex justify-content-center">
           <div class="container-show-process-description d-flex align-self-center">
-            <p class='text-center'><%= @drying_process.description %></p>
+            <p class='text-center'><%= sanitize @drying_process.description %></p>
           </div>
         </div>
 
