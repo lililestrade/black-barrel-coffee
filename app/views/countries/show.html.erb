@@ -144,7 +144,8 @@
             <p>CARACTÉRISTIQUES :</p>
           </div>
           <div class="second-row-show-country-two d-flex justify-content-center">
-            <p class='text-center'><%= sanitize @country.description %></p>
+            <!-- <p class='text-center'><%#= sanitize @country.description %></p> -->
+            <%= sanitize @country.description %>
           </div>
         </div>
       <!-- </div> -->

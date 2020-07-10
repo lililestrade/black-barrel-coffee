@@ -1,4 +1,5 @@
 .container.container-tabs-country {
+  // margin: 0px auto;
   margin: 0px auto;
   padding: 0px;
 }
@@ -10,6 +11,7 @@
   width: 510px;
   min-height: 471px;
   margin-top: 10px;
+  margin-right: 80px;
   background: rgba(#121212, 0.6);
   // background: $black;
   // opacity: 0.955;
@@ -203,10 +205,11 @@
   // position: absolute;
   // left: 877px;
   // top: 305px;
-  width: 480px;
-  // height: fit-content;
-  height: 202px;
-  margin: auto 0px;
+  width: 600px;
+  // height: 202px;
+  height: fit-content;
+  // margin: auto 0px;
+  margin: auto 0px auto 80px;
   background: rgba(#121212, 0.6);
   // background: $black;
   // opacity: 0.955;
@@ -223,7 +226,7 @@
 .container-tab-show-country-two {
   border: 2px solid white;
   min-height: 138px;
-  width: 424px;
+  width: 550px;
   margin-top: 28px;
   margin-bottom: 28px;
 }
@@ -243,8 +246,9 @@
   // min-height: 325px;
   // min-height: 340px;
   min-height: 91px;
-  & p {
+  & div {
     padding: 12px;
     min-height: fit-content;
+    text-align: center;
   }
 }
