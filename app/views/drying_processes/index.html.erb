@@ -17,6 +17,25 @@
       </p>
     </div>
     <br>
+
+    <div class='index-container-process d-flex justify-content-around'>
+      <div class='voie-seche'>
+        <p>VOIE SÈCHE</p>
+      </div>
+
+      <div class='voie-humide'>
+        <p>VOIE HUMIDE</p>
+      </div>
+
+      <div class='voies-hybrides'>
+        <p>VOIES HYBRIDES</p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <div class='d-flex justify-content-center align-items-center'>
     <% @drying_processes.each do |drying_process| %>
       <%= link_to drying_process.name, drying_process_path(drying_process), class: "btn btn-warning m-2" %>

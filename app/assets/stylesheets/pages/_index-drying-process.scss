@@ -8,3 +8,49 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 }
+
+.index-container-process {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1259px;
+  height: 374px;
+  background: rgba(#121212, 0.6);
+  border-radius: 4px;
+}
+
+.voie-seche {
+  & p {
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
+.voie-humide {
+  & p {
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
+.voies-hybrides {
+  & p {
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
