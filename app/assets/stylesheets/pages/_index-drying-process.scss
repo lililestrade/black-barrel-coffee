@@ -10,7 +10,7 @@
 }
 
 .index-container-process {
-  width: 1259px;
+  width: 1280px;
   height: 374px;
   background: rgba(#121212, 0.6);
   border-radius: 4px;
@@ -35,6 +35,9 @@
 }
 
 .voie-humide {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  width: 230px;
   & p {
     color: white;
     font-family: 'Raleway', sans-serif;

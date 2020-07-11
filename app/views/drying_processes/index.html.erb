@@ -22,7 +22,7 @@
     <div class='index-container-process d-flex justify-content-around'>
       <div class='voie-seche'>
         <p>Voie Sèche</p>
-        <div class='d-flex justify-content-center'>
+        <div class='d-flex justify-content-center mt-4'>
           <% nature =  DryingProcess.find_by(name: 'Nature')%>
           <%= link_to 'NATURE', drying_process_path(nature), class: "btn-process" %>
         </div>
@@ -30,7 +30,7 @@
 
       <div class='voie-humide'>
         <p>Voie Humide</p>
-        <div class='d-flex justify-content-center'>
+        <div class='d-flex justify-content-center mt-4'>
           <% lave =  DryingProcess.find_by(name: 'Lavé')%>
           <%= link_to 'LAVÉ', drying_process_path(lave), class: "btn-process" %>
         </div>
@@ -38,32 +38,32 @@
 
       <div class='voies-hybrides'>
         <p>Voies Hybrides</p>
-        <div class='d-flex justify-content-around'>
+        <div class='d-flex justify-content-around mt-4'>
           <% semilave =  DryingProcess.find_by(name: 'Semi-Lavé (Giling Basah)')%>
           <%= link_to 'SEMI-LAVÉ', drying_process_path(semilave), class: "btn-process" %>
 
           <% pulpednatural =  DryingProcess.find_by(name: 'Pulped Natural')%>
-          <%= link_to 'PULPED NATURAL', drying_process_path(pulpednatural), class: "btn-process" %>
+          <%= link_to 'PULPED NATURAL', drying_process_path(pulpednatural), class: "btn-process mr-3 ml-3" %>
 
-          <div class='d-flex flex-column '>
+          <div class='d-flex flex-column'>
             <% honeyprocess =  DryingProcess.find_by(name: 'Honey Process')%>
             <%= link_to 'HONEY PROCESS', drying_process_path(honeyprocess), class: "btn-process" %>
 
             <% whitehoney =  DryingProcess.find_by(name: 'White Honey')%>
-            <%= link_to 'WHITE HONEY', drying_process_path(whitehoney), class: "btn-process" %>
+            <%= link_to 'WHITE HONEY', drying_process_path(whitehoney), class: "btn-process mt-3 mb-3" %>
 
             <% yellowhoney =  DryingProcess.find_by(name: 'Yellow Honey')%>
             <%= link_to 'YELLOW HONEY', drying_process_path(yellowhoney), class: "btn-process" %>
 
             <% redhoney =  DryingProcess.find_by(name: 'Red Honey')%>
-            <%= link_to 'RED HONEY', drying_process_path(redhoney), class: "btn-process" %>
+            <%= link_to 'RED HONEY', drying_process_path(redhoney), class: "btn-process mt-3 mb-3" %>
 
             <% blackhoney =  DryingProcess.find_by(name: 'Black Honey')%>
             <%= link_to 'BLACK HONEY', drying_process_path(blackhoney), class: "btn-process" %>
           </div>
 
           <% moussonne =  DryingProcess.find_by(name: 'Moussonnée')%>
-          <%= link_to 'MOUSSONNÉE', drying_process_path(moussonne), class: "btn-process" %>
+          <%= link_to 'MOUSSONNÉE', drying_process_path(moussonne), class: "btn-process ml-3" %>
 
         </div>
       </div>
