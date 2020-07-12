@@ -1,0 +1,31 @@
+trix-editor {
+    border: 1px solid #bbb;
+    background-color: white;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0.4em 0.6em;
+    min-height: 5em;
+    outline: none;
+}
+
+trix-toolbar .button_group button.icon, trix-toolbar .button_group input[type=button].icon {
+  width: 2.6em;
+  height: 1.6em;
+  max-width: calc(0.8em + 4vw);
+  text-indent: -9999px;
+  background-color: white;
+}
+
+#country_altitude_growth {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#country_world_rank {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#country_world_market_share {
+  margin-bottom: 30px;
+}
