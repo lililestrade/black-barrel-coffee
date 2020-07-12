@@ -38,7 +38,6 @@
 
 .btn-white {
   border-radius: 5px;
-  // background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: white;
   border: 1px solid black;
   color: black;
@@ -48,7 +47,6 @@
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
   &:hover {
     color: white;
-    // background: linear-gradient(to top, #C9C6C6 0%,#FFFFFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background: black;
     border: 1px solid white;
   }
@@ -74,7 +72,23 @@
     font-weight: 600;
     height: 36px;
   }
+}
 
+.btn-edit {
+  border-radius: 5px;
+  background: $marker-green;
+  border: 1px solid white;
+  padding: 8px 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  &:hover {
+    color: $marker-green;
+    background: white;
+    border: 1px solid $marker-green;
+  }
 }
 
 // BUTTON DELETE
