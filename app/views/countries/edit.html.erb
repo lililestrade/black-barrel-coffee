@@ -1,22 +1,29 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1 class="text-center">MODIFICATION DE: <%= @country.name.upcase %></h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <%= simple_form_for @country do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom du pays ?" %>
-        <%= f.input :altitude_growth, label: false, placeholder: "Altitude de production ?" %>
-        <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
-        <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
-        <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
-        <%#= f.input :description, label: false, placeholder: "Description ..."%>
-        <%= f.hidden_field :description, label: false, id: :country_description %>
-        <trix-editor input="country_description" placeholder="Description..."></trix-editor>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
 
-        <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%= f.submit "Appliquer les mofications", class: "btn btn-success mt-3 mb-5" %>
+  <div class="container">
+    <h1 class="text-center edit-title">MODIFICATION DE: <%= @country.name.upcase %></h1>
+
+    <div class="container-edit-form-countries">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          <%= simple_form_for @country do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nom du pays ?" %>
+            <%= f.input :altitude_growth, label: false, placeholder: "Altitude de production ?" %>
+            <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
+            <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
+            <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
+            <%#= f.input :description, label: false, placeholder: "Description ..."%>
+            <%= f.hidden_field :description, label: false, id: :country_description %>
+            <trix-editor input="country_description" placeholder="Description..."></trix-editor>
+
+            <div class =" mt-2 mb-2 d-flex justify-content-center">
+              <%= f.submit "Appliquer les mofications", class: "btn btn-success mt-3" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
+    <br>
   </div>
 </div>
