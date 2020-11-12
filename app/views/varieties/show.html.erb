@@ -1,20 +1,30 @@
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
 
-  <% if policy(Variety).destroy? %>
-    <div class="button-delete d-flex justify-content-end">
-      <ol>
-        <li>
-          <%= link_to "Supprimer", variety_path(@variety),
-                  method: :delete,
-                  data: { confirm: "Es-tu vraiment sûr de vouloir supprimer cette variété ?" } %>
-    <!--  <button class="menu-toggle">
-            Menu
-          </button> -->
-        </li>
-      </ol>
+  <div class="d-flex justify-content-between">
+    <div class="button-return d-flex justify-content-start">
+      <%= link_to varieties_path do %>
+        <%= image_tag "back_arrow.svg", class: 'back-arrow' %>
+        <!-- <i class="far fa-arrow-alt-circle-left"></i> -->
+      <% end %>
     </div>
-  <% end %>
+
+    <% if policy(Variety).destroy? %>
+      <div class="button-delete d-flex justify-content-end">
+        <ol>
+          <li>
+            <%= link_to "Supprimer", variety_path(@variety),
+                    method: :delete,
+                    data: { confirm: "Es-tu vraiment sûr de vouloir supprimer cette variété ?" } %>
+      <!--  <button class="menu-toggle">
+              Menu
+            </button> -->
+          </li>
+        </ol>
+      </div>
+    <% end %>
+  </div>
+
 
   <div class="container container-show-variety-one d-flex justify-content-center">
     <div class="container-content-show-variety">
