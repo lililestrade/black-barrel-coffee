@@ -68,6 +68,7 @@
   border-left: 2px solid white;
   & p {
     margin: auto;
+    font-family: 'Raleway';
   }
 }
 
@@ -213,7 +214,8 @@
   // background: $black;
   // opacity: 0.955;
   border-radius: 4px;
-  font-family: 'Roboto Condensed';
+  // font-family: 'Roboto Condensed';
+  font-family: 'Raleway';
   color: white;
   letter-spacing: 0.1em;
 }
