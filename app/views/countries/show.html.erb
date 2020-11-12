@@ -2,20 +2,31 @@
 <div class="leaf-background">
   <%= render 'shared/secondnavbar' %>
 
-  <% if policy(Country).destroy? %>
-    <div class="button-delete d-flex justify-content-end">
-      <ol>
-        <li>
-          <%= link_to "Supprimer", country_path(@country),
-                  method: :delete,
-                  data: { confirm: "Es-tu vraiment sûr de vouloir supprimer ce pays ?" } %>
-    <!--  <button class="menu-toggle">
-            Menu
-          </button> -->
-        </li>
-      </ol>
+  <div class="d-flex justify-content-between">
+    <div class="button-return d-flex justify-content-start">
+      <%= link_to countries_path do %>
+        <%= image_tag "back_arrow.svg", class: 'back-arrow' %>
+        <!-- <i class="far fa-arrow-alt-circle-left"></i> -->
+      <% end %>
     </div>
-  <% end %>
+
+      <% if policy(Country).destroy? %>
+        <div class="button-delete d-flex justify-content-end">
+          <ol>
+            <li>
+              <%= link_to "Supprimer", country_path(@country),
+                      method: :delete,
+                      data: { confirm: "Es-tu vraiment sûr de vouloir supprimer ce pays ?" } %>
+        <!--  <button class="menu-toggle">
+                Menu
+              </button> -->
+            </li>
+          </ol>
+        </div>
+      <% end %>
+  </div>
+
+
   <div class="container-tabs-country d-flex justify-content-between">
 
     <div class="container-country-one d-flex justify-content-center">

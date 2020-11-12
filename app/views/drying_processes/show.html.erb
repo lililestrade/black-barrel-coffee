@@ -4,14 +4,12 @@
 
   <div class="d-flex justify-content-between">
     <div class="button-return d-flex justify-content-start">
-      <%#= link_to 'RETOUR', drying_process_path, class: "btn-process" %>
-
       <%= link_to drying_processes_path do %>
         <%= image_tag "back_arrow.svg", class: 'back-arrow' %>
         <!-- <i class="far fa-arrow-alt-circle-left"></i> -->
       <% end %>
-
     </div>
+
     <% if policy(DryingProcess).destroy? %>
       <div class="button-delete d-flex justify-content-end">
         <ol>
