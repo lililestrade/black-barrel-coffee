@@ -43,6 +43,7 @@
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid white;
+  margin-top: -25px;
 }
 
 .navbar-maintenance .navbar-collapse {
@@ -55,12 +56,6 @@
 }
 .navbar-maintenance .navbar-brand {
   padding: 0px;
-}
-
-.navbar {
-  padding: 2px 13px;
-  // width: 1469px;
-  margin-top: -25px;
 }
 
 // li.nav-item {
