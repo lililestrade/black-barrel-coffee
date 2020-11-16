@@ -1,0 +1,98 @@
+.container-edit-form-varieties {
+  background: rgba(#121212, 0.6);
+  border-radius: 4px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#variety_name {
+  font-family: 'Raleway';
+}
+
+.edit-variety-boolean {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Raleway';
+  color: white;
+}
+
+#variety_discover_year {
+  font-family: 'Raleway';
+}
+
+#variety_origin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Raleway';
+}
+
+#variety_altitude {
+  font-family: 'Raleway';
+}
+
+.edit-variety-choice {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Raleway';
+}
+
+.edit-variety-choice-label {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+#variety_plant {
+  font-family: 'Raleway';
+}
+
+#variety_strenght {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Raleway';
+}
+
+#variety_cup {
+  margin-bottom: 30px;
+  font-family: 'Raleway';
+}
+
+#variety_description_edit {
+  font-family: 'Raleway';
+}
+
+// CLASSES DANS EDIT-COUNTRIES
+
+// .edit-title {
+//   font-family: 'GT Pressura Mono Regular', 'Roboto Condensed';
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 42px;
+//   line-height: 49px;
+//   // display: flex;
+//   // align-items: center;
+//   // text-align: center;
+//   letter-spacing: 0.1em;
+//   color: white;
+//   margin-top: 25px;
+//   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+// }
+
+// trix-editor {
+//     border: 1px solid #bbb;
+//     background-color: white;
+//     border-radius: 3px;
+//     margin: 0;
+//     padding: 0.4em 0.6em;
+//     min-height: 5em;
+//     outline: none;
+// }
+
+// trix-toolbar .button_group button.icon, trix-toolbar .button_group input[type=button].icon {
+//   width: 2.6em;
+//   height: 1.6em;
+//   max-width: calc(0.8em + 4vw);
+//   text-indent: -9999px;
+//   background-color: white;
+// }

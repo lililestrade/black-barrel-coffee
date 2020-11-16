@@ -9,14 +9,18 @@
         <div class="col-md-8 offset-2">
           <%= simple_form_for @variety do |f| %>
             <%= f.input :name, label: false, placeholder: "Nom due la variété ?" %>
-            <%= f.input :arabica, as: :boolean %>
-            <%= f.input :robusta, as: :boolean %>
-            <%= f.input :liberica, as: :boolean %>
+            <div class="edit-variety-boolean">
+              <%= f.input :arabica, as: :boolean %>
+              <%= f.input :robusta, as: :boolean %>
+              <%= f.input :liberica, as: :boolean %>
+            </div>
             <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
             <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
             <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
-            <p>Type de mutation :</p>
-            <%= f.association :mutation, label: false %>
+            <div class="edit-variety-choice">
+              <p class="edit-variety-choice-label">Type de mutation :</p>
+              <%= f.association :mutation, label: false %>
+            </div>
             <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
             <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
             <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
