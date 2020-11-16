@@ -39,16 +39,31 @@ trix-toolbar .button_group button.icon, trix-toolbar .button_group input[type=bu
   background-color: white;
 }
 
+#country_name {
+  font-family: 'Raleway';
+}
+
 #country_altitude_growth {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: 'Raleway';
+}
+
+#country_annual_prod {
+  font-family: 'Raleway';
 }
 
 #country_world_rank {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: 'Raleway';
 }
 
 #country_world_market_share {
   margin-bottom: 30px;
+  font-family: 'Raleway';
+}
+
+#country_description_edit {
+  font-family: 'Raleway';
 }
