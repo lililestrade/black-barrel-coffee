@@ -1,27 +1,36 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1 class="text-center">MODIFICATION DE <%= @variety.name %></h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <%= simple_form_for @variety do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom due la variété ?" %>
-        <%= f.input :arabica, as: :boolean %>
-        <%= f.input :robusta, as: :boolean %>
-        <%= f.input :liberica, as: :boolean %>
-        <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
-        <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
-        <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
-        <p>Type de mutation :</p>
-        <%= f.association :mutation, label: false %>
-        <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
-        <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
-        <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
-        <%#= f.input :description, label: false, placeholder: "Description ..."%>
-        <%= f.hidden_field :description, label: false, id: :variety_description %>
-        <trix-editor input="variety_description" placeholder="Caractéristiques ..."></trix-editor>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
 
-        <%= f.submit 'Appliquer les modifications', class: "btn btn-success" %>
-      <% end %>
+  <div class="container">
+    <h1 class="text-center edit-title">MODIFICATION DE: <%= @variety.name.upcase %></h1>
+
+    <div class="container-edit-form-varieties">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          <%= simple_form_for @variety do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nom due la variété ?" %>
+            <%= f.input :arabica, as: :boolean %>
+            <%= f.input :robusta, as: :boolean %>
+            <%= f.input :liberica, as: :boolean %>
+            <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
+            <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
+            <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
+            <p>Type de mutation :</p>
+            <%= f.association :mutation, label: false %>
+            <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
+            <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
+            <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
+            <%#= f.input :description, label: false, placeholder: "Description ..."%>
+            <%= f.hidden_field :description, label: false, id: :variety_description %>
+            <trix-editor input="variety_description" placeholder="Caractéristiques ..." id="variety_description_edit"></trix-editor>
+
+            <div class =" mt-2 mb-2 d-flex justify-content-center">
+              <%= f.submit "APPLIQUER LES MODIFICATIONS", class: "btn-edit mt-3" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <br>
   </div>
 </div>
