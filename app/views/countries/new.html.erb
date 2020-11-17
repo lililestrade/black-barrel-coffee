@@ -1,30 +1,39 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1 class="text-center">CRÉATION D'UN NOUVEAU PAYS</h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <%= simple_form_for @country do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom du pays ?" %>
-        <%= f.input :altitude_growth, label: false, placeholder: "Altitude de production ?" %>
-        <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
-        <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
-        <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
-        <%#= f.input :description, label: false, placeholder: "Description ..."%>
-        <%= f.hidden_field :description, label: false, id: :country_description %>
-        <trix-editor input="country_description" placeholder="Description..."></trix-editor>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
 
-        <h2>Méthode de séchage en pratique dans ce pays :</h2>
-        <%= f.simple_fields_for :country_process_links, CountryProcessLink.new do |f2| %>
-          <%= f2.association :drying_process, label: false %>
-        <% end %>
+  <div class="container">
+    <h1 class="text-center edit-title">CRÉATION D'UN NOUVEAU PAYS</h1>
 
-        <h2>Mois de récolte :</h2>
-        <%= f.simple_fields_for :harvest_periods, HarvestPeriod.new do |f3| %>
-          <%= f3.association :month, label: false %>
-        <% end %>
+    <div class="container-new-form-country">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          <%= simple_form_for @country do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nom du pays ?" %>
+            <%= f.input :altitude_growth, label: false, placeholder: "Altitude de production ?" %>
+            <%= f.input :annual_prod, label: false, placeholder: "Production annuelle ?" %>
+            <%= f.input :world_rank, label: false, placeholder: "Rang mondial ?" %>
+            <%= f.input :world_market_share, label: false, placeholder: "Part du marché mondial ?" %>
+            <%#= f.input :description, label: false, placeholder: "Description ..."%>
+            <%= f.hidden_field :description, label: false, id: :country_description %>
+            <trix-editor input="country_description" placeholder="Description..." id="country_description_new"></trix-editor>
 
-        <%= f.submit 'Créer le pays', class: "btn btn-success" %>
-      <% end %>
+            <h2 class="new-country-choice-label">Méthode de séchage en pratique dans ce pays :</h2>
+            <%= f.simple_fields_for :country_process_links, CountryProcessLink.new do |f2| %>
+              <%= f2.association :drying_process, label: false %>
+            <% end %>
+
+            <h2 class="new-country-choice-label">Mois de récolte :</h2>
+            <%= f.simple_fields_for :harvest_periods, HarvestPeriod.new do |f3| %>
+              <%= f3.association :month, label: false %>
+            <% end %>
+
+            <div class =" mt-2 mb-2 d-flex justify-content-center">
+              <%= f.submit "CRÉER LE PAYS", class: "btn-edit mt-3" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
