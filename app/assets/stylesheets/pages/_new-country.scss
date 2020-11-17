@@ -1,0 +1,22 @@
+.container-new-form-country {
+  background: rgba(#121212, 0.6);
+  border-radius: 4px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+//CSS pour les cases dans edit-countries.scss
+
+#country_description_new {
+  font-family: 'Raleway';
+}
+
+.new-country-choice-label {
+  color: white;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-family: 'Raleway';
+  font-size: 22px;
+}
