@@ -1,45 +1,62 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1 class="text-center">CRÉATION D'UNE NOUVELLE VARIÉTÉ</h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <%= simple_form_for @variety do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom de la variété ?" %>
-        <%= f.input :arabica, as: :boolean %>
-        <%= f.input :robusta, as: :boolean %>
-        <%= f.input :liberica, as: :boolean %>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
 
-        <p>Parents :</p>
-        <%= f.simple_fields_for :parents, Parent.new do |f3| %>
-          <%= f3.input :parent_variety_id, collection: Variety.all.sort_by { |c| c.name }, label: false %>
-          <%#= f3.association :parent_variety_id, collection: Variety.all %>
-          <%#= f3.association :parent_variety_id, label: false %>
-        <% end %>
+  <div class="container">
+    <h1 class="text-center edit-title">CRÉATION D'UNE NOUVELLE VARIÉTÉ</h1>
 
-        <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
-        <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
+    <div class="container-new-form-varieties">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          <%= simple_form_for @variety do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nom de la variété ?" %>
+            <div class="edit-variety-boolean">
+              <%= f.input :arabica, as: :boolean %>
+              <%= f.input :robusta, as: :boolean %>
+              <%= f.input :liberica, as: :boolean %>
+            </div>
 
-        <p>Pays producteurs :</p>
-        <%= f.simple_fields_for :productive_countries, ProductiveCountry.new do |f2| %>
-          <%= f2.association :country, collection: Country.order('name') ,label: false %>
+            <div class="new-variety-choice">
+              <h2 class="new-variety-choice-label">Parents :</h2>
+              <%= f.simple_fields_for :parents, Parent.new do |f3| %>
+                <%= f3.input :parent_variety_id, collection: Variety.all.sort_by { |c| c.name }, label: false %>
+                <%#= f3.association :parent_variety_id, collection: Variety.all %>
+                <%#= f3.association :parent_variety_id, label: false %>
+              <% end %>
+            </div>
 
-          <%= f2.input :address, label: false, placeholder: "Adresse ?" %>
-        <% end %>
+            <%= f.input :discover_year, label: false, placeholder: "Découverte en quelle année ?" %>
+            <%= f.input :origin, label: false, placeholder: "Pays d'origine ?" %>
 
-        <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
-        <p>Type de mutation :</p>
-        <%= f.association :mutation, label: false %>
-        <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
-        <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
-        <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
-        <%#= f.input :description, label: false, placeholder: "Caractéristiques ..."%>
-        <%= f.hidden_field :description, label: false, id: :variety_description %>
-        <trix-editor input="variety_description" placeholder="Caractéristiques ..."></trix-editor>
+            <div class="new-variety-choice">
+              <h2 class="new-variety-choice-label">Pays producteurs :</h2>
+              <%= f.simple_fields_for :productive_countries, ProductiveCountry.new do |f2| %>
+                <%= f2.association :country, collection: Country.order('name') ,label: false %>
 
+                <%= f2.input :address, label: false, placeholder: "Adresse ?" %>
+              <% end %>
+            </div>
 
+            <%= f.input :altitude, label: false, placeholder: "Altitude de pousse ?" %>
 
-        <%= f.submit 'Créer la variété', class: "btn btn-success" %>
-      <% end %>
+            <div class="new-variety-choice">
+              <h2 class="new-variety-choice-label">Type de mutation :</h2>
+              <%= f.association :mutation, label: false %>
+            </div>
+
+            <%= f.input :plant, label: false, placeholder: "Comment est la plante ?" %>
+            <%= f.input :strenght, label: false, placeholder: "Résistance ?" %>
+            <%= f.input :cup, label: false, placeholder: "Rendu en tasse ?" %>
+            <%#= f.input :description, label: false, placeholder: "Caractéristiques ..."%>
+            <%= f.hidden_field :description, label: false, id: :variety_description %>
+            <trix-editor input="variety_description" placeholder="Caractéristiques ..." id="variety_description_new"></trix-editor>
+
+            <div class =" mt-2 mb-2 d-flex justify-content-center">
+              <%= f.submit "CRÉER LA VARIÉTÉ", class: "btn-edit mt-3" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <br>
   </div>
 </div>
