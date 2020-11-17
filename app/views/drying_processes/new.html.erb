@@ -1,19 +1,26 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <h1 class="text-center">CRÉATION D'UNE NOUVELLE MÉTHODE DE SÉCHAGE</h1>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <%= simple_form_for @drying_process do |f| %>
-        <%= f.input :name, label: false, placeholder: "Nom de la méthode" %>
-        <%= f.input :process_time, label: false, placeholder: "Combien de temps cela prend-il ?" %>
-        <%= f.hidden_field :description, label: false, id: :method_description %>
-        <%#= f.text_area :description, label: false, id: :method_description %>
-        <trix-editor input="method_description" placeholder="Description de la méthode ..." class="container-show-process-description-trix"></trix-editor>
+<div class="leaf-background">
+  <%= render 'shared/secondnavbar' %>
 
-        <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%= f.submit "Créer", class: "btn btn-primary" %>
+  <div class="container">
+    <h1 class="text-center edit-title">CRÉATION D'UNE NOUVELLE MÉTHODE DE SÉCHAGE</h1>
+
+    <div class="container-new-form-process">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          <%= simple_form_for @drying_process do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nom de la méthode" %>
+            <%= f.input :process_time, label: false, placeholder: "Combien de temps cela prend-il ?" %>
+            <%= f.hidden_field :description, label: false, id: :method_description %>
+            <%#= f.text_area :description, label: false, id: :method_description %>
+            <trix-editor input="method_description" placeholder="Description de la méthode ..." id="process_description_new" class="container-show-process-description-trix"></trix-editor>
+
+            <div class =" mt-2 mb-2 d-flex justify-content-center">
+              <%= f.submit "CRÉER LA MÉTHODE", class: "btn-edit mt-3" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
+    <br>
   </div>
 </div>
