@@ -235,9 +235,9 @@
 <!-- START Modal new_productive_country -->
 <div class="modal fade" id="newProductiveCountryModalCenter" tabindex="-1" role="dialog" aria-labelledby="newProductiveCountryModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content modal-style">
       <div class="modal-header">
-        <h5 class="modal-title" id="newProductiveCountryModalCenterTitle">Ajouter un pays producteur</h5>
+        <h5 class="modal-title" id="newProductiveCountryModalCenterTitle">AJOUTER UN PAYS PRODUCTEUR</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -249,7 +249,7 @@
           <%= f.association :country, label: false %>
           <%= f.input :address, label: false, placeholder: "Adresse ?" %>
           <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%= f.submit "Créer", class: "btn btn-primary" %>
+          <%= f.submit "CRÉER", class: "btn-edit mt-3" %>
           </div>
         <% end %>
       </div>
@@ -260,9 +260,9 @@
 <!-- START Modal new_parent -->
 <div class="modal fade" id="newParentModalCenter" tabindex="-1" role="dialog" aria-labelledby="newParentModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content modal-style">
       <div class="modal-header">
-        <h5 class="modal-title" id="newParentModalCenterTitle">Ajouter une variété parente</h5>
+        <h5 class="modal-title" id="newParentModalCenterTitle">AJOUTER UNE VARIÉTÉ PARENTE</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -273,7 +273,7 @@
           <%= f.association :variety, :as => :hidden, input_html: { value: @variety.id } %>
           <%= f.input :parent_variety_id, collection: Variety.all, label: false %>
           <div class =" mt-2 mb-2 d-flex justify-content-center">
-          <%= f.submit "Créer", class: "btn btn-primary" %>
+          <%= f.submit "CRÉER", class: "btn-edit mt-3" %>
           </div>
         <% end %>
       </div>
